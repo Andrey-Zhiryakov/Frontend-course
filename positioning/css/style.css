@@ -1,5 +1,10 @@
+html {
+	font-family: Roboto, Arial, sans-serif;
+}
+
 body {
 	height: 2000px;
+	min-width: 900px;
 }
 
 header {
@@ -100,12 +105,51 @@ header {
 }
 
 .alert {
-	height: 130px;
+	height: 84px;
 	width: 330px;
 	position:fixed;
 	z-index:10;
 	bottom: 155px;
 	right: 0;
+	padding:23px;
 	background-color: rgba(93, 93, 93, .9);
 	box-shadow:0 1px #c9c9c9;
+}
+
+.alert > div:last-child::after {
+	content:'.';
+	display:block;
+	height: 0;
+	visibility:hidden;
+	clear:both;
+}
+
+.rect {
+	width: 85px;
+	height: 85px;
+	display:inline-block;
+	float:left;
+	background-color: #f7e35f;
+}
+
+.alert-message {
+	height: 100%;
+	margin-left:1rem;
+	float:left;
+	color:#fff;
+}
+
+h5 {
+	margin-top:0;
+	margin-bottom:10px;
+	font-weight:bold;
+	text-transform:uppercase;
+}
+
+.alert-message span {
+	font-size:.75rem;
+}
+
+.term {
+	font-weight: bold;
 }
