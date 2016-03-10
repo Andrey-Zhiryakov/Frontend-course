@@ -98,3 +98,14 @@ header {
 	z-index:1;
 	background-color: #0089b2;
 }
+
+.alert {
+	height: 130px;
+	width: 330px;
+	position:fixed;
+	z-index:10;
+	bottom: 155px;
+	right: 0;
+	background-color: rgba(93, 93, 93, .9);
+	box-shadow:0 1px #c9c9c9;
+}
