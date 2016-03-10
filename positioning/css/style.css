@@ -1,0 +1,20 @@
+header {
+	height: 169px;
+	padding:8px;
+	/* background-color: #ccc; */
+}
+
+.photo-ring {
+	height: 200px;
+	width: 200px;
+	border:3px solid #3593c9;
+	border-radius:50%;
+	overflow:hidden;
+	/* background-color: #13A9F6;  */
+}
+
+.photo-ph {
+	width: 200px;
+	height: 200px;
+	margin-top:29px;
+}
