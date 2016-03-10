@@ -12,7 +12,7 @@
 		.resultSection {font-size: 0;}
 		.workSection {width: 4em; height: 4em; margin: 100px 0 0 100px; line-height: 0; border: 3px dashed orange;}
 
-		.workSection div {}
+		.workSection div {display:inline-block;}
 		
 		.workSection div:nth-child(3n) {background-color: rgba(255,0,0,.7);}
 		.workSection div:nth-child(3n+1) {background-color: rgba(0,255,0,.7);}
@@ -48,16 +48,16 @@
 		<section class="workSection">
 			<div class="w1 h1 l"></div>
 			<div class="w2 h1 r"></div>
-			<div class="w1 h1 l"></div>
+			<div class="w1 h1"></div>  <!-- without float -->
 			<div class="w1 h2 l"></div>
-			<div class="w2 h1 l"></div>
+			<div class="w2 h1"></div>  <!-- without float -->
 			<div class="w1 h1 r"></div>
 			<div class="w1 h2 r"></div>
-			<div class="w1 h1 l"></div>
-			<div class="w1 h1 l"></div>
+			<div class="w1 h1"></div>  <!-- without float -->
+			<div class="w1 h1 r"></div>
 			<div class="w1 h1 r"></div>
 			<div class="w1 h1 l"></div>
-			<div class="w1 h1 l"></div>
+			<div class="w1 h1"></div>  <!-- without float -->
 		</section>
 	</div>
 
