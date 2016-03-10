@@ -1,7 +1,10 @@
+body {
+	height: 2000px;
+}
+
 header {
-	height: 169px;
+	height: 155px;
 	padding:8px;
-	/* background-color: #ccc; */
 }
 
 .photo-ring {
@@ -11,7 +14,6 @@ header {
 	border:3px solid #3593c9;
 	border-radius:50%;
 	overflow:hidden;
-	/* background-color: #13A9F6;  */
 }
 
 .photo-ph {
@@ -60,4 +62,39 @@ header {
     left: 26px;
     top: 17px;
     background-position: -89px -5px;
+}
+
+.content {
+	width: 475px;
+	height: 632px;
+	margin: 0 auto;
+	position:relative;
+}
+
+.content > div {
+	height: 607px;
+	width: 460px;
+}
+
+.first {
+	position: absolute;
+	z-index:3;
+	background-color: #d8464c;
+	
+}
+
+.second {
+	position: absolute;
+	top:5px;
+	left:5px;
+	z-index:2;
+	background-color: #364f86;
+}
+
+.third {
+	position: absolute;
+	top:10px;
+	left:10px;
+	z-index:1;
+	background-color: #0089b2;
 }
