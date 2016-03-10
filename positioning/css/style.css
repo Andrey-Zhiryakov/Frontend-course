@@ -7,6 +7,7 @@ header {
 .photo-ring {
 	height: 200px;
 	width: 200px;
+	position:relative;
 	border:3px solid #3593c9;
 	border-radius:50%;
 	overflow:hidden;
@@ -17,4 +18,46 @@ header {
 	width: 200px;
 	height: 200px;
 	margin-top:29px;
+}
+
+.sprite {
+    background-image: url(../img/spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-Facebook {
+    width: 32px;
+    height: 33px;
+    position: absolute;
+    left: 146px;
+    top: 178px;
+    background-position: -5px -5px;
+}
+
+.sprite-Pinterest {
+    width: 32px;
+    height: 33px;
+    position: absolute;
+    left: 104px;
+    top: 194px;
+    background-position: -47px -5px;
+}
+
+.sprite-Thumblr {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 178px;
+    top: 150px;
+    background-position: -5px -48px;
+}
+
+.sprite-Twitter {
+    width: 32px;
+    height: 33px;
+    position: absolute;
+    left: 26px;
+    top: 17px;
+    background-position: -89px -5px;
 }
