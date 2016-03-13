@@ -19,12 +19,18 @@ header {
 	border: 3px solid #3593c9;
 	border-radius: 50%;
 	overflow: hidden;
+	/*IE 8 support*/
+	behavior: url(PIE.htc);
 }
 
 .photo-ph {
 	width: 200px;
 	height: 200px;
 	margin-top: 29px;
+}
+
+.IE-avatar {
+	visibility:hidden;
 }
 
 .sprite {
@@ -112,6 +118,10 @@ header {
 	bottom: 155px;
 	right: 0;
 	padding: 23px;
+	/*MS IE8 opasity support*/
+	background-color: #939393;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+	/*other browsers*/
 	background-color: rgba(93, 93, 93, .9);
 	box-shadow: 0 1px #c9c9c9;
 }
@@ -134,7 +144,7 @@ header {
 
 .alert-message {
 	height: 100%;
-	margin-left: 1rem;
+	margin-left: 16px;
 	float: left;
 	color: #fff;
 }

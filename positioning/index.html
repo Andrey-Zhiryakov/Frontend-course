@@ -3,17 +3,20 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Positioning</title>
-	<!--[if gte IE 8]>
-	  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	<header>
-		<div class="photo-ring">
-			<img class="photo-ph" src="img/avatar-placeholder.png">		
+	<header> 
+		<div class="photo-ring"> 
+			<img class="photo-ph" src="img/avatar-placeholder.png">	
+			<!--[if lt IE 9]>
+			<img class="IE-avatar" src="img/IE8-avatar.png">
+			<![endif]-->	
 		</div>
 		<a href="#"><div class="sprite sprite-Facebook"></div></a>
 		<a href="#"><div class="sprite sprite-Pinterest"></div></a>
@@ -46,5 +49,19 @@
 		 	</div>
 		 </article>
 	</main>
+	
+	<!--[if lt IE 9]>
+	<style>
+		.photo-ph {
+			display:none;
+			visibility:hidden;
+		}
+		.IE-avatar {
+			visibility: visible; 
+			margin-left:16px;
+			margin-top:29px;
+		}
+	</style>
+	<![endif]-->
 </body>
 </html>
