@@ -29,10 +29,6 @@ header {
 	margin-top: 29px;
 }
 
-.IE-avatar {
-	visibility:hidden;
-}
-
 .sprite {
 	background-image: url(../img/spritesheet.png);
 	background-repeat: no-repeat;
