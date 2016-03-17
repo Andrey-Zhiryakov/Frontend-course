@@ -48,10 +48,6 @@ section::after {
   clear: both;
 }
 
-.main-wrap {
-  margin: 0 auto;
-}
-
 .wrap1 {
 width: 400px;
 background-color: #feb81d;
