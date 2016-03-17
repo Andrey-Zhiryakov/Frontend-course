@@ -40,35 +40,16 @@ section {
   margin: 0 auto;
 }
 
-.main-wrap {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.wrap1 {
-width: 30%;
-background-color: #feb81d;
-}
-
-.wrap2 {
-  width: 227.5%;
-  position: relative;
-  left: 105%;
-  background-color: #1dfefe;
-}
-
 .col1 {
-  width: 44%;
-  margin-right: -100%;
-  position: relative;
-  left: -46.2%;
+  width: 38%;
   float: left;
+  background-color: #feb81d;
 }
 
 .col2{
-  width: 100%;
+  width: 60%;
   float: right;
-  overflow: hidden;
+  background-color: #1dfefe;
 }
 
 nav ul {
