@@ -78,9 +78,17 @@ section::after {
 .col2{
   width: 800px;
   margin-right: -800px;
+  padding: 10px;
   position: relative;
   left: -800px;
+  box-sizing: border-box;
   float: left;
+}
+
+.col2 > img {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .col3{
@@ -103,6 +111,20 @@ nav li {
 
 li a {
   vertical-align: middle;
+}
+
+.news {
+  width: 150px;
+  margin: 0 auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 2px solid #828282;
+  border-radius: 5px;
+}
+
+.data-container {
+  padding: 3px;
+  text-align: center;
 }
 
 footer {
