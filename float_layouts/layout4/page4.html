@@ -11,10 +11,39 @@
     <h1>Lorem ipsum dolor sit amet, consectetur.</h1>
   </header>
   <main>
-
+    <section>
+      <div class="main-wrap">
+        <div class="wrap1">
+          <div class="wrap2">
+            <div class="col1" id="column1">
+              <nav>
+                <ul>
+                  <li><a href="#">Nav Example</a></li>
+                  <li><a href="#">Nav Example</a></li>
+                  <li><a href="#">Nav Example</a></li>
+                  <li><a href="#">Nav Example</a></li>
+                </ul>
+              </nav>
+              <button type="button" name="button" onclick="addContent('column1')">Add content</button>
+            </div>
+            <div class="col2"   id="column2">
+              <p>Lorem ipsum dolor sit amet.</p>
+              <button type="button" name="button" onclick="addContent('column2')">Add content</button>
+            </div>
+            <div style="clear:both;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   <footer>
-    <span>Copyright lorem,  &copy;</span>
+    <span>Copyright lorem.  &copy;</span>
   </footer>
+  <script type="text/javascript">
+    function addContent(id) {
+      var container = document.getElementById(id);
+      container.innerHTML = container.innerHTML + "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dignissimos aliquam adipisci consequatur magni iure perferendis cumque eius hic sit, possimus, doloremque ab, illo fugiat ex doloribus obcaecati corrupti error.";
+    }
+  </script>
 </body>
 </html>
