@@ -3,9 +3,9 @@ html, body {
 	width: 795px;
 	height: 100%;
 	margin: 0 auto;
-	font-size:16px;
+	font-size: 16px;
 	font-family: Helvetica, Arial, sans-serif;
-	color:#6A6A6A;
+	color: #6A6A6A;
 }
 
 .main-wrapper {
@@ -20,7 +20,7 @@ header {
 	margin: 0 auto;
 	box-sizing: border-box;
 	background-color: #ccc;
-	border:1px solid black;
+	border: 1px solid black;
 	border-bottom: none;
 }
 
@@ -29,7 +29,7 @@ header {
 	height: 70px;
 	margin: 9px;
 	float: left;
-	background-color: 	white;
+	background-color: white;
 }
 
 .main-title {
