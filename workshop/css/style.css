@@ -221,11 +221,11 @@ a:hover span{
 .some-list li{
 	height: 18px;
 	font-size: 12px;
-	transition: all .5s;
+	transition: transform .5s;
 }
 
 .some-list li:hover {
-	transition: all .5s;
+	transition: transform .5s;
 	transform: translateX(30px);
 }
 
