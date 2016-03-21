@@ -25,16 +25,16 @@ header {
 }
 
 .logo {
-	width: 70px;
-	height: 70px;
-	margin: 9px;
+	width: 71px;
+	height: 71px;
+	margin: 8px;
 	float: left;
 	background-color: white;
 }
 
 .main-title {
-	float: left;
 	margin-top: 10px;
+	float: left;
 }
 
 h1, .main-title span {
@@ -43,17 +43,19 @@ h1, .main-title span {
 }
 
 h1 {
-	margin: -2px 0 0 -1px;
+	margin: -1px 0 0 -1px;
 	display: block;
 	font-size: 24px;
+	letter-spacing: 0.5px;
 	font-weight: normal;
 }
 
 .main-title span {
-	margin-top: -4px;
+	margin-top: -5px;
 	display: inline-block;
 	vertical-align: top;
 	font-size: 14px;
+	letter-spacing: 0.5px;
 }
 
 .head::after {
@@ -86,7 +88,7 @@ h1 {
 	width: 100%;
 	height: 100%;
 	display: block;
-	padding-top: 6px;
+	padding-top: 7px;
 	box-sizing: border-box;
 	font-size: 14px;
 	text-align: center;
@@ -103,6 +105,11 @@ h1 {
 
 .nav-item a:target {
 	background-color: #fff;
+	color: #000;
+}
+
+.nav-item a:active {
+	background-color: #ffe3e3;
 	color: #000;
 }
 
@@ -135,7 +142,7 @@ h1 {
 	height: 100%;
 	width: 223px;
 	margin-right: -223px;
-		padding-top: 11px;
+	padding-top: 11px;
 	padding-left: 3px;
 	position: relative;
 	left: -223px;
@@ -147,6 +154,7 @@ h1 {
 	width: 202px;
 	margin: 0 auto;
 	padding: 0;
+	padding-top: 3px;
 	display: block;
 	list-style: none;
 	background-color: #383838;
@@ -154,18 +162,20 @@ h1 {
 
 .nav-list-vertical > li {
 	width: 100%;
-	height: 34px;
+	height: 2.1em;
 	margin: 0;
-	padding-top: 0px;
-	box-sizing: border-box;
 }
 
 .nav-list-vertical span {
-	letter-spacing: 0.25px;
+	margin-left: -7px;
+	font-size: 14px;
+	word-spacing: 1px;
+	letter-spacing: -.1px;
 	vertical-align: middle;
 }
 
 a:hover span{
+	box-sizing: content-box;
 	border-bottom: 2px solid #949494;
 }
 
@@ -183,14 +193,15 @@ a:hover span{
 
 .main-content h2 {
 	margin: 0;
-	letter-spacing: -0.45px;
+	letter-spacing: -0.75px;
 	font-size: 18px;
 }
 
 .main-content p {
-	margin: 6px 0 10px 0;
+	margin: 5px 0 9px 0;
 	font-size: 12px;
 	line-height: 1.35	;
+	letter-spacing: -0.29px;
 	color: #747474;
 }
 
@@ -198,13 +209,18 @@ a:hover span{
 	margin: 0;
 	padding-left: 2px;
 	font-size: 16px;
-	letter-spacing: -0.4px;
+	letter-spacing: -0.55px;
 	color: #747474;
 }
 
+.some-list {
+	margin-top: 13px;
+	padding-left: 36px;
+}
+
 .some-list li{
-	font-size: 12px;
 	height: 18px;
+	font-size: 12px;
 	transition: all .5s;
 }
 
