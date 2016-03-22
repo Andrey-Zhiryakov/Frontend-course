@@ -1,0 +1,161 @@
+html {
+	font-family: Roboto, Arial, sans-serif;
+}
+
+body {
+	height: 2000px;
+	min-width: 900px;
+}
+
+header {
+	height: 155px;
+	padding: 8px;
+}
+
+.photo-ring {
+	height: 200px;
+	width: 200px;
+	position: relative;
+	border: 3px solid #3593c9;
+	border-radius: 50%;
+	overflow: hidden;
+	/*IE 8 support*/
+	behavior: url(PIE.htc);
+}
+
+.photo-ph {
+	width: 200px;
+	height: 200px;
+	margin-top: 29px;
+}
+
+.sprite {
+	background-image: url(../img/spritesheet.png);
+	background-repeat: no-repeat;
+	display: block;
+}
+
+.sprite-Facebook {
+	width: 32px;
+	height: 33px;
+	position: absolute;
+	left: 146px;
+	top: 178px;
+	background-position: -5px -5px;
+}
+
+.sprite-Pinterest {
+	width: 32px;
+	height: 33px;
+	position: absolute;
+	left: 104px;
+	top: 194px;
+	background-position: -47px -5px;
+	}
+
+.sprite-Thumblr {
+	width: 32px;
+	height: 32px;
+	position: absolute;
+	left: 178px;
+	top: 150px;
+	background-position: -5px -48px;
+}
+
+.sprite-Twitter {
+	width: 32px;
+	height: 33px;
+	position: absolute;
+	left: 26px;
+	top: 17px;
+	background-position: -89px -5px;
+}
+
+.content {
+	width: 475px;
+	height: 632px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.content > div {
+	height: 607px;
+	width: 460px;
+}
+
+.first {
+	position: absolute;
+	z-index: 3;
+	background-color: #d8464c;
+	
+}
+
+.second {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	z-index: 2;
+	background-color: #364f86;
+}
+
+.third {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 1;
+	background-color: #0089b2;
+}
+
+.alert {
+	height: 84px;
+	width: 330px;
+	position: fixed;
+	z-index: 10;
+	bottom: 155px;
+	right: 0;
+	padding: 23px;
+	/*MS IE8 opasity support*/
+	background-color: #939393;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+	/*other browsers*/
+	background-color: rgba(93, 93, 93, .9);
+	box-shadow: 0 1px #c9c9c9;
+}
+
+.alert > div:last-child::after {
+	content: '.';
+	display: block;
+	height: 0;
+	visibility: hidden;
+	clear: both;
+}
+
+.rect {
+	width: 85px;
+	height: 85px;
+	display: inline-block;
+	float: left;
+	background-color: #f7e35f;
+}
+
+.alert-message {
+	height: 100%;
+	margin-left: 16px;
+	float: left;
+	color: #fff;
+}
+
+h5 {
+	margin-top: 0;
+	margin-bottom: 10px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.alert-message span {
+	font-size: .75rem;
+}
+
+.term {
+	font-weight: bold;
+}
