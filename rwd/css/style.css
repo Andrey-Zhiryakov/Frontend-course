@@ -107,6 +107,16 @@ a {
   /*font-family: 'CicleFina';*/
   font-size: 14px;
   font-weight: 400;
+
+}
+
+.nav-list a:hover {
+  border-bottom: 2px solid orange;
+}
+
+.nav-list li:hover:before {
+  transition: transform .5s;
+  transform: scale(3);
 }
 
 .nav-list li:last-child {
@@ -114,6 +124,7 @@ a {
 }
 
 .header-nav li::before {
+  transition: transform .5s;
   content: '\e800';
   display: block;
   position: absolute;
