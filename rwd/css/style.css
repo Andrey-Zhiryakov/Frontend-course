@@ -1,6 +1,14 @@
+/********fonts*****************/
+@font-face{
+  font-family:"CicleFina";
+  src:url("Cicle_Fina.eot?") format("eot"),url("Cicle_Fina.woff") format("woff"),url("Cicle_Fina.ttf") format("truetype"),url("Cicle_Fina.svg#CicleFina") format("svg");
+  font-weight:normal;
+  font-style:normal;
+}
+/********basic styles************/
 html, body {
   height: 100%;
-  font-family:
+  font-family: 'Source Sans Pro', Arial, sans-serif;
 }
 
 body {
@@ -10,15 +18,109 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   align-content: space-between;
+  background-image: url(../img/bg.png);
 }
 
 .main-header, .main-footer {
-  height: 95px;
+  min-height: 140px;
   flex-basis: 100%;
-  background-color: red;
+  background-color: white;
+}
+
+.main-header::after {
+  content: '';
+  height: 0;
+  display: block;
+  visibility: 0;
+  clear: both;
 }
 
 .content {
+  min-height: calc(100% - 280px);
   flex-basis: 100%;
   background-color: green;
+}
+
+nav {
+  /*display: inline-block;*/
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*****end of basic styles************/
+
+.main-header {
+  padding-top: 30px;
+  box-sizing: border-box;
+  background-color: inherit;
+}
+
+.logo {
+  display: inline-block;
+}
+
+.logo::after {
+  content: '';
+  height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+
+.logo img {
+  float: left;
+}
+
+.logo h1 {
+  margin: 0;
+  padding: 0;
+  padding-top: 20px;
+  float: right;
+}
+
+.logo-word {
+  margin-top: 20px;
+  font-size: 2rem;
+  font-weight: normal;
+  color: black;
+}
+
+.header-nav {
+  padding-top: 35px;
+  float: right;
+}
+
+.nav-list {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.nav-list li {
+  display: inline-block;
+  padding-right: 30px;
+  position: relative;
+  /*font-family: 'CicleFina';*/
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.nav-list li:last-child {
+  padding-right: 0;
+}
+
+.header-nav li::before {
+  content: '\e800';
+  display: block;
+  position: absolute;
+  left: -15px;
+  bottom: 5px;
+  font-family: "fontello";
+  font-style: normal;
+  font-size: 8px;
+  color: orange;
 }
