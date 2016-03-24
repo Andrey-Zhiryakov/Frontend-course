@@ -72,6 +72,49 @@ a {
   color: inherit;
 }
 
+.read-more-btn {
+  height: 23px;
+  width: 100px;
+  margin-right: 5px;
+  float: right;
+  background-color: #faa61a;
+  box-shadow: 1px 0 1px #fab94c;
+}
+
+.read-more-btn::after {
+  content: '';
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+
+.read-more-btn .btn-caption {
+  height: 100%;
+  margin: 0;
+  padding: 0 3px;
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  font-family: Colaborate;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 25px;
+  color: white;
+  background-color: black;
+}
+
+.btn-caption::after {
+  content: '\e800';
+  display: block;
+  position: absolute;
+  left: 77px;
+  top: -1px;
+  font-family: fontello;
+  font-style: normal;
+  color: black;
+  /*font-size: 8px;*/
+}
 /*****end of basic styles************/
 
 .main-header {
@@ -131,8 +174,7 @@ a {
   font-family: CicleFina;
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: 1.2px;
-
+  letter-spacing: .5px;
 }
 
 .nav-list a:hover {
@@ -235,4 +277,26 @@ a {
 
 .project-descr-info .info {
   font-size: 14px;
+}
+
+.project-descr-box {
+  max-width: 280px;
+  height: 364px;
+  margin-left: 30px;
+  background-color: white;
+}
+
+.project-descr-box h3 {
+  margin: 0;
+  padding: 3px 10px;
+  font-family: Bebas;
+  font-size: 20.18px;
+}
+
+.project-descr-box .descr-text {
+  margin: 0;
+  padding: 10px 16px;
+  font-family: Colaborate;
+  font-weight: bold;
+  line-height: 22.01px;
 }
