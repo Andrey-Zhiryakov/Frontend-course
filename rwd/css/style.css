@@ -12,6 +12,41 @@
   font-weight:normal;
   font-style:normal;
 }
+
+@font-face{
+  font-family:"Bebas";
+  src:url("../font/BebasNeue_Bold.otf") format("opentype");
+  font-weight:bold;
+  font-style:normal;
+}
+
+@font-face{
+  font-family:"Bebas";
+  src:url("../font/BebasNeue_Regular.otf") format("opentype");
+  font-weight:normal;
+  font-style:normal;
+}
+
+@font-face{
+  font-family:"Colaborate";
+  src:url("../font/BebasNeue_Regular.otf") format("opentype");
+  font-weight:normal;
+  font-style:normal;
+}
+
+@font-face{
+  font-family:"Colaborate";
+  src:url("../font/BebasNeue_Bold.otf") format("opentype");
+  font-weight:bold;
+  font-style:normal;
+}
+
+@font-face{
+  font-family:"Colaborate";
+  src:url("../font/BebasNeue_Light.otf") format("opentype");
+  font-weight:lighter;
+  font-style:normal;
+}
 /********basic styles************/
 html, body {
   height: 100%;
@@ -105,6 +140,7 @@ a {
   margin-left: 20px;
   padding: 0;
   display: inline-block;
+  position: relative;
   text-transform: uppercase;
 }
 
@@ -124,7 +160,7 @@ a {
 }
 
 .nav-list li:hover:before {
-  transition: transform .5s;
+  transition: transform .4s ease-in-out;
   transform: scale(3);
 }
 
@@ -133,7 +169,7 @@ a {
 }
 
 .header-nav li::before {
-  transition: transform .5s;
+  transition: transform .4s ease-in-out;
   content: '\e800';
   display: block;
   position: absolute;
@@ -147,16 +183,87 @@ a {
 
 
 .banner {
-  background-color: #faa61a;
   min-height: 200px;
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #faa61a;
 }
 
 .banner h1 {
   margin: 0;
   padding: 0;
+  flex-basis: 100%;
   text-align: center;
   font-family: HelveticaLT, sans-serif;
   font-size: 124px;
   font-weight: lighter;
   text-transform: uppercase;
+  /***I used text-shadow for visual font smoothing **/
+   text-shadow:-1px -1px 1px rgba(255,255,255,0.2),    1px 1px 1px rgba(255,255,255,0.2),    1px 1px 1px rgba(0,0,0,0.7);
+   -webkit-font-smoothing: antialiased;
+}
+
+.video-box {
+  position: relative;
+  /*border: 1px solid red;*/
+}
+
+.video-box video {
+    cursor: pointer;
+}
+
+.video-box .play-btn {
+  position: absolute;
+  top: 150px;
+  left: 210px;
+}
+
+.about-video-box {
+  width: 200px;
+  height: 364px;
+  padding: 20px;
+  float: right;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: black;
+}
+
+.info-box {
+
+}
+
+.about-video-box span {
+  /*width: 100%;*/
+  /*display: inline-block;*/
+}
+
+.about-video-box .title {
+  margin-right: 10%;
+  padding: 0 3px;
+  text-transform: uppercase;
+  font-family: Bebas, sans-serif;
+  color: black;
+  letter-spacing: 1px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: white;
+}
+
+.about-video-box .info {
+  padding-left: 5px;
+  min-width: 100%;
+  display: block;
+  font-family: Colaborate, sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  color: white;
+}
+
+.project-descr-info .info {
+  font-size: 14px;
 }
