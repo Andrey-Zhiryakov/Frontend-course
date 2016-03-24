@@ -60,7 +60,6 @@ body {
 .content {
   min-height: calc(100% - 280px);
   flex-basis: 100%;
-  background-color: green;
 }
 
 nav {
@@ -89,6 +88,12 @@ a {
   clear: both;
 }
 
+.read-more-btn a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .read-more-btn .btn-caption {
   height: 100%;
   margin: 0;
@@ -113,7 +118,6 @@ a {
   font-family: fontello;
   font-style: normal;
   color: black;
-  /*font-size: 8px;*/
 }
 /*****end of basic styles************/
 
@@ -174,7 +178,7 @@ a {
   font-family: CicleFina;
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: .5px;
+  letter-spacing: .8px;
 }
 
 .nav-list a:hover {
@@ -206,6 +210,7 @@ a {
 
 .banner {
   min-height: 200px;
+  margin-bottom: 30px;
   padding: 30px;
   display: flex;
   flex-direction: row;
@@ -241,6 +246,7 @@ a {
   position: absolute;
   top: 150px;
   left: 210px;
+  cursor: pointer;
 }
 
 .about-video-box {
@@ -299,4 +305,29 @@ a {
   font-family: Colaborate;
   font-weight: bold;
   line-height: 22.01px;
+}
+
+.about-us {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  /*justify-content: space-around;*/
+}
+
+.about-box {
+  padding: 20px 30px 50px 40px;
+  position: relative;
+  flex-basis: 1px;
+  flex-grow: 3;
+  border: 1px solid #ccc;
+  border-left: none;
+}
+
+.about-box:last-child {
+  border-right: none;
+}
+
+.about-box.did-you-know{
+  flex-grow: 5;
 }
