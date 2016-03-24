@@ -235,7 +235,6 @@ a {
 
 .video-box {
   position: relative;
-  /*border: 1px solid red;*/
 }
 
 .video-box video {
@@ -319,7 +318,7 @@ a {
   padding: 20px 30px 50px 40px;
   position: relative;
   flex-basis: 1px;
-  flex-grow: 3;
+  flex-grow: 2;
   border: 1px solid #ccc;
   border-left: none;
 }
@@ -329,5 +328,45 @@ a {
 }
 
 .about-box.did-you-know{
-  flex-grow: 5;
+  flex-grow:3;
+}
+
+.contact-list {
+  margin: 0;
+  display: block;
+  list-style: none;
+}
+
+.contact-list > li {
+  display: inline-block;
+  height: 30px;
+}
+
+.contact-list span {
+  margin: 1px;
+  padding: 2px;
+  color: white;
+  background-color: black;
+}
+
+.contact-list li[class*="icon"]:before {
+  font-size: 1.7rem;
+}
+
+li.address span {
+  display: inline-block;
+}
+
+.addr1 {
+  /*margin-right: 20px;*/
+}
+
+.addr2 {
+  margin-left: 100px;
+  /*padding-left: 110px;*/
+  /*margin-right: 40px;*/
+}
+
+.addr3 {
+  width: 70%;
 }
