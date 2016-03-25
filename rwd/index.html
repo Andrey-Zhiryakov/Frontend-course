@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
   <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="css/fontello.css">
@@ -36,7 +37,7 @@
         <video src="#" poster="img/panda.jpg">
           Sorry, but your browser doesn't support HTML5 video.
         </video>
-        <img src="img/play-btn.png" alt="play button" class="play-btn"/>
+        <img src="img/spritesheet.png" alt="play button" class="play-btn"/>
         <div class="about-video-box">
           <div class="info-box client-info">
             <span class="title">Client</span>
@@ -60,7 +61,7 @@
         <h3>Project description</h3>
         <img src="img/proj-descr-img.jpg" alt="some image" />
         <p class="descr-text">Ac aliquam pid amet, lorem eu, etiam ultrices, egestas. Et porttitor a, lacus egestas est rhoncus, egestas amet facilisis augue pellentesque. Nec? Velit tristique. Proin facilisis porta porttitor in tortor vel</p>
-        <div class="read-more-btn">
+        <div class="read-more-btn" role="button">
           <a href="#">
             <span class="btn-caption">Raed more</span>
           </a>
@@ -72,12 +73,12 @@
         <div class="about-box our-services">
           <h2>Our <span>services</span></h2>
           <ul class="services-list">
-            <li>Ac tristique sagittis turpis</li>
-            <li>Duis mus nec porttitor</li>
-            <li>Phasellus lectus cras</li>
-            <li>Ac tristique sagittis turpis</li>
-            <li>Ac tristique sagittis turpis</li>
-            <li>Ac tristique sagittis turpis</li>
+            <li class="icon-right-big">Ac tristique sagittis turpis</li>
+            <li class="icon-right-big">Duis mus nec porttitor</li>
+            <li class="icon-right-big">Phasellus lectus cras</li>
+            <li class="icon-right-big">Ac tristique sagittis turpis</li>
+            <li class="icon-right-big">Ac tristique sagittis turpis</li>
+            <li class="icon-right-big">Ac tristique sagittis turpis</li>
           </ul>
         </div>
         <div class="about-box did-you-know">
@@ -85,7 +86,7 @@
           <p>
             Ac tristique sagittis turpis dis purus egestas! Duis mus nec porttitor hac ac dictumst, porttitor eros adipiscing elementum tincidunt urna mus porttitor odio, non tristique adipiscing lorem, sed nec vel adipiscing sit, quis platea parturient sit adipiscing et massa . Risus, placerat. Augue etiam et dis velit ut, auctor et, duis dolor nunc nunc, augue nisi nascetur, porta
           </p>
-          <div class="read-more-btn">
+          <div class="read-more-btn" role="button">
             <a href="#">
               <span class="btn-caption">Raed more</span>
             </a>
@@ -98,14 +99,24 @@
             <li class="fax icon-fax"><span>203 - 810-4333</span></li>
             <li class="email icon-mail-alt"><span>Contact@lipsum.com</span></li>
             <li class="address icon-home">
-              <span class="addr1">50 Washington street</span>
-              <span class="addr2">Sute 1048</span>
-              <span class="addr3">lipsume  0644</span>
+              <div class="address-wrap">
+                <span class="addr1">50 Washington street</span>
+                <span class="addr2">Sute 1048</span>
+                <span class="addr3">lipsume  0644</span>
+              </div>
             </li>
           </ul>
         </div>
       </section>
-      <section class="our-clients"></section>
+      <section class="our-clients">
+        <h2>Our <span>clients</span></h2>
+        <div class="client-logo at-t-logo"></div>
+        <div class="client-logo inc-logo"></div>
+        <div class="client-logo auto-immune-logo"></div>
+        <div class="client-logo visa-logo"></div>
+        <div class="client-logo polar-logo"></div>
+        <div class="client-logo gap-logo"></div>
+      </section>
     </article>
   </main>
   <footer class="main-footer">
