@@ -32,18 +32,22 @@
     font-style: normal;
     font-weight: normal;
 }
-/*@font-face {
-  font-family: "Bebas";
-  src: url("../font/BEBAS___.eot?") format("eot"), url("../font/BEBAS___.woff") format("woff"), url("../font/BEBAS___.ttf") format("truetype"), url("../font/BEBAS___.svg#Bebas") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}*/
 
 @font-face {
   font-family: "Colaborate";
   src: url("../font/ColabThi.eot?") format("eot"), url("../font/ColabThi.woff") format("woff"), url("../font/ColabThi.ttf") format("truetype"), url("../font/ColabThi.svg#Colaborate-Thin") format("svg");
   font-weight: normal;
   font-style: normal;
+}
+
+@font-face {
+    font-family: "CenturyGothic";
+    src: url("../font/CenturyGothic.eot");
+    src: url("../font/CenturyGothic.eot?#iefix")format("embedded-opentype"),
+    url("../font/CenturyGothic.woff") format("woff"),
+    url("../font/CenturyGothic.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
 }
 
 /********basic styles************/
@@ -82,16 +86,12 @@ body {
   flex-basis: 100%;
 }
 
-nav {
-  /*display: inline-block;*/
-}
-
 a {
   text-decoration: none;
   color: inherit;
 }
 
-h2 {
+h3 {
   margin: 0;
   margin-bottom: 20px;
   padding: 0;
@@ -100,7 +100,7 @@ h2 {
   font-size: 22.18px;
 }
 
-h2>span {
+h3>span {
   color: #faa61a;
 }
 
@@ -174,6 +174,10 @@ h2>span {
 
 .logo img {
   float: left;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;
 }
 
 .logo h2 {
@@ -181,7 +185,7 @@ h2>span {
   padding: 0;
   padding-top: 20px;
   float: right;
-  font-size: 2rem;
+  font-size: 41.05px;
 }
 
 .logo-word {
@@ -191,7 +195,7 @@ h2>span {
 }
 
 .header-nav {
-  padding-top: 35px;
+  padding-top: 43px;
   float: right;
 }
 
@@ -336,7 +340,7 @@ h2>span {
   background-color: white;
 }
 
-.project-descr-box h3 {
+.project-descr-box h4 {
   margin: 0;
   padding: 3px 10px;
   font-family: Bebas, Arial, sans-serif;
@@ -354,10 +358,8 @@ h2>span {
 .about-us {
   width: 100%;
   display: flex;
-  /*flex-direction: column;*/
   align-items: stretch;
   justify-content: space-between;
-  /*justify-content: space-around;*/
 }
 
 .about-box {
@@ -452,8 +454,7 @@ h2>span {
 /*************************************/
 /*************CONTACT styles***********/
 .about-box.contact {
-    flex-grow: 4;
-  /*padding-left: 20px;*/
+  flex-grow: 4;
   padding-right: 10px;
 }
 
@@ -504,7 +505,6 @@ li.fax span{
 }
 
 .contact-list .email span{
-  /*width:190px;*/
   padding-right: 40px;
 }
 
@@ -534,7 +534,7 @@ li.address span {
   justify-content: space-between;
 }
 
-.our-clients h2 {
+.our-clients h3 {
   width: 100%;
 }
 
@@ -568,4 +568,54 @@ li.address span {
 
 .gap-logo {
   background-position: -878px -11px;
+}
+/**************************************/
+/***********FOOTER styles****************/
+.main-footer {
+  box-sizing: border-box;
+  padding-top: 45px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  font-size: 12px;
+}
+
+.main-footer h2 {
+  padding-top: 5px;
+  font-size: 26px;
+}
+
+.main-footer .logo {
+  margin-right: 20px;
+}
+
+.main-footer .logo img {
+  width: 30px;
+  height: 30px;
+}
+
+.footer-nav {
+  height: 21px;
+  margin-right: 5px;
+  padding-top: 5px;
+  flex-grow: 1;
+  border-bottom: 1px solid #cdcdcd;
+}
+
+.footer-nav .nav-list {
+  float: right;
+}
+
+.footer-nav .nav-list a {
+  font-family: CenturyGothic, Arial, sans-serif;
+  font-size: 12px;
+}
+
+.copy {
+  width: 100%;
+  margin-right: 5px;
+  font-family: CenturyGothic, Arial, sans-serif;
+  text-transform: uppercase;
+  text-align: right;
 }
