@@ -665,13 +665,91 @@ li.address span {
 
   .project-descr-box .descr-text {
     height: 53px;
-    padding-top: 5px;
+    padding-top: 8px;
     padding-bottom: 5px;
     margin-bottom: 8px;
     overflow: scroll;
   }
+
+  .about-box {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 @media screen and (max-width: 892px)  {
-  
+  .main-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-nav {
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 855px)  {
+  .banner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-descr-box {
+    max-width: 525px;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 0;
+    padding-bottom: 15px;
+    font-size: 16px;
+  }
+
+  .project-descr-box img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+
+.project-descr-box .descr-text {
+  height: auto;
+}
+
+  .about-us {
+    flex-direction: column;
+  }
+
+  .services-list li {
+    display: block;
+  }
+
+  .about-box::before,
+  .about-box::after {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 805px) {
+  .main-footer {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .main-footer .logo {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+
+  .main-footer .copy {
+    width: auto;
+    position: relative;
+    top: 100px;
+  }
+}
+
+@media screen and (max-width: 745px) {
+  .banner h1 {
+    font-size: 76px;
+  }
 }
