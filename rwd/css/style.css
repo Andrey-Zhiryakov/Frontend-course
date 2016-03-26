@@ -128,6 +128,8 @@ h3>span {
 }
 
 .read-more-btn a {
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 100%;
   display: block;
@@ -143,7 +145,8 @@ h3>span {
   font-family: Colaborate, Arial, sans-serif;
   font-size: 14px;
   font-weight: 600;
-  line-height: 25px;
+  line-height: 23px;
+  vertical-align: text-top;
   color: white;
   background-color: black;
 }
@@ -153,10 +156,15 @@ h3>span {
   display: block;
   position: absolute;
   left: 77px;
-  top: -1px;
+  top: 0;
   font-family: fontello;
   font-style: normal;
   color: black;
+}
+
+.hidden-checkbox {
+  display: none;
+  visibility: hidden;
 }
 /*****end of basic styles************/
 
@@ -269,19 +277,15 @@ h3>span {
   flex-basis: 100%;
   text-align: center;
   font-family: HelveticaLT, Arial, sans-serif;
-  font-size: 124px;
   font-weight: lighter;
   text-transform: uppercase;
-  /***I used text-shadow for visual font smoothing **/
-   text-shadow:-1px -1px 1px rgba(255,255,255,0.2),    1px 1px 1px rgba(255,255,255,0.2),    1px 1px 1px rgba(0,0,0,0.7);
-   -webkit-font-smoothing: antialiased;
 }
 
 .video-box {
   position: relative;
 }
 
-.video-box video {
+.video-box img {
     cursor: pointer;
 }
 
@@ -289,9 +293,6 @@ h3>span {
   width: 62px;
   height: 62px;
   position: absolute;
-  top: 150px;
-  left: 210px;
-  cursor: pointer;
   content: url(../img/play-btn.png);
 }
 
@@ -522,13 +523,16 @@ li.address span {
 /*********OUR CLIENTS styles*******/
 .our-clients {
   padding: 20px 50px 30px 40px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .our-clients h3 {
   width: 100%;
+}
+
+.clients-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .client-logo {
@@ -561,6 +565,10 @@ li.address span {
 
 .gap-logo {
   background-position: -878px -11px;
+}
+
+.wcag-hidden {
+  visibility: hidden;
 }
 /**************************************/
 /***********FOOTER styles****************/
@@ -611,4 +619,59 @@ li.address span {
   font-family: CenturyGothic, Arial, sans-serif;
   text-transform: uppercase;
   text-align: right;
+}
+
+
+
+
+
+
+@media screen and (min-width: 1005px) {
+  .banner h1 {
+    font-size: 124px;
+    /***I used text-shadow for visual font smoothing **/
+     text-shadow:-1px -1px 1px rgba(255,255,255,0.2),    1px 1px 1px rgba(255,255,255,0.2),    1px 1px 1px rgba(0,0,0,0.7);
+     -webkit-font-smoothing: antialiased;
+  }
+
+  .video-box .play-btn {
+    top: 150px;
+    left: 210px;
+  }
+}
+
+@media screen and (max-width: 1004px) {
+  .banner h1 {
+    font-size: 96px;
+  }
+
+  .banner {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .video-box .play-btn {
+    top: 110px;
+    left: 150px;
+  }
+
+  .about-video-box {
+    height: 273px;
+  }
+
+  .project-descr-box {
+    height: 273px;
+  }
+
+  .project-descr-box .descr-text {
+    height: 53px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+    overflow: scroll;
+  }
+}
+
+@media screen and (max-width: 892px)  {
+  
 }

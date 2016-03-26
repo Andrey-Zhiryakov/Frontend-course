@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
   <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="css/fontello.css">
   <!-- fonts -->
   <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
-  <title>Document</title>
+  <title>Lispum Media</title>
 </head>
 <body>
   <header class="main-header">
@@ -34,9 +34,11 @@
     <article class="banner">
       <h1>Lipsum Media Presentation</h1>
       <div class="video-box">
-        <video src="#" poster="img/panda.jpg">
-          Sorry, but your browser doesn't support HTML5 video.
-        </video>
+        <picture>
+          <source srcset="img/panda.jpg" media="(min-width: 1005px)">
+          <source srcset="img/panda-medium.jpg" media="(min-width: 600px)">
+          <img srcset="img/panda-small.jpg"  alt="video poster image" class="video-img">
+        </picture>
         <img src="img/spritesheet.png" alt="play button" class="play-btn"/>
         <div class="about-video-box">
           <div class="info-box client-info">
@@ -109,13 +111,16 @@
         </div>
       </section>
       <section class="our-clients">
-        <h3>Our <span>clients</span></h3>
-        <div class="client-logo at-t-logo"></div>
-        <div class="client-logo inc-logo"></div>
-        <div class="client-logo auto-immune-logo"></div>
-        <div class="client-logo visa-logo"></div>
-        <div class="client-logo polar-logo"></div>
-        <div class="client-logo gap-logo"></div>
+        <label for="clients-checkbox"><h3>Our <span>clients</span></h3></label>
+        <input type="checkbox" id="clients-checkbox" class="hidden-checkbox">
+        <div class="clients-wrapper">
+          <div class="client-logo at-t-logo"><span class="wcag-hidden">AT&amp;T</span></div>
+          <div class="client-logo inc-logo"><span class="wcag-hidden">INC.</span></div>
+          <div class="client-logo auto-immune-logo"><span class="wcag-hidden">AutoImmune</span></div>
+          <div class="client-logo visa-logo"><span class="wcag-hidden">VISA</span></div>
+          <div class="client-logo polar-logo"><span class="wcag-hidden">Polar beverages</span></div>
+          <div class="client-logo gap-logo"><span class="wcag-hidden">GAP</span></div>
+        </div>
       </section>
     </article>
   </main>
