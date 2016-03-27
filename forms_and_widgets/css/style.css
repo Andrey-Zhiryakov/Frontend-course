@@ -1,0 +1,63 @@
+/************FONTS*************/
+@font-face {
+  font-family: 'Gotham';
+  src: url("../font/GothamSSm-Light.eot");
+  src: url("../font/GothamSSm-Light-.eot?#iefix")format("embedded-opentype"),
+  url("../font/GothamSSm-Light.woff") format("woff"),
+  url("../font/GothamSSm-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url("../font/GothamSSm-Book.eot");
+  src: url("../font/GothamSSm-Book-.eot?#iefix")format("embedded-opentype"),
+  url("../font/GothamSSm-Book.woff") format("woff"),
+  url("../font/GothamSSm-Book.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url("../font/GothamSSm-Medium.eot");
+  src: url("../font/GothamSSm-Medium-.eot?#iefix")format("embedded-opentype"),
+  url("../font/GothamSSm-Medium.woff") format("woff"),
+  url("../font/GothamSSm-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: bold;
+}
+
+/*************MAIN STYLES***************/
+body, html {
+  height: 100%;
+  margin: 5px;
+  padding: 0;
+  font-family: Gotham, Arial, sans-serif;
+}
+
+.widget {
+  border-radius: 5px;
+  box-shadow: 1px 2px 5px 1px #dbdbdb;
+}
+
+.header-button {
+  height: 100%;
+  width: 84px;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  background-color: #404a58;
+}
+/***************************************/
+
+.first-widget {
+  width: 345px;
+  height: 425px;
+}
+
+.first-widget header {
+  height: 62px;
+  font-size: 0;
+}
