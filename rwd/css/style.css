@@ -287,8 +287,13 @@ h3>span {
   text-transform: uppercase;
 }
 
-.video-box {
+.video-box picture{
   position: relative;
+  float: left;
+}
+
+.video-box .play-btn-wrapper {
+  display: inline;
 }
 
 .video-box img {
@@ -668,7 +673,7 @@ li.address span {
     height: 53px;
     padding-top: 8px;
     padding-bottom: 5px;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     overflow: scroll;
   }
 }
@@ -808,9 +813,14 @@ li.address span {
 
   .header-nav,
   .banner .about-video-box,
-  .banner .video-img {
+  .banner .video-img,
+  .video-box picture {
     width: 100%;
     float: none;
+  }
+
+  .video-box picture {
+    display: block;
   }
 
   .header-nav .nav-list {
@@ -855,8 +865,8 @@ li.address span {
   }
 
   .video-box .play-btn {
-    top: 25%;
-    left: 45%;
+    top: calc(50% - 62px/2);
+    left: calc(50% + 15px - 62px/2); /*+15px is only for visual similarity*/
   }
 
   .about-video-box {
