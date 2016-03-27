@@ -383,7 +383,7 @@ h3>span {
 
 .about-box {
   padding: 20px 30px 30px 40px;
-  flex-basis: 1px;
+  flex-basis: 100px;
   flex-grow: 3;
   position: relative;
   border: 1px solid #ccc;
@@ -464,8 +464,8 @@ h3>span {
 /*************************************/
 /*************CONTACT styles***********/
 .about-box.contact {
-  flex-grow: 4;
   padding-right: 10px;
+  flex-grow: 4;
 }
 
 .contact-list {
@@ -479,11 +479,11 @@ h3>span {
 }
 
 .contact-list > li {
+  width: calc(100% - 33px);
+  height: 46px;
   margin-left: 33px;
   display: inline-block;
-  width: calc(100% - 33px);
   position: relative;
-  height: 46px;
 }
 
 .contact-list span {
@@ -510,8 +510,8 @@ li.address {
 li.mobile span,
 li.fax span{
   padding: 1px 15px 0 2px;
-  line-height: 20px;
   font-size: 20.18px;
+  line-height: 20px;
 }
 
 .contact-list .email span{
@@ -534,16 +534,13 @@ li.address span {
 /*********OUR CLIENTS styles*******/
 .our-clients {
   padding: 20px 50px 30px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .our-clients h3 {
   width: 100%;
-}
-
-.clients-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .client-logo {
@@ -633,7 +630,6 @@ li.address span {
 }
 
 /***********MEDIA QUERIES************/
-
 @media screen and (min-width: 1025px) {
   .banner h1 {
     font-size: 124px;
@@ -718,6 +714,7 @@ li.address span {
 
 .project-descr-box .descr-text {
   height: auto;
+  overflow: visible;
 }
 
   .about-box {
