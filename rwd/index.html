@@ -18,28 +18,32 @@
       <h2>Lispum <span class="logo-word">Media</span></h2>
       </a>
     </div>
-    <nav class="header-nav">
-      <ul class="nav-list">
-        <li><a href="#">home</a></li>
-        <li><a href="#">about</a></li>
-        <li><a href="#">work</a></li>
-        <li><a href="#">services</a></li>
-        <li><a href="#">resources</a></li>
-        <li><a href="#">articles</a></li>
-        <li><a href="#">contact</a></li>
-      </ul>
-    </nav>
+    <label for="header-nav-checkbox" class="nav-label">&#9776;</label>
+    <input type="checkbox" id="header-nav-checkbox" class="hidden-checkbox">
+    <div class="wrapper">
+      <nav class="header-nav">
+        <ul class="nav-list">
+          <li><a href="#">home</a></li>
+          <li><a href="#">about</a></li>
+          <li><a href="#">work</a></li>
+          <li><a href="#">services</a></li>
+          <li><a href="#">resources</a></li>
+          <li><a href="#">articles</a></li>
+          <li><a href="#">contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
   <main class="content" role="main">
     <article class="banner">
       <h1>Lipsum Media Presentation</h1>
       <div class="video-box">
         <picture>
-          <source srcset="img/panda.jpg" media="(min-width: 1005px)">
-          <source srcset="img/panda-medium.jpg" media="(min-width: 600px)">
+          <source srcset="img/panda.jpg" media="(min-width: 1025px)">
+          <source srcset="img/panda-medium.jpg" media="(min-width: 615px)">
           <img srcset="img/panda-small.jpg"  alt="video poster image" class="video-img">
         </picture>
-        <img src="img/spritesheet.png" alt="play button" class="play-btn"/>
+        <img src="img/play-btn.png" alt="play button" class="play-btn"/>
         <div class="about-video-box">
           <div class="info-box client-info">
             <span class="title">Client</span>
@@ -111,16 +115,13 @@
         </div>
       </section>
       <section class="our-clients">
-        <label for="clients-checkbox"><h3>Our <span>clients</span></h3></label>
-        <input type="checkbox" id="clients-checkbox" class="hidden-checkbox">
-        <div class="clients-wrapper">
-          <div class="client-logo at-t-logo"><span class="wcag-hidden">AT&amp;T</span></div>
-          <div class="client-logo inc-logo"><span class="wcag-hidden">INC.</span></div>
-          <div class="client-logo auto-immune-logo"><span class="wcag-hidden">AutoImmune</span></div>
-          <div class="client-logo visa-logo"><span class="wcag-hidden">VISA</span></div>
-          <div class="client-logo polar-logo"><span class="wcag-hidden">Polar beverages</span></div>
-          <div class="client-logo gap-logo"><span class="wcag-hidden">GAP</span></div>
-        </div>
+        <h3>Our <span>clients</span></h3>
+        <div class="client-logo at-t-logo"><span class="wcag-hidden">AT&amp;T</span></div>
+        <div class="client-logo inc-logo"><span class="wcag-hidden">INC.</span></div>
+        <div class="client-logo auto-immune-logo"><span class="wcag-hidden">AutoImmune</span></div>
+        <div class="client-logo visa-logo"><span class="wcag-hidden">VISA</span></div>
+        <div class="client-logo polar-logo"><span class="wcag-hidden">Polar beverages</span></div>
+        <div class="client-logo gap-logo"><span class="wcag-hidden">GAP</span></div>
       </section>
     </article>
   </main>

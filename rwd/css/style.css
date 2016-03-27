@@ -53,6 +53,7 @@
 /********basic styles************/
 html, body {
   height: 100%;
+  min-width: 310px;
   font-family: 'Source Sans Pro', Arial, sans-serif;
 }
 
@@ -166,8 +167,23 @@ h3>span {
   display: none;
   visibility: hidden;
 }
-/*****end of basic styles************/
 
+.nav-label {
+  min-height: 80px;
+  padding: 15px 15px 0 15px;
+  box-sizing: border-box;
+  display: none;
+  text-align: right;
+  font-size: 32px;
+  color: orange;
+  font-weight: bold;
+}
+
+.wrapper {
+  display: inline;
+  transition: height 0.3s ease-in-out;
+}
+/*****end of basic styles************/
 /********HEADER styles*************/
 .main-header {
   padding-top: 30px;
@@ -293,16 +309,16 @@ h3>span {
   width: 62px;
   height: 62px;
   position: absolute;
-  content: url(../img/play-btn.png);
+  /*content: url(../img/play-btn.png);*/
 }
 
-@supports (object-position: 0 0) and (object-fit: none) {
+/*@supports (object-position: 0 0) and (object-fit: none) {
   .video-box .play-btn {
     object-fit: none;
     object-position:  -85px -133px;
     content: url(../img/spritesheet.png);
   }
-}
+}*/
 
 .about-video-box {
   width: 200px;
@@ -621,12 +637,9 @@ li.address span {
   text-align: right;
 }
 
+/***********MEDIA QUERIES************/
 
-
-
-
-
-@media screen and (min-width: 1005px) {
+@media screen and (min-width: 1025px) {
   .banner h1 {
     font-size: 124px;
     /***I used text-shadow for visual font smoothing **/
@@ -640,12 +653,13 @@ li.address span {
   }
 }
 
-@media screen and (max-width: 1004px) {
+@media screen and (max-width: 1024px) {
   .banner h1 {
     font-size: 96px;
   }
 
-  .banner {
+  .banner,
+  .about-box {
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -655,10 +669,7 @@ li.address span {
     left: 150px;
   }
 
-  .about-video-box {
-    height: 273px;
-  }
-
+  .about-video-box,
   .project-descr-box {
     height: 273px;
   }
@@ -670,17 +681,12 @@ li.address span {
     margin-bottom: 8px;
     overflow: scroll;
   }
-
-  .about-box {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
 }
 
-@media screen and (max-width: 892px)  {
+@media screen and (max-width: 910px)  {
   .main-header {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
   }
@@ -691,8 +697,9 @@ li.address span {
   }
 }
 
-@media screen and (max-width: 855px)  {
-  .banner {
+@media screen and (max-width: 875px)  {
+  .banner,
+  .about-us  {
     flex-direction: column;
     align-items: center;
   }
@@ -716,8 +723,9 @@ li.address span {
   height: auto;
 }
 
-  .about-us {
-    flex-direction: column;
+  .about-box {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
   .services-list li {
@@ -730,26 +738,150 @@ li.address span {
   }
 }
 
-@media screen and (max-width: 805px) {
+@media screen and (max-width: 820px) {
   .main-footer {
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
   }
 
   .main-footer .logo {
     margin-top: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    order: 2;
+  }
+
+  .footer-nav {
+    order: 1;
   }
 
   .main-footer .copy {
     width: auto;
-    position: relative;
-    top: 100px;
+    order: 3;
   }
 }
 
-@media screen and (max-width: 745px) {
+@media screen and (max-width: 760px) {
   .banner h1 {
     font-size: 76px;
+  }
+}
+
+@media screen and (max-width: 615px) {
+  .main-header {
+    min-height: 30px;
+    margin-bottom: 5px;
+    padding: 0;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: black;
+  }
+
+  .main-header .logo {
+    margin: 5px;
+  }
+
+  .main-header .logo,
+  .main-header .logo span {
+    color: orange;
+  }
+
+  .main-header h2 {
+    font-size: 32px;
+  }
+
+  .wrapper {
+    height: 0;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+  }
+
+  .nav-label {
+    display: block;
+    border-left: 1px solid orange;
+    color: black;
+    background-color: orange;
+  }
+
+  .main-header .wrapper {
+    background-color: orange;
+  }
+
+  #header-nav-checkbox:checked ~ div.wrapper {
+    height: 400px;
+    transition: height 0.3s  ease-in-out;
+    background-color: orange;
+  }
+
+  .header-nav,
+  .banner .about-video-box,
+  .banner .video-img {
+    width: 100%;
+    float: none;
+  }
+
+  .header-nav .nav-list {
+    width: calc(100% - 40px);
+    margin-right: 20px;
+  }
+
+  .header-nav li {
+    height: 45px;
+    width: 100%;
+    margin-bottom: 5px;
+    padding-right: 0;
+    padding-left: 10px;
+    box-sizing: border-box;
+    display: block;
+    color: orange;
+    background-color: black;
+  }
+
+  .header-nav li:last-child {
+    padding-right: 0;
+  }
+
+  .header-nav li:before,
+  .main-footer .footer-nav {
+    display: none;
+  }
+
+  .header-nav li a::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+  .header-nav li a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    font-size: 36px;
+    text-align: center;
+    letter-spacing: 10px;
+  }
+
+  .video-box .play-btn {
+    top: 25%;
+    left: 45%;
+  }
+
+  .about-video-box {
+    margin-top: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .project-descr-info .info {
+    font-size: 18px;
+  }
+
+  h3 {
+    font-size: 32px;
+  }
+
+  .did-you-know p {
+    font-size: 20px;
   }
 }
