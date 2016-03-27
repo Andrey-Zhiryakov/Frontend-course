@@ -688,12 +688,14 @@ li.address span {
 }
 
 @media screen and (max-width: 875px)  {
-  .banner,
-  .about-us  {
+  .banner {
     flex-direction: column;
     align-items: center;
   }
 
+.about-us {
+  flex-direction: column;
+}
   .project-descr-box {
     max-width: 525px;
     height: auto;
@@ -861,6 +863,10 @@ li.address span {
     margin-top: 5px;
     padding-top: 5px;
     padding-bottom: 5px;
+  }
+
+  .project-descr-box {
+    max-width: 100%;
   }
 
   .project-descr-info .info {
