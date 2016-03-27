@@ -15,16 +15,6 @@
 
 @font-face {
     font-family: "Bebas";
-    src: url("../font/BebasRegular.eot");
-    src: url("../font/BebasRegular.eot?#iefix")format("embedded-opentype"),
-    url("../font/BebasRegular.woff") format("woff"),
-    url("../font/BebasRegular.ttf") format("truetype");
-    font-style: normal;
-    font-weight: lighter;
-}
-
-@font-face {
-    font-family: "Bebas";
     src: url("../font/BebasBold.eot");
     src: url("../font/BebasBold.eot?#iefix")format("embedded-opentype"),
     url("../font/BebasBold.woff") format("woff"),
