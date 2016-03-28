@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/style.css"  charset="utf-8">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <img src="http://lorempixel.com/100/100/" alt="beautiful picture">
+    <h1>Lorem ipsum dolor sit amet, consectetur.</h1>
+  </header>
+  <main>
+    <section>
+        <div class="wrap1">
+          <div class="wrap2">
+            <div class="col1" id="column1">
+              <nav>
+                <ul>
+                  <li><a href="../">Home</a></li>
+                  <li><a href="../layout1/page1.html">Layout 1</a></li>
+                  <li><a href="../layout3/page3.html">Layout 3</a></li>
+                  <li><a href="../layout4/page4.html">Layout 4</a></li>
+                  <li><a href="../layout5/page5.html">Layout 5</a></li>
+                  <li><a href="../layout6/page6.html">Layout 6</a></li>
+                </ul>
+              </nav>
+              <button type="button" name="button" onclick="addContent('column1')">Add content</button>
+            </div>
+            <div class="col2"   id="column2">
+              <h2>Lorem ipsum dolor.</h2>
+              <img src="http://lorempixel.com/400/400/" style="float:left;">
+              <span>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus consectetur tempore blanditiis impedit non ipsum sunt molestiae, at magni, laborum pariatur itaque quis in assumenda excepturi natus, labore iste, ea iusto sapiente? Architecto ad est cum itaque suscipit repellat, eum, delectus unde ut. Minus tempore distinctio sit omnis reiciendis culpa placeat quod! Harum similique eum quod quae quo labore delectus id. Accusamus consequatur alias vero numquam quas reprehenderit maiores repellendus aspernatur unde voluptatibus odit ullam ipsum enim asperiores iusto, aut facere exercitationem, provident eaque perspiciatis modi quasi nam sequi. Magni dolores voluptas suscipit corporis ea obcaecati aut, reprehenderit atque. Consequuntur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ducimus omnis, quo labore assumenda et praesentium dignissimos corporis nisi dolorem eligendi obcaecati dolor voluptates ipsam tenetur consequuntur recusandae ipsum, mollitia vitae accusantium vero, nam laborum esse beatae. Optio at nesciunt est nostrum dolor, iusto quaerat laboriosam. Sunt deserunt ex at, praesentium consequatur consequuntur sit neque enim unde iste temporibus, perferendis. Optio, mollitia fugiat ratione! Officia quod veniam placeat consequuntur, aliquam, omnis esse voluptatem eligendi sed quia incidunt suscipit voluptas, porro reprehenderit explicabo ex id vero qui impedit optio unde eum doloremque itaque quis. Ipsa porro expedita magni error, ullam, hic!</span>
+              <button type="button" name="button" onclick="addContent('column2')">Add content</button>
+            </div>
+            <div style="clear:both;"></div>
+          </div>
+        </div>
+    </section>
+  </main>
+  <footer>
+    <span>Copyright lorem.  &copy;</span>
+  </footer>
+  <script type="text/javascript">
+    function addContent(id) {
+      var container = document.getElementById(id);
+      container.innerHTML = container.innerHTML + "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dignissimos aliquam adipisci consequatur magni iure perferendis cumque eius hic sit, possimus, doloremque ab, illo fugiat ex doloribus obcaecati corrupti error.";
+    }
+  </script>
+</body>
+</html>
