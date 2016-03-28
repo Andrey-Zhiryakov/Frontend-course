@@ -7,73 +7,75 @@
 </head>
 <body>
   <div class="widget first-widget">
-    <header>
-      <div class="header-button prev">
+    <form action="index.html" method="post">
+      <header>
+        <button type="button" class="button header-button prev"></button>
+        <button type="button" class="button header-button current">May 2014</button>
+        <button type="button" class="button header-button next"></button>
+      </header>
+      <div class="main">
+        <table class="calendar">
+          <tr>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+          </tr>
+          <tr>
+            <td><span class="day another-month">29</span></td>
+            <td><span class="day another-month">30</span></td>
+            <td><span class="day">1</span></td>
+            <td><span class="day">2</span></td>
+            <td><span class="day selected vertical-middle-text">3</span></td>
+            <td><span class="day">4</span></td>
+            <td><span class="day">5</span></td>
+          </tr>
+          <tr>
+            <td><span class="day">6</span></td>
+            <td><span class="day holiday">7</span></td>
+            <td><span class="day">8</span></td>
+            <td><span class="day">9</span></td>
+            <td><span class="day">10</span></td>
+            <td><span class="day">11</span></td>
+            <td><span class="day">12</span></td>
+          </tr>
+          <tr>
+            <td><span class="day">13</span></td>
+            <td><span class="day">14</span></td>
+            <td><span class="day">15</span></td>
+            <td><span class="day">16</span></td>
+            <td><span class="day">17</span></td>
+            <td><span class="day">18</span></td>
+            <td><span class="day">19</span></td>
+          </tr>
+          <tr>
+            <td><span class="day">20</span></td>
+            <td><span class="day">21</span></td>
+            <td><span class="day">22</span></td>
+            <td><span class="day holiday">23</span></td>
+            <td><span class="day">24</span></td>
+            <td><span class="day">25</span></td>
+            <td><span class="day">26</span></td>
+          </tr>
+          <tr>
+            <td><span class="day">27</span></td>
+            <td><span class="day">28</span></td>
+            <td><span class="day">29</span></td>
+            <td><span class="day">30</span></td>
+            <td><span class="day another-month">1</span></td>
+            <td><span class="day another-month">2</span></td>
+            <td><span class="day another-month">3</span></td>
+          </tr>
+        </table>
+        <button type="button" name="button" class="button add-event">Add event</button>
       </div>
-      <div class="header-button current">
-        <span class="current-text vertical-middle-text">May 2014</span>
-      </div>
-      <div class="header-button next"></div>
-    </header>
-    <section class="main">
-      <table class="calendar">
-        <tr>
-          <th>Sun</th>
-          <th>Mon</th>
-          <th>Tue</th>
-          <th>Wed</th>
-          <th>Thu</th>
-          <th>Fri</th>
-          <th>Sat</th>
-        </tr>
-        <tr>
-          <td>29</td>
-          <td>30</td>
-          <td>1</td>
-          <td>2</td>
-          <td><span class="selected vertical-middle-text">3</span></td>
-          <td>4</td>
-          <td>5</td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td><span class="holiday">7</span></td>
-          <td>8</td>
-          <td>9</td>
-          <td>10</td>
-          <td>11</td>
-          <td>12</td>
-        </tr>
-        <tr>
-          <td>13</td>
-          <td>14</td>
-          <td>15</td>
-          <td>16</td>
-          <td>17</td>
-          <td>18</td>
-          <td>19</td>
-        </tr>
-        <tr>
-          <td>20</td>
-          <td>21</td>
-          <td>22</td>
-          <td><span class="holiday">23</span></td>
-          <td>24</td>
-          <td>25</td>
-          <td>26</td>
-        </tr>
-        <tr>
-          <td>27</td>
-          <td>28</td>
-          <td>29</td>
-          <td>30</td>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-        </tr>
-      </table>
-      <button type="button" name="button" class="button add-event">Add event</button>
-    </section>
+    </form>
+  </div>
+  <div class="widget second-widget">
+
   </div>
 </body>
 </html>

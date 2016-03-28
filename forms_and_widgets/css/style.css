@@ -32,6 +32,7 @@
 /*************MAIN STYLES***************/
 body, html {
   height: 100%;
+  margin: 0;
   padding: 0;
   font-family: Gotham, Arial, sans-serif;
   background-color: #d9d9d9;
@@ -52,6 +53,22 @@ body {
   background-color: #fbfbfb;
 }
 
+.button {
+  margin: 0 auto;
+  display: block;
+  border: none;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.5px;
+  background: none;
+  background-color: #fb6362;
+  -webkit-box-shadow: 0 1px 1px #424242, 0 2px 2px #afafaf;
+  box-shadow: 0 1px 1px #424242, 0 2px 2px #afafaf;
+}
+
 .header-button {
   height: 100%;
   width: 73px;
@@ -60,7 +77,11 @@ body {
   position: relative;
   display: inline-block;
   box-sizing: border-box;
+  border-radius: 0;
+  font-weight: normal;
+  text-transform: none;
   background-color: #404a58;
+  box-shadow: none;
 }
 
 .header-button:first-child {
@@ -72,22 +93,6 @@ body {
   border-top-right-radius: 5px;
 }
 
-.button {
-  margin: 0 auto;
-  display: block;
-  border: none;
-  border-radius: 3px;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: white;
-  letter-spacing: 1px;
-  background: none;
-  background-color: #fb6362;
-  /*-webkit-box-shadow: inset hoff voff blur color;
-  box-shadow: inset hoff voff blur color;*/
-}
-
 .vertical-middle-text::before {
   content: '';
   display: inline-block;
@@ -95,7 +100,7 @@ body {
   vertical-align: middle;
 }
 /***************************************/
-
+/************FIRST WIDGET***************/
 .first-widget {
   width: 346px;
   height: 425px;
@@ -109,12 +114,12 @@ body {
 
 .first-widget .prev::before,
 .first-widget .next::before {
-  content: 'A';
+  content: '';
   width: 8px;
   height: 12px;
   display: inline-block;
   position: absolute;
-  top: 24px;
+  top: 25px;
   left: 37px;
   background-image: url(../img/spritesheet.png);
   background-repeat: no-repeat;
@@ -131,16 +136,7 @@ body {
 
 .current {
   width: 200px;
-  font-size: 16px;
-}
-
-.current-text {
-  width: 100%;
-  height: 100%;
-  display: inline-block;
-  text-align: center;
-  letter-spacing: 1px;
-  color: white;
+  font-size: 17px;
 }
 
 .calendar {
@@ -158,23 +154,37 @@ body {
   text-align: center;
 }
 
+.day {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  border-radius: 50%;
+  line-height: 37px;
+  cursor: pointer;
+}
+
+.day:hover {
+  background-color: #d2d2d2;
+}
+
+.day:active,
+.selected {
+  font-weight: bold;
+  background-color: #fb6362;
+  color: white;
+}
+
 .holiday {
   font-weight: bold;
   color: #fb6362;
 }
 
-.selected {
-  width: 100%;
-  height: 100%;
-  display: inline-block;
-  border-radius: 50%;
-  font-weight: bold;
-  line-height: 37px;
-  background-color: #fb6362;
-  color: white;
+.another-month {
+  color: #c5c5c5;
 }
 
 .first-widget .add-event {
   height: 59px;
   width: 300px;
 }
+/***************************************/
