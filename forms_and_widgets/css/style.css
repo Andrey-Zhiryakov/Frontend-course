@@ -43,6 +43,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  align-content: flex-start;
 }
 
 .widget {
@@ -63,6 +64,7 @@ body {
   text-transform: uppercase;
   color: white;
   letter-spacing: 0.5px;
+  cursor: pointer;
   background: none;
   background-color: #fb6362;
   -webkit-box-shadow: 0 1px 1px #424242, 0 2px 2px #afafaf;
@@ -99,6 +101,16 @@ body {
   height: 100%;
   vertical-align: middle;
 }
+
+.first-widget .prev::before,
+.first-widget .next::before,
+.point:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    background-image: url(../img/spritesheet.png);
+    background-repeat: no-repeat;
+}
 /***************************************/
 /************FIRST WIDGET***************/
 .first-widget {
@@ -114,15 +126,10 @@ body {
 
 .first-widget .prev::before,
 .first-widget .next::before {
-  content: '';
   width: 8px;
   height: 12px;
-  display: inline-block;
-  position: absolute;
   top: 25px;
   left: 37px;
-  background-image: url(../img/spritesheet.png);
-  background-repeat: no-repeat;
 }
 
 .first-widget .prev::before {
@@ -188,3 +195,51 @@ body {
   width: 300px;
 }
 /***************************************/
+/**********SECOND WIDGET***************/
+.second-widget {
+  width: 346px;
+  height: 625px;
+}
+
+.header-img {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.header-img img {
+  margin-left: -23px;
+}
+
+.header-img figcaption {
+  position: absolute;
+  top: 62%;
+  left: 7%;
+}
+
+.caption {
+  display: block;
+  color: white;
+}
+
+.building {
+  font-size: 25px;
+  letter-spacing: -0.5px;
+}
+
+.point {
+  margin-top: 5px;
+  padding-left: 18px;
+  position: relative;
+  font-size: 14px;
+}
+
+.point:before {
+  width: 12px;
+  height: 17px;
+  top: 0;
+  left: 2px;
+  background-position: -75px -73px;
+}
