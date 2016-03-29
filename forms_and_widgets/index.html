@@ -85,6 +85,32 @@
           </figcaption>
         </figure>
       </header>
+      <div class="main">
+        <dl class="input-date-list">
+          <dt>
+            <label for="check-in" class="custom-label check-label">Check in</label>
+          </dt>
+          <dd>
+            <div class="input-wrapper date-wrapper">
+              <input type="text" id="check-in" name="check-in" class="text-input date-input" placeholder="9 July, 2016" value="">
+              <button type="button" name="call-calendar" class="input-button call-calendar"></button>
+            </div>
+          </dd>
+          <dt>
+            <label for="check-out" class="custom-label check-label">Check out</label>
+          </dt>
+          <dd>
+            <div class="input-wrapper date-wrapper">
+              <input type="text" id="check-out" name="check-out" class="text-input date-input" placeholder="16 July, 2016" value="">
+              <button type="button" name="call-calendar" class="input-button call-calendar"></button>
+            </div>
+          </dd>
+        </dl>
+        <div class="checkbox">
+          <input type="checkbox" id="flex-dates" class="flex-dates-checkbox" name="name" value="">
+          <label for="flex-dates" class="custom-label flex-dates-label">Flexible dates</label>
+        </div>
+      </div>
     </form>
   </div>
 </body>
