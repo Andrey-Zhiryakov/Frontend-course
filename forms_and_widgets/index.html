@@ -6,112 +6,231 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="widget first-widget">
-    <form action="index.html" method="post">
-      <header class="first-widget-header">
-        <button type="button" class="button header-button prev"></button>
-        <button type="button" class="button header-button current">May 2014</button>
-        <button type="button" class="button header-button next"></button>
-      </header>
-      <div class="main">
-        <table class="calendar">
-          <tr>
-            <th>Sun</th>
-            <th>Mon</th>
-            <th>Tue</th>
-            <th>Wed</th>
-            <th>Thu</th>
-            <th>Fri</th>
-            <th>Sat</th>
-          </tr>
-          <tr>
-            <td><span class="day another-month">29</span></td>
-            <td><span class="day another-month">30</span></td>
-            <td><span class="day">1</span></td>
-            <td><span class="day">2</span></td>
-            <td><span class="day selected vertical-middle-text">3</span></td>
-            <td><span class="day">4</span></td>
-            <td><span class="day">5</span></td>
-          </tr>
-          <tr>
-            <td><span class="day">6</span></td>
-            <td><span class="day holiday">7</span></td>
-            <td><span class="day">8</span></td>
-            <td><span class="day">9</span></td>
-            <td><span class="day">10</span></td>
-            <td><span class="day">11</span></td>
-            <td><span class="day">12</span></td>
-          </tr>
-          <tr>
-            <td><span class="day">13</span></td>
-            <td><span class="day">14</span></td>
-            <td><span class="day">15</span></td>
-            <td><span class="day">16</span></td>
-            <td><span class="day">17</span></td>
-            <td><span class="day">18</span></td>
-            <td><span class="day">19</span></td>
-          </tr>
-          <tr>
-            <td><span class="day">20</span></td>
-            <td><span class="day">21</span></td>
-            <td><span class="day">22</span></td>
-            <td><span class="day holiday">23</span></td>
-            <td><span class="day">24</span></td>
-            <td><span class="day">25</span></td>
-            <td><span class="day">26</span></td>
-          </tr>
-          <tr>
-            <td><span class="day">27</span></td>
-            <td><span class="day">28</span></td>
-            <td><span class="day">29</span></td>
-            <td><span class="day">30</span></td>
-            <td><span class="day another-month">1</span></td>
-            <td><span class="day another-month">2</span></td>
-            <td><span class="day another-month">3</span></td>
-          </tr>
-        </table>
-        <button type="button" name="button" class="button add-event">Add event</button>
+  <div class="content">
+    <div class="widget first-widget">
+      <form action="index.html" method="post">
+        <header class="first-widget-header">
+          <button type="button" class="button header-button prev sprite"></button>
+          <button type="button" class="button header-button current">May 2014</button>
+          <button type="button" class="button header-button next sprite"></button>
+        </header>
+        <div class="main">
+          <table class="calendar">
+            <tr>
+              <th>Sun</th>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thu</th>
+              <th>Fri</th>
+              <th>Sat</th>
+            </tr>
+            <tr>
+              <td><span class="day another-month">29</span></td>
+              <td><span class="day another-month">30</span></td>
+              <td><span class="day">1</span></td>
+              <td><span class="day">2</span></td>
+              <td><span class="day selected vertical-middle-text">3</span></td>
+              <td><span class="day">4</span></td>
+              <td><span class="day">5</span></td>
+            </tr>
+            <tr>
+              <td><span class="day">6</span></td>
+              <td><span class="day holiday">7</span></td>
+              <td><span class="day">8</span></td>
+              <td><span class="day">9</span></td>
+              <td><span class="day">10</span></td>
+              <td><span class="day">11</span></td>
+              <td><span class="day">12</span></td>
+            </tr>
+            <tr>
+              <td><span class="day">13</span></td>
+              <td><span class="day">14</span></td>
+              <td><span class="day">15</span></td>
+              <td><span class="day">16</span></td>
+              <td><span class="day">17</span></td>
+              <td><span class="day">18</span></td>
+              <td><span class="day">19</span></td>
+            </tr>
+            <tr>
+              <td><span class="day">20</span></td>
+              <td><span class="day">21</span></td>
+              <td><span class="day">22</span></td>
+              <td><span class="day holiday">23</span></td>
+              <td><span class="day">24</span></td>
+              <td><span class="day">25</span></td>
+              <td><span class="day">26</span></td>
+            </tr>
+            <tr>
+              <td><span class="day">27</span></td>
+              <td><span class="day">28</span></td>
+              <td><span class="day">29</span></td>
+              <td><span class="day">30</span></td>
+              <td><span class="day another-month">1</span></td>
+              <td><span class="day another-month">2</span></td>
+              <td><span class="day another-month">3</span></td>
+            </tr>
+          </table>
+          <button type="button" name="button" class="button big-button">Add event</button>
+        </div>
+      </form>
+    </div>
+    <div class="widget second-widget">
+        <header  class="second-widget-header">
+          <figure class="header-img">
+            <img src="img/picture1.jpg" alt="beautiful picture"/>
+            <figcaption>
+              <span class="caption building"><a href="#">Hotel Relais</a></span>
+              <span class="caption point sprite"><a href="#">Paris, France</a></span>
+            </figcaption>
+          </figure>
+        </header>
+        <div class="main">
+          <form action="index.html" method="post">
+          <dl class="input-date-list">
+            <dt>
+              <label for="check-in" class="custom-label check-label">Check in</label>
+            </dt>
+            <dd>
+              <div class="input-wrapper date-wrapper">
+                <!--  Because placeholder is not supported in IE 9, I set date into value attribute-->
+                <input type="text" id="check-in" name="check-in" class="text-input date-input" value="9 July, 2016">
+                <button type="button" name="call-calendar" class="input-button call-calendar sprite"></button>
+              </div>
+            </dd>
+            <dt>
+              <label for="check-out" class="custom-label check-label">Check out</label>
+            </dt>
+            <dd>
+              <div class="input-wrapper date-wrapper">
+                <!--  Because placeholder is not supported in IE 9, I set date into value attribute-->
+                <input type="text" id="check-out" name="check-out" class="text-input date-input" value="16 July, 2016">
+                <button type="button" name="call-calendar" class="input-button call-calendar sprite"></button>
+              </div>
+            </dd>
+          </dl>
+          <div class="checkbox">
+            <input type="checkbox" id="flex-dates" class="flex-dates-checkbox" name="name" value="">
+            <label for="flex-dates" class="custom-label flex-dates-label">Flexible dates</label>
+          </div>
+          <div class="people-select">
+            <dl class="adults">
+              <dt>
+                <label for="adults-select" class="custom-label">Adults</label>
+              </dt>
+              <dd>
+                <div class="input-wrapper select-wrapper">
+                    <input type="text" readonly class="dropdown custom-dropdown" name="adults" value="2">
+                    <a class="select-button input-button sprite"></a>
+                    <ul class="dropdown-list">
+                      <li class="dropdown-item input-wrapper vertical-middle-text">1</li>
+                      <li class="dropdown-item input-wrapper vertical-middle-text">2</li>
+                      <li class="dropdown-item input-wrapper vertical-middle-text">3</li>
+                    </ul>
+                </div>
+              </dd>
+            </dl>
+            <dl class="children">
+              <dt>
+                <label for="children-select" class="custom-label">Children</label>
+              </dt>
+              <dd>
+                <div class="input-wrapper select-wrapper">
+                      <input type="text" readonly class="dropdown custom-dropdown" name="children" value="1">
+                    <a class="select-button input-button sprite"></a>
+                    <ul class="dropdown-list">
+                      <li class="dropdown-item input-wrapper vertical-middle-text">1</li>
+                      <li class="dropdown-item input-wrapper vertical-middle-text">2</li>
+                      <li class="dropdown-item input-wrapper vertical-middle-text">3</li>
+                    </ul>
+                </div>
+              </dd>
+            </dl>
+          </div>
+          <button type="button" name="button" class="button big-button search sprite">Search rooms</button>
+        </form>
+        </div>
+    </div>
+    <div class="widget third-widget">
+      <ul class="left-bar">
+        <li class="bar-item"><a href="#" class="button header-button sprite toggle selected"></a></li>
+        <li class="bar-item"><a href="#" class="button header-button sprite toggle"></a></li>
+        <li class="bar-item"><a href="#" class="button header-button sprite toggle"></a></li>
+      </ul>
+      <div class="description">
+        <h3 class="title">My most favourite place in the world</h3>
+        <span class="review-count">154</span><span class="review-text"> Reviews</span>
+        <p class="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a pulvinar ipsum. Aliquam sit amet iaculis dolor. Vivamus sed diam sollicitudin. </p>
+        <a href="#" class="read-more">Read more</a>
       </div>
-    </form>
-  </div>
-  <div class="widget second-widget">
-    <form action="index.html" method="post">
-      <header  class="second-widget-header">
-        <figure class="header-img">
-          <img src="img/picture1.jpg" alt="beautiful picture" />
-          <figcaption>
-            <span class="caption building">Hotel Relais</span>
-            <span class="caption point">Paris, France</span>
-          </figcaption>
-        </figure>
-      </header>
-      <div class="main">
-        <dl class="input-date-list">
-          <dt>
-            <label for="check-in" class="custom-label check-label">Check in</label>
-          </dt>
-          <dd>
-            <div class="input-wrapper date-wrapper">
-              <input type="text" id="check-in" name="check-in" class="text-input date-input" placeholder="9 July, 2016" value="">
-              <button type="button" name="call-calendar" class="input-button call-calendar"></button>
-            </div>
-          </dd>
-          <dt>
-            <label for="check-out" class="custom-label check-label">Check out</label>
-          </dt>
-          <dd>
-            <div class="input-wrapper date-wrapper">
-              <input type="text" id="check-out" name="check-out" class="text-input date-input" placeholder="16 July, 2016" value="">
-              <button type="button" name="call-calendar" class="input-button call-calendar"></button>
-            </div>
-          </dd>
-        </dl>
-        <div class="checkbox">
-          <input type="checkbox" id="flex-dates" class="flex-dates-checkbox" name="name" value="">
-          <label for="flex-dates" class="custom-label flex-dates-label">Flexible dates</label>
+      <div class="preview">
+        <img src="img/picture2.jpg" alt="place photo" class="place-photo"/>
+        <div class="social-block">
+          <a href="#" class="comment sprite">752</a>
+          <a href="#" class="like sprite">2709</a>
         </div>
       </div>
-    </form>
+    </div>
+    <div class="widget fourth-widget">
+      <span class="horisontal-line vertical-bottom-text custom-label">40</span>
+      <span class="horisontal-line vertical-bottom-text custom-label">30</span>
+      <span class="horisontal-line vertical-bottom-text custom-label">20</span>
+      <span class="horisontal-line vertical-bottom-text custom-label">0</span>
+      <div class="column-wrapper column1 vertical-bottom-text">
+        <span class="size-label">17</span>
+        <div class="column button animate-height" style="height: 47px;"></div>
+        <span class="day-name custom-label">Mon</span>
+      </div>
+      <div class="column-wrapper column2">
+        <span class="size-label">19</span>
+        <div class="column button animate-height" style="height: 60px;"></div>
+        <span class="day-name custom-label">Tues</span>
+      </div>
+      <div class="column-wrapper column3">
+        <span class="size-label">27</span>
+        <div class="column button animate-height" style="height: 117px;"></div>
+        <span class="day-name custom-label">Wed</span>
+      </div>
+      <div class="column-wrapper column4">
+        <span class="size-label">32</span>
+        <div class="column button animate-height" style="height: 156px;"></div>
+        <span class="day-name custom-label">Thu</span>
+      </div>
+      <div class="column-wrapper column5">
+        <span class="size-label">28</span>
+        <div class="column button animate-height" style="height: 127px;"></div>
+        <span class="day-name custom-label">Fri</span>
+      </div>
+      <div class="column-wrapper column6">
+        <span class="size-label">34</span>
+        <div class="column button animate-height" style="height: 167px;"></div>
+        <span class="day-name custom-label">Sat</span>
+      </div>
+      <div class="column-wrapper column7">
+        <span class="size-label">30</span>
+        <div class="column button animate-height" style="height: 141px;"></div>
+        <span class="day-name custom-label">Sun</span>
+      </div>
+    </div>
+    <div class="widget fifth-widget">
+      <form action="index.html" method="post">
+        <div class="email-wrapper input-wrapper">
+        <span class="email-address vertical-middle-text">rick.james@mail.com<a href="#" class="sprite"></a></span>
+        <!-- <span class="email-address vertical-middle-text">rick.james@mail.com<a href="#" class="sprite"></a></span> -->
+        <!-- <span class="email-address vertical-middle-text">short<a href="#" class="sprite"></a></span> -->
+          <input type="text" class="email-input text-input">
+          <button type="button" class="add-address-button transparent-button input-button sprite"></button>
+        </div>
+        <div class="subject-wrapper input-wrapper">
+          <input type="text" class="subject-input text-input" value="Subject">
+          <label for="select-file" class="transparent-button input-button sprite"></label>
+          <input type="file" id="select-file" class="select-file-button" name="attachment" value="">
+        </div>
+        <span class="file-name custom-label input-wrapper">No file selected...</span>
+        <textarea name="message" class="message text-input" cols="44" rows="14">Message</textarea>
+        <button class="send-mail-button button big-button" type="button">Send</button>
+      </form>
+    </div>
   </div>
 </body>
 </html>
