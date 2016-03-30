@@ -1,0 +1,9 @@
+body, html {
+  min-height: 100%;
+}
+
+
+.wrapper {
+  width: 1020px;
+  height: 100%;
+}
