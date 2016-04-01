@@ -78,7 +78,6 @@ body, html {
 .main-header, .main-footer {
   width: 100%;
   box-sizing: border-box;
-  outline: 1px solid greenyellow;
 }
 
 .main-header,
@@ -93,9 +92,10 @@ main,
 }
 
 main{
-  padding-top: 0px;
+  padding-top: 20px;
   padding-bottom: 70px;
   box-sizing: border-box;
+  outline: 1px solid greenyellow;
 }
 
 .main-footer {
@@ -503,6 +503,137 @@ ul[class*="categories"] > li:nth-child(2n+1) > .category {
 .header-nav-item .link8:hover {
   background-position: 9px -774px;
 }
+/******************MAIN*******************************/
+
+.content-nav {
+  width: 164px;
+  height: 370px;
+  padding-right: 5px;
+  border-right: 1px solid #eaeaea;;
+  font-size: 0;
+}
+
+.vertical-nav {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: block;
+  list-style: none;
+}
+
+.vertical-nav-item {
+  width: 77px;
+  height: 70px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  display: inline-block;
+}
+
+.vertical-nav-item a {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 5px;
+  display: block;
+  box-sizing: border-box;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  color:  #777777;
+}
+
+.vertical-nav-item a:hover {
+    background-color: #555;
+    color: white;
+}
+
+.daily-news {
+  background-position: -177px -19px;
+}
+
+.daily-news:hover {
+  background-position: -263px -19px;
+}
+
+.magazine {
+  background-position: -1035px -19px;
+}
+
+.magazine:hover {
+  background-position: -1121px -19px;
+}
+
+
+.maps {
+  background-position: -1207px -19px;
+}
+
+.maps:hover {
+  background-position: -1293px -19px;
+}
+
+
+.sciense {
+  background-position: -1376px -19px;
+}
+
+.sciense:hover {
+  background-position: -1459px -19px;
+}
+
+
+.education {
+  background-position: -351px -15px;
+}
+
+.education:hover {
+  background-position: -443px -15px;
+}
+
+
+.games {
+  background-position: -863px -19px;
+}
+
+.games:hover {
+  background-position: -949px -19px;
+}
+
+
+.events {
+  background-position: -533px -19px;
+}
+
+.events:hover {
+  background-position: -619px -19px;
+}
+
+
+.blogs {
+  background-position: -4px -19px;
+}
+
+.blogs:hover {
+  background-position: -90px -19px;
+}
+
+
+.explorers {
+  background-position: -701px -19px;
+}
+
+.explorers:hover {
+  background-position: -780px -19px;
+}
+
+
+.trips {
+  background-position: -1545px -19px;
+}
+
+.trips:hover {
+  background-position: -1631px -19px;
+}
 
 
 
@@ -536,16 +667,7 @@ ul[class*="categories"] > li:nth-child(2n+1) > .category {
 
 
 
-
-
-
-
-
-
-
-
-
-/*******************************************/
+/*****************FOOTER**************************/
 .main-footer {
   background-color: #242424;
 }
@@ -562,7 +684,6 @@ ul[class*="categories"] > li:nth-child(2n+1) > .category {
 .subscribe,
 .nav-legal {
   height: 100%;
-  /*width: 60%;*/
 }
 
 .subscribe,
