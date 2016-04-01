@@ -209,7 +209,7 @@ input[type="text"]:-ms-input-placeholder         {color:#e7e7e7; font-style: ita
   width: 444px;
   height: 48px;
   padding-top: 5px;
-  padding-left: 41px;
+  padding-left: 36px;
   float: left;
   border-radius: 3px;
   background-position: -3px -197px;
@@ -227,6 +227,7 @@ input[type="text"]:-ms-input-placeholder         {color:#e7e7e7; font-style: ita
   width: 212px;
   padding-top: 7px;
   padding-right: 5px;
+  padding-left: 5px;
   display: block;
   float: left;
   font-size: 15px;
@@ -358,6 +359,7 @@ ul[class*="categories"] > li:nth-child(2n+1) > .category {
 .account-box {
   width: 162px;
   height: 46px;
+  padding-left: 5px;
   position: relative;
   float: right;
   border-radius: 3px;
@@ -368,11 +370,33 @@ ul[class*="categories"] > li:nth-child(2n+1) > .category {
   bottom: 10px;
 }
 
+.account-button {
+  width: 75px;
+  height: 100%;
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 14px;
+  color:  #999999;
+}
 
+.sign-up {
+  background-position: 15px -254px;
+}
 
+.sign-up:hover {
+  background-position: 15px -300px;
+  color: #fdcc05;
+}
 
+.login {
+  background-position: 15px -111px;
+}
 
-
+.login:hover {
+  background-position: 15px -157px;
+  color: #fdcc05;
+}
 
 .header-nav {
   width: 100%;
