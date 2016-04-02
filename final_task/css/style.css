@@ -95,7 +95,6 @@ main{
   padding-top: 20px;
   padding-bottom: 70px;
   box-sizing: border-box;
-  outline: 1px solid greenyellow;
 }
 
 .main-footer {
@@ -1262,23 +1261,80 @@ ul[class*="categories"] > li:nth-child(2n+1) > .category {
   background-position: -23px -869px;
 }
 
-.shopping-btn:hover {
+.shopping-btn:hover,
+.subscriptions-btn:hover,
+.subscribe-box .box-button:hover {
   background-color: rgba(255,220,5,.26);
 }
-
-.subscriptions-btn:hover {
-  background-color: rgba(255,220,5,.26);
+/*********************CONTENT FOOTER******************/
+.magazines-btn {
+  /*background-position: -1353px -21px;*/
+  /*background-size: 2260px 50px;*/
 }
 
+.subscribe-block {
+  margin-top: 10px;
+  margin-bottom: 22px;
+}
 
+.subscribe-box {
+  width: 227.5px;
+  height: 200px;
+  margin-right: 10px;
+  padding: 8px 0 0 5px;
+  position: relative;
+  float: left;
+}
 
+.subscribe-box:last-child {
+  margin: 0;
+  float: right;
+}
 
+.subscribe-box .preview-text-outside {
+  padding-top: 10px;
+  margin-bottom: 8px;
+  margin-right: 5px;
+}
 
+.subscribe-box .preview-text-outside > img {
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
 
+.subscribe-box .preview-text-outside h5 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  display: block;
+  float: none;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: clip;
+}
 
+.subscribe-box .rating-block {
+  float: left;
+}
 
+.subscribe-box .box-button {
+  padding-right: 10px;
+  border-right: 0;
+  border-bottom: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-position: -23px -1524px;
+}
 
+.subscribe-box .box-button:hover {
+  background-position: -23px -1601px;
+}
 
+.subscribe-box .box-button .btn-caption {
+  font-size: 12px;
+}
 
 
 
