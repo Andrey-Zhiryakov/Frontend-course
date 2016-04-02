@@ -19,66 +19,69 @@
           <div class="search-box box top-box-sprite">
             <form class="search-form clearfix" action="index.html" method="post">
               <input type="text" name="name" placeholder="Search" class="search-input">
-              <a href="#" class="categoriess-button misc-sprite">All categories</a>
+              <a href="#" class="categoriess-button misc-sprite">
+                <span>All categories</span>
+                <!--  I paste dropdown-menu into <a> only for example -->
+                <div class="dropdown-menu box">
+                  <input type="checkbox" name="select-all" value="" id="select-all">
+                  <label class="cb-label middle-text misc-sprite" for="select-all">Select all categories to search</label>
+                  <ul class="categories-1">
+                    <li>
+                      <input type="checkbox" id="Videos" name="name" value="">
+                      <label for="Videos" class="category box misc-sprite middle-text">Videos</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="Photography" name="name" value="">
+                      <label for="Photography" class="category box misc-sprite middle-text">Photography</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="Animals" name="name" value="">
+                      <label for="Animals" class="category box misc-sprite middle-text">Animals</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="Games" name="name" value="">
+                      <label for="Games" class="category box misc-sprite middle-text">Games</label>
+                    </li>
+                  </ul>
+                  <ul class="categories-2">
+                    <li>
+                      <input type="checkbox" id="Environment" name="name" value="">
+                      <label for="Environment" class="category box misc-sprite middle-text">Environment</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="Travel" name="name" value="">
+                      <label for="Travel" class="category box misc-sprite middle-text">Travel</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="Kids" name="name" value="">
+                      <label for="Kids" class="category box misc-sprite middle-text">Kids</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="Adventurer" name="name" value="">
+                      <label for="Adventurer" class="category box misc-sprite middle-text">Adventurer</label>
+                    </li>
+                  </ul>
+                  <ul class="categories-3">
+                    <li>
+                      <input type="checkbox" id="Television" name="name" value="">
+                      <label for="Television" class="category box misc-sprite middle-text">Television</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="Apps" name="name" value="">
+                      <label for="Apps" class="category box misc-sprite middle-text">Apps</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="Events" name="name" value="">
+                      <label for="Events" class="category box misc-sprite middle-text">Events</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="Trips" name="name" value="">
+                      <label for="Trips" class="category box misc-sprite middle-text">Trips</label>
+                    </li>
+                  </ul>
+                </div>
+              </a>
               <button type="button" name="search" class="go-button top-box-sprite"></button>
-              <div class="dropdown-menu box">
-                <input type="checkbox" name="select-all" value="" id="select-all">
-                <label class="cb-label middle-text misc-sprite" for="select-all">Select all categories to search</label>
-                <ul class="categories-1">
-                  <li>
-                    <input type="checkbox" id="Videos" name="name" value="">
-                    <label for="Videos" class="category box misc-sprite middle-text">Videos</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="Photography" name="name" value="">
-                    <label for="Photography" class="category box misc-sprite middle-text">Photography</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="Animals" name="name" value="">
-                    <label for="Animals" class="category box misc-sprite middle-text">Animals</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="Games" name="name" value="">
-                    <label for="Games" class="category box misc-sprite middle-text">Games</label>
-                  </li>
-                </ul>
-                <ul class="categories-2">
-                  <li>
-                    <input type="checkbox" id="Environment" name="name" value="">
-                    <label for="Environment" class="category box misc-sprite middle-text">Environment</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="Travel" name="name" value="">
-                    <label for="Travel" class="category box misc-sprite middle-text">Travel</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="Kids" name="name" value="">
-                    <label for="Kids" class="category box misc-sprite middle-text">Kids</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="Adventurer" name="name" value="">
-                    <label for="Adventurer" class="category box misc-sprite middle-text">Adventurer</label>
-                  </li>
-                </ul>
-                <ul class="categories-3">
-                  <li>
-                    <input type="checkbox" id="Television" name="name" value="">
-                    <label for="Television" class="category box misc-sprite middle-text">Television</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="Apps" name="name" value="">
-                    <label for="Apps" class="category box misc-sprite middle-text">Apps</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="Events" name="name" value="">
-                    <label for="Events" class="category box misc-sprite middle-text">Events</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="Trips" name="name" value="">
-                    <label for="Trips" class="category box misc-sprite middle-text">Trips</label>
-                  </li>
-                </ul>
-              </div>
             </form>
           </div>
           <div class="account-box box">
@@ -105,7 +108,6 @@
         </ul>
       </nav>
     </header>
-
     <main role="main">
       <section class="main-content clearfix">
         <section class="content">
@@ -276,7 +278,6 @@
               </div>
               <p class="preview-description">The legendary great white shark is far more fearsome in our imaginations than in reality. As scientific research on these elusive predators increases, their image as mindless killing machines is beginning to fade.</p>
             </div>
-
           </section>
         </section>
         <section class="news-and-events">

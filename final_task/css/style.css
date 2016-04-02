@@ -443,7 +443,7 @@ input[type="text"]:-ms-input-placeholder         {color:#e7e7e7; font-style: ita
   background-position: -14px -67px;
 }
 
-.categoriess-button:hover ~ .dropdown-menu {
+.categoriess-button:hover  .dropdown-menu {
   display: block;
 }
 
@@ -513,6 +513,7 @@ ul[class*="categories"] li {
   border-bottom: none;
   background-color: #f3f3f3;
   background-position: -18px -1744px;
+  cursor: pointer;
   color: #999;
 }
 
@@ -1287,7 +1288,7 @@ ul[class*="categories"] > li:nth-child(2n+1) > .category {
 
 .subscribe-box:last-child {
   margin: 0;
-  float: right;
+  /*float: right;*/
 }
 
 .subscribe-box .preview-text-outside {
@@ -1334,16 +1335,6 @@ ul[class*="categories"] > li:nth-child(2n+1) > .category {
 .subscribe-box .box-button .btn-caption {
   font-size: 12px;
 }
-
-
-
-
-
-
-
-
-
-
 
 /*****************FOOTER**************************/
 .main-footer {
@@ -1416,6 +1407,10 @@ input.subscribe-input:-ms-input-placeholder         {color:#595959;}
   color:  #848484;
 }
 
+.subscribe-btn:hover {
+  color: white;
+}
+
 .subscribe-social {
   width: 30px;
   height: 40px;
@@ -1477,6 +1472,10 @@ input.subscribe-input:-ms-input-placeholder         {color:#595959;}
   font-size: 12px;
   font-weight: 400;
   text-align: center;
+}
+
+.footer-nav-list li a:hover {
+  color: white;
 }
 
 .legal {
