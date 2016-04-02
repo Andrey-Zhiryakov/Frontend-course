@@ -157,6 +157,11 @@ input[type="text"] {
     background-repeat: no-repeat;
 }
 
+.menu-sprite {
+    background-image: url(../img/menu-sprite.png);
+    background-repeat: no-repeat;
+}
+
 .top-box-sprite {
     background-image: url(../img/top-box-sprite.png);
     background-repeat: no-repeat;
@@ -172,8 +177,6 @@ input[type="text"] {
     background-repeat: no-repeat;
 }
 
-
-
 .header-box {
   height: 30px;
   margin-top: 18px;
@@ -181,7 +184,9 @@ input[type="text"] {
 }
 
 .box,
-.header-box {
+.header-box,
+.preview-text-outside,
+.preview-text-inside {
   box-sizing: border-box;
   border: 1px solid #eee;
   background-color: white;
@@ -199,7 +204,6 @@ input[type="text"] {
   background-repeat: no-repeat;
   color:  #777;
 }
-
 
 .bottom-text::before,
 .middle-text::before,
@@ -220,6 +224,96 @@ input[type="text"]::-webkit-input-placeholder{color:#e7e7e7; font-style: italic;
 input[type="text"]::-moz-placeholder                {color:#e7e7e7; font-style: italic; font-weight: 100;}
 input[type="text"]:-moz-placeholder                 {color:#e7e7e7; font-style: italic; font-weight: 100;}
 input[type="text"]:-ms-input-placeholder         {color:#e7e7e7; font-style: italic; font-weight: 100;}
+
+/*****************preview classes*********************/
+.preview-text-outside {
+  padding: 5px;
+  background-color: #fbfbfb;
+}
+
+.preview-text-outside .picture {
+  width: 100%;
+  height: 100px;
+}
+
+.preview-text-outside .left-side {
+  float: left;
+}
+
+.left-side h5 {
+  margin: 0;
+  margin-bottom: -5px;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color:  #777777;
+}
+.left-side .timestamp {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 400;
+  color:  #a0a0a0;
+}
+
+.preview-text-outside .right-side {
+  float: right;
+}
+
+.vote-count {
+  padding-left: 2px;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 400;
+  color:  #a0a0a0;
+}
+
+.preview-text-inside {
+
+}
+
+.starRating {
+  width: 70px;
+  height: 15px;
+  margin-top: 4px;
+  margin-bottom: -4px;
+  display: block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.starRating > input {
+  display: none;
+  opacity: 0;
+}
+
+.starRating > label,
+.starRating > label::before {
+  background: url(../img/misc-sprite.png);
+  background-repeat: no-repeat;
+}
+
+.starRating > label {
+  display: block;
+  float: right;
+  position: relative;
+  background-position: -30px -30px;
+}
+
+.starRating > label:before{
+  content: '';
+  display: block;
+  width: 14px;
+  height: 39px;
+  background-position: -30px -654px;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+
+.starRating > label:hover:before,
+.starRating > label:hover ~ label:before,
+.starRating:not(:hover) > :checked ~ label:before{
+  opacity : 1;
+}
 /****************************************************/
 .logo {
   float: left;
@@ -524,11 +618,16 @@ ul[class*="categories"] > li:nth-child(2n+1) > .category {
   background-position: 9px -774px;
 }
 /******************MAIN*******************************/
+.main-content {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eaeaea;
+}
 
 .content {
   width: 702px;
-  padding-right: 12px;
+  padding-right: 11px;
   box-sizing: border-box;
+  float: left;
 }
 
 .content,
@@ -931,8 +1030,62 @@ ul[class*="categories"] > li:nth-child(2n+1) > .category {
   color: white;
 }
 
+/******************PREVIEW BLOCK***********************/
+.preview-block {
+  margin-top: 20px;
+}
 
+.large-preview {
+  width: 340px;
+  height: 240px;
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  float: left;
+}
 
+.large-preview:nth-child(2n+1) {
+  margin-left: 0;
+}
+
+.large-preview:nth-last-child(1),
+.large-preview:nth-last-child(2) {
+  margin-bottom: 0;
+}
+
+.preview-description {
+  margin-top: 8px;
+  padding: 0 3px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 13.983px;
+  text-align: justify;
+  color:  #989898;
+}
+
+/********************RIGHT SIDE**************************/
+.news-and-events {
+  width: 238px;
+  padding-left: 11px;
+  box-sizing: border-box;
+  float: right;
+}
+
+.most-popular-news {
+  margin-top: 0;
+}
+
+.most-popular-news .button {
+  background-position: -20px -96px;
+}
+
+.right-aside .preview-text-outside{
+  margin-top: 7px;
+}
+
+.most-popular-videos .button {
+  background-position: -20px -1677px;
+}
 
 
 
