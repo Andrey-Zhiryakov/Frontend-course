@@ -1107,7 +1107,7 @@ ul[class*="categories"] > li:nth-child(2n+1) > .category {
 }
 
 .large-preview .preview-text-outside .page-link:hover {
-  background-position: 134px -1938px;
+  background-position: 135px -1978px;
 }
 
 .large-preview:nth-child(2n+1) {
@@ -1168,9 +1168,9 @@ ul[class*="categories"] > li:nth-child(2n+1) > .category {
   height: 40px;
   display: block;
   position: absolute;
-  bottom: 16px;
+  bottom: 13px;
   right: 9px;
-  background-position: -29px -2284px;
+  background-position: -30px -2320px;
 }
 
 .upcoming-events {
@@ -1268,8 +1268,7 @@ ul[class*="categories"] > li:nth-child(2n+1) > .category {
 }
 /*********************CONTENT FOOTER******************/
 .magazines-btn {
-  /*background-position: -1353px -21px;*/
-  /*background-size: 2260px 50px;*/
+    background-position: -15px -1861px;
 }
 
 .subscribe-block {
