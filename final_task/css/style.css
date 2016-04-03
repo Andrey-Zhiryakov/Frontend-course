@@ -926,17 +926,36 @@ ul[class*="categories"] > li:nth-child(2n+1) > .category {
   background-color: #fdcc05;
 }
 
-.toggle li:hover a {
-  border: none;
-
+.toggle-radio {
+  display: none;
 }
 
-.toggle li a {
+.toggle li:hover label {
+  border: none;
+}
+
+.toggle li label {
   width: 100%;
   display: inline-block;
   box-sizing: border-box;
   vertical-align: middle;
+  cursor: pointer;
   border-right: 1px solid #717171;
+}
+
+#toggle1-1:checked ~ ul > li:nth-child(1),
+#toggle1-2:checked ~ ul > li:nth-child(2) ,
+#toggle1-3:checked ~ ul > li:nth-child(3),
+#toggle2-1:checked ~ ul > li:nth-child(1),
+#toggle2-2:checked ~ ul > li:nth-child(2)   {
+  background-color: #fdcc05;
+}
+#toggle1-1:checked ~ ul > li:nth-child(1) label,
+#toggle1-2:checked ~ ul > li:nth-child(2) label,
+#toggle1-3:checked ~ ul > li:nth-child(3) label,
+#toggle2-1:checked ~ ul > li:nth-child(1) label,
+#toggle2-2:checked ~ ul > li:nth-child(2) label {
+  border: none;
 }
 
 .slider-footer {
