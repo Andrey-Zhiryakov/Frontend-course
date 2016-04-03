@@ -1213,8 +1213,6 @@ ul[class*="categories"] > li:nth-child(2n+1) > .category {
   position: relative;
 }
 
-
-
 .event h5 {
   margin: 0;
   margin-bottom: 5px;
@@ -1280,15 +1278,14 @@ ul[class*="categories"] > li:nth-child(2n+1) > .category {
 .subscribe-box {
   width: 227.5px;
   height: 200px;
-  margin-right: 10px;
+  margin-left: 10px;
   padding: 8px 0 0 5px;
   position: relative;
   float: left;
 }
 
-.subscribe-box:last-child {
+.subscribe-box:nth-child(4n+1) {
   margin: 0;
-  /*float: right;*/
 }
 
 .subscribe-box .preview-text-outside {
