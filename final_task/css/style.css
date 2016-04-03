@@ -1410,6 +1410,12 @@ input.subscribe-input::-moz-placeholder                {color:#595959;}
 input.subscribe-input:-moz-placeholder                 {color:#595959;}
 input.subscribe-input:-ms-input-placeholder         {color:#595959;}
 
+input::-ms-clear { display: none; }
+
+.subscribe-input::-ms-value {
+  background-color: #282828;
+}
+
 .subscribe-btn {
   width: 101px;
   height: 100%;
