@@ -839,7 +839,7 @@ ul[class*="categories"] > li:nth-child(2n+1) > .category {
 
 .slider-nav li {
   height: 30px;
-  min-width: 79px;
+  width: 79px;
   margin-right: 6px;
   margin-bottom: 15px;
   display: inline-block;
@@ -863,7 +863,6 @@ ul[class*="categories"] > li:nth-child(2n+1) > .category {
 }
 
 .slider-link:hover {
-  text-transform: uppercase;
   background-color:  #555;
   color: white;
 }
@@ -877,10 +876,6 @@ ul[class*="categories"] > li:nth-child(2n+1) > .category {
   left: 30px;
   border: 10px solid transparent;
   border-top: 10px solid #555;
-}
-
-.slider-nav li:nth-last-child(2) .slider-link:hover {
-  letter-spacing: -1.7px;
 }
 
 .slider {
@@ -913,7 +908,6 @@ ul[class*="categories"] > li:nth-child(2n+1) > .category {
 .toggle li {
   width: 27px;
   height: 100%;
-  /*padding-top: 3px;*/
   display: inline-block;
   color:  #ffffff;
   font-size: 16.31px;
@@ -1077,9 +1071,9 @@ ul[class*="categories"] > li:nth-child(2n+1) > .category {
 .sort-menu-list {
   width: 100%;
   height: 100%;
-  display: block;
   margin: 0;
   padding: 0;
+  display: block;
   list-style: none;
 }
 
@@ -1112,7 +1106,7 @@ ul[class*="categories"] > li:nth-child(2n+1) > .category {
   width: 340px;
   height: 240px;
   padding: 5px;
-  margin-bottom: 10px;
+  margin-top: 10px;
   margin-left: 10px;
   float: left;
   position: relative;
@@ -1134,9 +1128,9 @@ ul[class*="categories"] > li:nth-child(2n+1) > .category {
   margin-left: 0;
 }
 
-.large-preview:nth-last-child(1),
-.large-preview:nth-last-child(2) {
-  margin-bottom: 0;
+.large-preview:nth-child(1),
+.large-preview:nth-child(2) {
+  margin-top: 0;
 }
 
 .preview-description {
