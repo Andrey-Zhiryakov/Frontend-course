@@ -152,7 +152,8 @@ function getLastDigit(value) {
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(value) {
-    throw new Error('Not implemented');
+    // throw new Error('Not implemented');
+    return parseInt(value, 10);
 }
 
 /**
@@ -169,7 +170,8 @@ function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelipidedDiagonal(a,b,c) {
-    throw new Error('Not implemented');
+    // throw new Error('Not implemented');
+    
 }
 
 /**
