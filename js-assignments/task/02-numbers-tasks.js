@@ -40,7 +40,7 @@ function getRectangleArea(width, height) {
  */
 function getCicleCircumference(radius) {
     // throw new Error('Not implemented');
-    return 2*Math.PI*radius;
+    return 2*Math.PI*radius;   
 }
 
 /**
@@ -56,8 +56,8 @@ function getCicleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-    throw new Error('Not implemented');
-    // return Math.round(value1+value2)/2);
+    // throw new Error('Not implemented');
+     return Math.round(value1/2+value2/2);
 }
 
 /**
@@ -171,7 +171,7 @@ function parseNumberFromString(value) {
  */
 function getParallelipidedDiagonal(a,b,c) {
     // throw new Error('Not implemented');
-    
+
 }
 
 /**
