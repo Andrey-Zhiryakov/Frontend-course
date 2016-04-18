@@ -40,7 +40,7 @@ function getRectangleArea(width, height) {
  */
 function getCicleCircumference(radius) {
     // throw new Error('Not implemented');
-    return 2*Math.PI*radius;   
+    return 2*Math.PI*radius;
 }
 
 /**
@@ -116,7 +116,8 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (1,2)     => 0
  */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
-    throw new Error('Not implemented');
+    // throw new Error('Not implemented');
+    return Math.abs(Math.atan2(y2, x2) - Math.atan2(y1, x1));
 }
 
 /**
@@ -153,7 +154,7 @@ function getLastDigit(value) {
  */
 function parseNumberFromString(value) {
     // throw new Error('Not implemented');
-    return parseInt(value, 10);
+    return value.indexOf(".") > 0 ? parseFloat(value) : parseInt(value, 10);
 }
 
 /**
@@ -171,7 +172,7 @@ function parseNumberFromString(value) {
  */
 function getParallelipidedDiagonal(a,b,c) {
     // throw new Error('Not implemented');
-
+    return Math.sqrt(a*a + b*b + c*c);
 }
 
 /**
@@ -192,7 +193,8 @@ function getParallelipidedDiagonal(a,b,c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
-    throw new Error('Not implemented');
+    // throw new Error('Not implemented');
+    return Math.round(num/Math.pow(10,pow)) * Math.pow(10,pow);
 }
 
 /**
@@ -213,7 +215,25 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) {
-    throw new Error('Not implemented');
+    // throw new Error('Not implemented');
+    if (n <= 1){
+        return false;
+      }
+    else if (n <= 3){
+        return true;
+      }
+    else if (n % 2 === 0 || n % 3 === 0){
+        return false;
+      }
+    var i = 5;
+    while (i * i <= n){
+        if (n % i === 0 || n % (i + 2) === 0)
+            return false;
+        i = i + 6;
+    return true;
+    }
+
+    return true;
 }
 
 /**
@@ -232,7 +252,9 @@ function isPrime(n) {
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(value, def) {
-    throw new Error('Not implemented');
+    // throw new Error('Not implemented');
+    var a = parseInt(value, 10);
+    return a ? a : def;
 }
 
 module.exports = {
