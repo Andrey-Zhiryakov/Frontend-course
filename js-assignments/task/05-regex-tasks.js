@@ -31,7 +31,8 @@
  * @return {RegExp}
  */
 function getRegexForGuid() {
-   throw new Error('Not implemented');
+  //  throw new Error('Not implemented');
+  return new RegExp("^[{]{1}[0-9a-fA-F]{8}[-]{1}([0-9a-fA-F]{4}[-]{1}){3}[0-9a-fA-F]{12}[}]{1}$","gm");
 }
 
 
@@ -53,7 +54,8 @@ function getRegexForGuid() {
  *
  */
 function getRegexForPitSpot() {
-   throw new Error('Not implemented');
+  //  throw new Error('Not implemented');
+  return new RegExp();
 }
 
 
