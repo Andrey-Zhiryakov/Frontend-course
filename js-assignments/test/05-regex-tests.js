@@ -18,6 +18,7 @@ describe('05-regex-tasks', function() {
                 result.test(str),
                 `regex does not match '${str}'`
             );
+            result = tasks.getRegexForGuid();
         });
 
         [
@@ -32,6 +33,7 @@ describe('05-regex-tasks', function() {
                  result.test(str) == false,
                 `regex matches '${str}'`
              );
+             result = tasks.getRegexForGuid();
         });
 
     });
@@ -75,6 +77,7 @@ describe('05-regex-tasks', function() {
                 result.test(str),
                 `regex does not match '${str}'`
             );
+            result = tasks.getRegexForIPv4();
         });
 
         [
@@ -87,6 +90,7 @@ describe('05-regex-tasks', function() {
                 result.test(str) == false,
                 `regex matches '${str}'`
             );
+            result = tasks.getRegexForIPv4();
         });
     });
 
@@ -104,6 +108,7 @@ describe('05-regex-tasks', function() {
                 result.test(str),
                 `regex does not match '${str}'`
             );
+            result = tasks.getRegexForSSN();
         });
 
         [
@@ -117,6 +122,7 @@ describe('05-regex-tasks', function() {
                 result.test(str) == false,
                 `regex matches '${str}'`
             );
+            result = tasks.getRegexForSSN();
         });
 
     });
@@ -138,6 +144,7 @@ describe('05-regex-tasks', function() {
                 !result.test(str),
                 `Regex matches '${str}'`
             );
+            result = tasks.getPasswordValidator(6);
         });
 
         [
@@ -151,6 +158,7 @@ describe('05-regex-tasks', function() {
                 result.test(str),
                 `Regex does not match '${str}'`
             );
+            result = tasks.getPasswordValidator(6);
         });
 
         assert(
