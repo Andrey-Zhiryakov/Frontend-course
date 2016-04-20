@@ -30,7 +30,16 @@
  *
  */
 function getFizzBuzz(num) {
-    throw new Error('Not implemented');
+    // throw new Error('Not implemented');
+    if (num % 3 === 0) {
+      if (num % 5 === 0) {
+        return 'FizzBuzz';
+      }
+      return 'Fizz';
+    } else if (num % 5 === 0) {
+      return 'Buzz';
+    }
+    return num;
 }
 
 
@@ -46,9 +55,11 @@ function getFizzBuzz(num) {
  *   10 => 3628800
  */
 function getFactorial(n) {
-    throw new Error('Not implemented');
+    // throw new Error('Not implemented');
+    for (var i = 1, fact = 1; i < n; i++, fact*=i) {}
+    return fact;
 }
-
+// console.log(getFactorial(5));
 
 /**
  * Returns the sum of integer numbers between n1 and n2 (inclusive).
@@ -63,9 +74,11 @@ function getFactorial(n) {
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
 function getSumBetweenNumbers(n1, n2) {
-    throw new Error('Not implemented');
+    // throw new Error('Not implemented');
+    for (var i = n1,sum = n1; i < n2; i++, sum+=i) {}
+    return sum;
 }
-
+// console.log(getSumBetweenNumbers(-1,1));
 
 /**
  * Returns true, if a triangle can be built with the specified sides a,b,c and false in any other ways.
@@ -82,30 +95,38 @@ function getSumBetweenNumbers(n1, n2) {
  *   10,10,10 =>  true
  */
 function isTriangle(a,b,c) {
-    throw new Error('Not implemented');
+    // throw new Error('Not implemented');
+    if (a < b+c) {
+       if (b < a+c) {
+           if (c < a+b) {
+             return true;
+           }
+        }
+    }
+    return false;
 }
-
+// console.log(isTriangle(3,4,5));
 
 /**
  * Returns true, if two specified axis-aligned rectangles overlap, otherwise false.
- * Each rectangle representing by object 
+ * Each rectangle representing by object
  *  {
  *     top: 5,
  *     left: 5,
  *     width: 20,
  *     height: 10
  *  }
- * 
+ *
  *  (5;5)
- *     -------------  
- *     |           | 
+ *     -------------
+ *     |           |
  *     |           |  height = 10
- *     ------------- 
- *        width=20    
- * 
+ *     -------------
+ *        width=20
+ *
  * NOTE: Please use canvas coordinate space (https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes#The_grid),
  * it differs from Cartesian coordinate system.
- * 
+ *
  * @param {object} rect1
  * @param {object} rect2
  * @return {bool}
@@ -113,33 +134,39 @@ function isTriangle(a,b,c) {
  * @example:
  *   { top: 0, left: 0, width: 10, height: 10 },
  *   { top: 5, left: 5, width: 20, height: 20 }    =>  true
- * 
+ *
  *   { top: 0, left: 0, width: 10, height: 10 },
  *   { top:20, left:20, width: 20, height: 20 }    =>  false
- *  
+ *
  */
 function doRectanglesOverlap(rect1, rect2) {
-    throw new Error('Not implemented');
+    // throw new Error('Not implemented');
+    if (Math.abs(rect1.top - rect2.top) < Math.max(rect1.height, rect2.height)) {
+      if (Math.abs(rect1.left - rect2.left) < Math.max(rect1.width, rect2.width)) {
+        return true;
+      }
+    }
+    return false;
 }
 
 
 /**
  * Returns true, if point lies inside the circle, otherwise false.
- * Circle is an object of 
+ * Circle is an object of
  *  {
  *     center: {
- *       x: 5,       
+ *       x: 5,
  *       y: 5
- *     },        
+ *     },
  *     radius: 20
  *  }
- * 
- * Point is object of 
+ *
+ * Point is object of
  *  {
  *     x: 5,
  *     y: 5
  *  }
- * 
+ *
  * @param {object} circle
  * @param {object} point
  * @return {bool}
@@ -147,12 +174,16 @@ function doRectanglesOverlap(rect1, rect2) {
  * @example:
  *   { center: { x:0, y:0 }, radius:10 },  { x:0, y:0 }     => true
  *   { center: { x:0, y:0 }, radius:10 },  { x:10, y:10 }   => false
- *   
+ *
  */
-function isInsideCircle(circle, point) {
-    throw new Error('Not implemented');
+function isInsideCircle(circle, point) { debugger;
+    // throw new Error('Not implemented');
+    if (((point.x - circle.center.x) * (point.x - circle.center.x) + (point.y - circle.center.y) * (point.y - circle.center.y)) < Math.pow(circle.radius,2)) {
+      return true;
+    }
+    return false;
 }
-
+// console.log(isInsideCircle({"center":{"x":5,"y":5},"radius":6},{"x":0,"y":0}));
 
 /**
  * Returns the first non repeated char in the specified strings otherwise returns null.
@@ -167,6 +198,8 @@ function isInsideCircle(circle, point) {
  */
 function findFirstSingleChar(str) {
     throw new Error('Not implemented');
+    // str = str.sort();
+
 }
 
 
@@ -192,9 +225,13 @@ function findFirstSingleChar(str) {
  *
  */
 function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
-    throw new Error('Not implemented');
+    // throw new Error('Not implemented');
+    let result = isStartIncluded ?'[' : '(';
+    result+= `${Math.min(a,b)}, ${Math.max(a,b)}`;
+    result += isEndIncluded ? ']' : ')';
+    return result;
 }
-
+// console.log(getIntervalString(1,4, 0,1));
 
 /**
  * Reverse the specified string (put all chars in reverse order)
@@ -209,9 +246,10 @@ function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
  * 'noon' => 'noon'
  */
 function reverseString(str) {
-    throw new Error('Not implemented');
+    // throw new Error('Not implemented');
+    return str.split('').reverse().join('');
 }
-
+// console.log(reverseString('qwert'));
 
 /**
  * Reverse the specified integer number (put all digits in reverse order)
@@ -226,9 +264,10 @@ function reverseString(str) {
  *   34143 => 34143
  */
 function reverseInteger(num) {
-    throw new Error('Not implemented');
+    // throw new Error('Not implemented');
+    return parseInt(num.toString().split('').reverse().join(''),10);
 }
-
+// console.log(reverseInteger(123));
 
 /**
  * Validates the CCN (credit card number) and return true if CCN is valid
@@ -293,7 +332,7 @@ function getDigitalRoot(num) {
  *   '[[][][[]]]' => true
  *   '[[][]][' => false
  *   '{)' = false
- *   '{[(<{[]}>)]}' = true 
+ *   '{[(<{[]}>)]}' = true
  */
 function isBracketsBalanced(str) {
     throw new Error('Not implemented');
