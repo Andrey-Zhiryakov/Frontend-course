@@ -97,11 +97,11 @@ function getSumBetweenNumbers(n1, n2) {
 function isTriangle(a,b,c) {
     // throw new Error('Not implemented');
     if (a < b+c) {
-       if (b < a+c) {
-           if (c < a+b) {
-             return true;
-           }
-        }
+      if (b < a+c) {
+          if (c < a+b) {
+            return true;
+          }
+      }
     }
     return false;
 }
@@ -197,11 +197,18 @@ function isInsideCircle(circle, point) { debugger;
  *   'entente' => null
  */
 function findFirstSingleChar(str) {
-    throw new Error('Not implemented');
-    // str = str.sort();
+    // throw new Error('Not implemented');
+    var result = {};
+    for (var i = 0; i < str.length; i++){
+      result[str[i]] = result[str[i]] ? result[str[i]] + 1 : 1;
+    }
+    for (var char in result){
+      if (result[char] === 1) return char;
+    }
+    return null;
 
 }
-
+// console.log(findFirstSingleChar('abracadabra'));
 
 /**
  * Returns the string representation of math interval, specified by two points and include / exclude flags.
@@ -290,9 +297,23 @@ function reverseInteger(num) {
  *   4916123456789012 => false
  */
 function isCreditCardNumber(ccn) {
-    throw new Error('Not implemented');
-}
+    // throw new Error('Not implemented');
+    var ccn = '' + ccn, sum = 0, fl, digit;
 
+    for (var i = ccn.length - 1; i >= 0; i--) {
+      digit = parseInt(ccn[i], 10);
+      if (fl) {
+          digit *= 2;
+          if (digit > 9){
+              digit = (digit % 10) + 1;
+          }
+      }
+      fl = !fl;
+      sum += digit;
+    }
+    return (sum % 10 === 0);
+}
+// console.log(isCreditCardNumber(4916123456789012));
 
 /**
  * Returns the digital root of integer:
@@ -309,9 +330,21 @@ function isCreditCardNumber(ccn) {
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
 function getDigitalRoot(num) {
-    throw new Error('Not implemented');
+    // throw new Error('Not implemented');
+    let result = 0;
+    while (true) {
+      num = num.toString().split('');
+      for (var digit of num) {
+        result+=+digit;
+      }
+      if (result <= 9) {
+        return result;
+      }
+      num = result;
+      result = 0;
+    }
 }
-
+// console.log(getDigitalRoot(12345));
 
 /**
  * Returns true if the specified string has the balanced brackets and false otherwise.
@@ -335,9 +368,25 @@ function getDigitalRoot(num) {
  *   '{[(<{[]}>)]}' = true
  */
 function isBracketsBalanced(str) {
-    throw new Error('Not implemented');
-}
+    // throw new Error('Not implemented');
+    var mask = "[]{}()<>",
+      result = [], char, bracket;
 
+    for(var i = 0; str[i], char = str[i]; i++) {
+      bracket = mask.indexOf(char);
+      if (bracket >= 0) {
+        if(bracket % 2 === 0) {
+          result.push(bracket + 1);
+        } else {
+          if(result.pop() !== bracket) {
+              return false;
+          }
+      }
+    }
+  }
+  return result.length === 0;
+}
+// console.log(isBracketsBalanced('{[(<{[]}>)]}'));
 
 /**
  * Returns the human readable string of time period specified by the start and end time.
@@ -395,7 +444,8 @@ function timespanToHumanString(startDate, endDate) {
  *    365, 10 => '365'
  */
 function toNaryString(num, n) {
-    throw new Error('Not implemented');
+    // throw new Error('Not implemented');
+    return num.toString(n);
 }
 
 
@@ -435,9 +485,24 @@ function getCommonDirectoryPath(pathes) {
  *
  */
 function getMatrixProduct(m1, m2) {
-    throw new Error('Not implemented');
-}
+    // throw new Error('Not implemented');
+    var m1RowCount = m1.length, m1colCount = m1[0].length,
+    m2ColCount = m2[0].length, result = new Array(m1RowCount);
 
+    for (var i = 0; i < m1RowCount; ++i) {
+      result[i] = new Array(m2ColCount);
+
+      for (var j = 0; j < m2ColCount; ++j) {
+        result[i][j] = 0;
+
+        for (var k = 0; k < m1colCount; ++k) {
+            result[i][j] += m1[i][k] * m2[k][j];
+        }
+      }
+    }
+    return result;
+}
+// console.log(getMatrixProduct([[1,2,3]], [[4],[5],[6]]));
 
 /**
  * Returns the evaluation of the specified tic-tac-toe position.
