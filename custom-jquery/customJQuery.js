@@ -7,10 +7,11 @@
   }
 
   var JQuery = function(selector) {
-    if (this === window)  //if this call is from document
-      return new JQuery(selector);  //we make new jquery object
-
-    if (type(selector) === 'string') { //if this selector is simple css selector
+    if (!(this instanceof JQuery)){  //if this call is from document, we make a new instance of jQuery object
+      return new JQuery(selector);
+    } //we make new jquery object
+    if (this instanceof JQuery) {  //if this call as constructor
+    if (typeof selector === 'string') { //if this selector is simple css selector
       var result = document.querySelectorAll(selector);
 
       if (result.length > 0) {
@@ -21,18 +22,18 @@
     } else if (typeof selector === 'object') { //if this selector is node from previous function execution
         this.selectedNodes = selector;  //we store this node as selected
       }
+    }
   }
 
   //check on Node.js/browser
-  typeof window !== 'undefined' ?
-     window.$ = JQuery:
-     global.$ = JQuery;
+  // typeof window !== 'undefined' ?
+     window.$ = JQuery;
+    //  global.$ = JQuery;
 
   JQuery.prototype.each = function(func) {
     if (type(func) === 'function') {  //check on function, if this isn't function, we cannot do 'each'
       var nodes = this.selectedNodes;
       if (nodes) {
-
         for (var i = 0; i < nodes.length; i++) {
           if (func.call(nodes[i], i, nodes[i]) === false) { // we call function with assigning node as 'this'
             break;
@@ -48,16 +49,32 @@
 
   };
 
-  JQuery.prototype.append = function() {
-
+  JQuery.prototype.append = function(value) {
+    switch (typeof value) {
+      case 'string':
+        this.each(function() {
+          var oldText = $(this).html();
+          $(this).html(oldText + value);
+        });
+        break;
+      case 'object':
+      this.each(function(index, node) {
+        node.appendChild(value.cloneNode(true));
+      });
+        break;
+    }
+    return this;
   };
 
   JQuery.prototype.html = function(value) {
     var nodes = this.selectedNodes;
-
     if (nodes) {
       if (arguments.length === 0) { //if we haven't got arguments, we return html content of the first element in collection
-        return nodes[0].innerHTML;
+      if (nodes.length) {
+        return nodes[0].innerHTML; //this if 'nodes' have more than 1 element
+      } else {
+        return nodes.innerHTML; // this if 'nodes' is a single element
+      }
       }
 
       switch (type(value)) {
