@@ -171,8 +171,20 @@
     return this;
   };
 
-  JQuery.prototype.children = function() {
+  JQuery.prototype.children = function(value) {
+    if (arguments.length === 0) {
+      if (this.selectedNodes.length) {
+        return this.selectedNodes[0].children; // we return children of the first matched node
+      } else {
+        return this.selectedNodes.children; // this if metod has been called from '$(this)'
+      }
+    }
+    var children = [];  //array of children nodes accepted by selector
+    this.each(function(ind, node) { //we iterate each node of matched ...
+      children = children.concat([].slice.call(node.querySelectorAll(value))); //... and match children nodes by 'querySelectorAll'
+    });
 
+    return children;
   };
 
   JQuery.prototype.css = function() {
