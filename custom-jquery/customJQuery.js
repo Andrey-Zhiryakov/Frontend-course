@@ -25,7 +25,7 @@
     }
   }
 
-  window.$ = JQuery; // add jQuery variable to global window object
+  window.$ = JQuery; // add jQuery variable to global object 'window'
 
   JQuery.prototype.each = function(func) {
     if (type(func) === 'function') {  //check on function, if this isn't function, we cannot do 'each'
@@ -173,12 +173,16 @@
 
   JQuery.prototype.children = function(value) {
     if (arguments.length === 0) {
-      if (this.selectedNodes.length) {
-        return this.selectedNodes[0].children; // we return children of the first matched node
-      } else {
-        return this.selectedNodes.children; // this if metod has been called from '$(this)'
+      if (this.selectedNodes) { //check for matched nodes, if no nodes matched, return empty array in order don't get an error
+        if (this.selectedNodes.length) {
+          return this.selectedNodes[0].children; // we return children of the first matched node
+        } else {
+          return this.selectedNodes.children; // this if metod has been called from '$(this)'
+        }
       }
+      return [];
     }
+
     var children = [];  //array of children nodes accepted by selector
     this.each(function(ind, node) { //we iterate each node of matched ...
       children = children.concat([].slice.call(node.querySelectorAll(value))); //... and match children nodes by 'querySelectorAll'
@@ -187,8 +191,30 @@
     return children;
   };
 
-  JQuery.prototype.css = function() {
+  JQuery.prototype.css = function(value) {
+    if (arguments.length === 0) {
+      return this;
+    }
+    if (this.selectedNodes) { //check for matched nodes, if no nodes matched, return 'this' in order don't get an error
+      switch (type(value)) {
+        case 'string':  //if we gen a string value, then we must return property value
+          if (this.selectedNodes.length > 0) {  // if matched nodes, then return property value of first matched element
+            return this.selectedNodes[0].style[value];
+          } else {
+            return this.selectedNodes.style[value]; //if method was called by '$(this)', and 'selectedNode' is a single element
+          }
+          break;
+        case 'object':  //if we get on object, then we must set properties to all matched nodes
+          this.each(function (ind, node) {
+            for (var item in value) {
+              node.style[item] = value[item].toString(); //set value to style property as string value
+            }
+          });
+          break;
+      }
+    }
 
+    return this;
   };
 
   JQuery.prototype.data = function() {
