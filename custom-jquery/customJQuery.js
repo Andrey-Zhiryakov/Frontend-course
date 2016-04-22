@@ -25,10 +25,7 @@
     }
   }
 
-  //check on Node.js/browser
-  // typeof window !== 'undefined' ?
-     window.$ = JQuery;
-    //  global.$ = JQuery;
+  window.$ = JQuery; // add jQuery variable to global window object
 
   JQuery.prototype.each = function(func) {
     if (type(func) === 'function') {  //check on function, if this isn't function, we cannot do 'each'
@@ -45,8 +42,48 @@
     return this;
   };
 
-  JQuery.prototype.addClass = function() {
+  JQuery.prototype.addClass = function(value) {
+    if (!arguments.length) {
+      return this;
+    }
 
+    var nodes = this.selectedNodes, classesArray;
+
+    var addClassFunc = function(index,node) { //function that iterate classes
+      for (var i = 0; i < classesArray.length; i++) {
+          node.classList.add(classesArray[i]);
+      }
+    };
+
+    switch (type(value)) {
+      case 'string':    //if we get a string to add to nodes
+        classesArray = value.split(' '); //make array for easier operating
+
+        if (nodes.length > 1) { //if selected nodes more than one, we call 'each' function for iterate nodes
+          this.each(addClassFunc);
+        } else if (nodes.length === 1) {  //if we have one selected node
+          addClassFunc(0,nodes[0]);
+        }
+        break;
+      case 'function': //if we get a function to process class names
+        if (nodes.length > 1) {
+          this.each(function(index, node){
+            var result = value.call(node, index, [].join.call(node.classList, ' '));  //we call received function
+            if (type(result)=== 'string') {
+              classesArray = result.split(' ');
+              addClassFunc(index, node);
+            }
+
+          });
+        } else if (nodes.length === 1) {
+          result = value.call(nodes[0], 0, [].join.call(nodes[0].classList, ' '));
+          if (type(result)=== 'string') {
+            classesArray = result.split(' ');
+            addClassFunc(0,nodes[0]);
+          }
+        }
+        break;
+    }
   };
 
   JQuery.prototype.append = function(value) {
@@ -100,7 +137,7 @@
               }
             }
           } else { // if 'nodes' is single element form jquery object with 'this' selector
-            var result = value.call(nodes, -1, (function(){var oldHTML = nodes.innerHTML; return oldHTML;})()); //I made the self-calling function for save old condition of html content of node
+            var result = value.call(nodes, -1, (function(){var oldHTML = nodes.innerHTML; return oldHTML;})()); //I made the self-calling function for save old condition of the html content of the node
 
             if (result && type(result) === 'string') {
               nodes.innerHTML = result;
@@ -113,8 +150,25 @@
     return this;
   };
 
-  JQuery.prototype.attr = function() {
+  JQuery.prototype.attr = function(attrName, value) {
+    if (arguments.length === 0) {
+      return this;
+    }
+    if (arguments.length === 1) { //return attribute of first matched node
+      return this.selectedNodes[0].getAttribute(attrName);
+    }
 
+    if (this.selectedNodes.length > 1) {  // if more than one matched node, we call 'each' method
+      this.each(function(index, node) {
+        node.setAttribute(attrName, value); //set attributes to all matched nodes
+      });
+    } else if (this.selectedNodes.length === 1) { // if only one matched node
+      this.selectedNodes[0].setAttribute(attrName, value);
+    } else {
+      this.selectedNodes.setAttribute(attrName, value); // this if metod has been called from '$(this)'
+    }
+
+    return this;
   };
 
   JQuery.prototype.children = function() {
