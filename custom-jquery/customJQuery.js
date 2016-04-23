@@ -20,7 +20,11 @@
         this.selectedNodes = null;
       }
     } else if (typeof selector === 'object') { //if this selector is node from previous function execution
-        this.selectedNodes = selector;  //we store this node as selected
+        if (selector instanceof JQuery) { // if we get a JQuery object
+          this.selectedNodes = selector.selectedNodes;
+        } else {  // if we get a single HTML DOM node
+          this.selectedNodes = selector;  //we store this node as selected
+        }
       }
     }
   }
@@ -30,11 +34,15 @@
   JQuery.prototype.each = function(func) {
     if (type(func) === 'function') {  //check on function, if this isn't function, we cannot do 'each'
       var nodes = this.selectedNodes;
-      if (nodes) {
-        for (var i = 0; i < nodes.length; i++) {
-          if (func.call(nodes[i], i, nodes[i]) === false) { // we call function with assigning node as 'this'
-            break;
+      if (nodes) {  //if we have some matched nodes
+        if (nodes.length) { // if we have some matched nodes
+          for (var i = 0; i < nodes.length; i++) {
+            if (func.call(nodes[i], i, nodes[i]) === false) { // we call function with assigning node as 'this' for each node
+              break;
+            }
           }
+        } else {  //if we have single matched node that is DOM Element
+          func.call(nodes, i, nodes);
         }
       }
     }
@@ -43,63 +51,70 @@
   };
 
   JQuery.prototype.addClass = function(value) {
-    if (!arguments.length) {
-      return this;
+    if (!arguments.length) {  //if we didn't receive arguments, we cannot return anything
+      return this;  //..and return JQuery object
     }
 
-    var nodes = this.selectedNodes, classesArray;
+    if (this.selectedNodes) { // if we have some matched nodes
+      var nodes = this.selectedNodes, classesArray;
 
-    var addClassFunc = function(index,node) { //function that iterate classes
-      for (var i = 0; i < classesArray.length; i++) {
+      var addClassFunc = function(index,node) { //function that iterate classes
+        for (var i = 0; i < classesArray.length; i++) {
           node.classList.add(classesArray[i]);
-      }
-    };
+        }
+      };
 
-    switch (type(value)) {
-      case 'string':    //if we get a string to add to nodes
+      switch (type(value)) {
+        case 'string':    //if we get a string to add to nodes
         classesArray = value.split(' '); //make array for easier operating
 
         if (nodes.length > 1) { //if selected nodes more than one, we call 'each' function for iterate nodes
           this.each(addClassFunc);
         } else if (nodes.length === 1) {  //if we have one selected node
           addClassFunc(0,nodes[0]);
+        } else {
+          addClassFunc(0,nodes); //if we have DOM object node
         }
         break;
-      case 'function': //if we get a function to process class names
-        if (nodes.length > 1) {
-          this.each(function(index, node){
-            var result = value.call(node, index, [].join.call(node.classList, ' '));  //we call received function
-            if (type(result)=== 'string') {
-              classesArray = result.split(' ');
-              addClassFunc(index, node);
-            }
-
-          });
-        } else if (nodes.length === 1) {
-          result = value.call(nodes[0], 0, [].join.call(nodes[0].classList, ' '));
-          if (type(result)=== 'string') {
-            classesArray = result.split(' ');
-            addClassFunc(0,nodes[0]);
+        case 'function': //if we get a function to process class names
+        var addClass = function(ind, node) {  //function that call received function with current node and classlist
+          result = value.call(node, ind, node.classList.toString());
+          if (type(result) === 'string') { //if we receive result as string, we call 'addClassFunc' to add class/classes to current node
+            classesArray = result.split(' '); //make array of classes
+            addClassFunc(ind,node);
           }
         }
+        if (nodes.length > 1) { // if we have some matched nodes
+          this.each(function(index, node){
+            addClass(index, node);
+          });
+        } else if (nodes.length === 1) { // if we have single matched node
+            addClass(0, nodes[0]);
+          } else {    //if we have single DOM object node
+            addClass(0, nodes);
+          }
         break;
+      }
     }
+
+    return this;
   };
 
   JQuery.prototype.append = function(value) {
     switch (typeof value) {
-      case 'string':
+      case 'string':  //if we got a string value, we append element through innerHTML property of Element
         this.each(function() {
-          var oldText = $(this).html();
-          $(this).html(oldText + value);
+          var currentText = $(this).html(); //save current text of matched node
+          $(this).html(currentText + value);  //append child element
         });
         break;
-      case 'object':
+      case 'object':  //if we got complete object, we just append it to each matched node
       this.each(function(index, node) {
         node.appendChild(value.cloneNode(true));
       });
         break;
     }
+
     return this;
   };
 
@@ -151,7 +166,7 @@
   };
 
   JQuery.prototype.attr = function(attrName, value) {
-    if (arguments.length === 0) {
+    if (arguments.length === 0) { //if we didn't receive arguments, we cannot add attributes
       return this;
     }
     if (arguments.length === 1) { //return attribute of first matched node
