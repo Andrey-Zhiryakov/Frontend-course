@@ -217,15 +217,106 @@
     return this;
   };
 
-  JQuery.prototype.data = function() {
+  JQuery.prototype.data = function(dataName, value) {
+    if (this.selectedNodes) { // if we have matched nodes
 
+      var nodes = this.selectedNodes;
+      var returnValue = function(val) {
+        if (nodes.length > 0) {   //check of single node
+          return val ? nodes[0].dataset[val] : Object.assign({}, nodes[0].dataset);  //if we have data attribute name, return value, otherwise return dataset
+        } else {
+          return val ? nodes.dataset[val] : Object.assign({}, nodes.dataset);   //if we have data attribute name, return value, otherwise return dataset
+        }
+      }
+
+      if (!dataName) {  // if we don't have name of data attribute, return all dataset
+        return returnValue();
+      } else {
+        switch (type(dataName)) {
+          case 'string':  //if we get attribute as string
+            if (!value) {
+              return returnValue(dataName);  //no value received, so we return current value
+            } else {
+              this.each(function(ind, node) { // else set value to all matched nodes
+                node.dataset[dataName] = value;
+              });
+            }
+            break;
+          case 'object':
+            this.each(function(ind, node) {  //if we receive an object with data items, we set each item to all matched nodes
+              for (item in dataName) {
+                node.dataset[item] = dataName[item];
+              }
+            });
+            break;
+        }
+      }
+    }
+
+    return this;
   };
 
-  JQuery.prototype.on = function() {
+  JQuery.prototype.on = function(event/*, selector, callback*/) {
+    if (arguments.length < 2) {
+      return this;  //if we get less than 2 arguments, we cannot set event listener
+    }
 
+    if (this.selectedNodes) {   // if we have some matched nodes
+      var callbackFunc, selector;
+      if (arguments.length === 3) { // if we receive selector for dalegate callback
+        selector = arguments[1];
+        callbackFunc = arguments[2];
+
+
+      var delegate = function(e) {    //delegate function
+        if ([].slice.call(this.querySelectorAll(selector)).indexOf(e.target) > -1) { //if event target matches to selector
+          callbackFunc(e);  //we call callback function
+        }
+      }
+    }
+
+      if (this.selectedNodes.length > 0) {    //check of single node, if function was called from '$(this)'
+        if (arguments.length ===2) {  //if we didn't receive selector, we set callback function, otherwise we set delegate functiom
+          this.selectedNodes[0].addEventListener(event, arguments[1]);
+        } else {
+          this.selectedNodes[0].addEventListener(event, delegate);
+        }
+      } else {
+        if (arguments.length ===2) {  //if we didn't receive selector, we set callback function, otherwise we set delegate functiom
+          this.selectedNodes.addEventListener(event, arguments[1]);
+        } else {
+          this.selectedNodes.addEventListener(event, delegate);
+        }
+      }
+    }
   };
 
-  JQuery.prototype.one = function() {
+  JQuery.prototype.one = function(event, callback) {
+    if (arguments.length < 2) {
+      return this;   //if we get less than 2 arguments, we cannot set event listener
+    }
+    if (this.selectedNodes) {   // if we have some matched nodes
+      var eventNode;
 
+      if (this.selectedNodes.length > 0) {  //check for single node
+        eventNode = this.selectedNodes[0];
+      } else {
+        eventNode = this.selectedNodes;
+      }
+
+      // this.on(event,  function(e){  // this is the first variant of one-time call function
+      //     eventNode.removeEventListener(e.type, arguments.callee);
+      //     return callback.call(that, e);
+      //   });
+
+      this.on(event,function(){  // this is the second variant of one-time call function, made with closure
+        var callFunc = function(e){
+            eventNode.removeEventListener(e.type, callFunc); //at first we remove event listener
+            return callback.call(eventNode, e); // ...and call our callback function
+          };
+
+          return callFunc;
+      }());
+    }
   };
 })();
