@@ -54,7 +54,7 @@
     if (!arguments.length) {  //if we didn't receive arguments, we cannot return anything
       return this;  //..and return JQuery object
     }
-
+debugger;
     if (this.selectedNodes) { // if we have some matched nodes
       var nodes = this.selectedNodes, classesArray;
 
@@ -108,10 +108,18 @@
           $(this).html(currentText + value);  //append child element
         });
         break;
-      case 'object':  //if we got complete object, we just append it to each matched node
-      this.each(function(index, node) {
-        node.appendChild(value.cloneNode(true));
-      });
+      case 'object':
+      if (!(value instanceof JQuery)) { //if we got complete object, we just append it to each matched node
+        this.each(function(index, node) {
+          node.appendChild(value.cloneNode(true));
+        });
+      } else {  //if we got anything like '$(selector)'
+        this.each(function(index, node) {
+          value.each(function(ind, _node) { //iterate each matched node to append
+            node.appendChild(_node.cloneNode(true));
+          });
+        });
+      }
         break;
     }
 
