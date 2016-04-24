@@ -132,3 +132,6 @@ main .container {
     border-radius: 4px;
     height: 500px;
 }
+ul > li.active:before {
+  border-bottom-color: #fb6362;
+}
