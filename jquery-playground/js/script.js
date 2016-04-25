@@ -1,10 +1,11 @@
 $(document).ready(function(){
-  var tabsContent = [{'index': 0, 'title':'One', 'content':'', 'date': '', 'img': null},
-                     {'index': 1, 'title':'Two', 'content':'some content of tab Two', 'date': '', 'img': null},
-                     {'index': 2, 'title':'Three', 'content':'What\'s up?', 'date': '', 'img': null},
-                     {'index': 3, 'title':'Four', 'content':'This is uniqe content!', 'date': '', 'img': null}];
-
-  tabsContent[0].content = $('.container').html();
+  var tabsContent = new WeakMap(), tabsContentSize = 0;
+  var tabs = $('.tab');
+  tabsContent.set(tabs[0] , {'content':$('.container').html(), 'date': '', 'img': null})
+  .set(tabs[1] , {'content':'some content of tab Two', 'date': '', 'img': null})
+  .set(tabs[2] , {'content':'What\'s up?', 'date': '', 'img': null})
+  .set(tabs[3] , {'content':'This is uniqe content!', 'date': '', 'img': null});
+  tabsContentSize+=4;
 
   window.s = function(){  //just for debug
     return tabsContent;
@@ -19,13 +20,14 @@ $(document).ready(function(){
     $.simplyToast(message, type, {appendTo: 'aside', offset : {'from':'bottom'}});
   }
 
+  //tabs event handler
   $('.tabs').on('click', function(e){
     return function(e){
       $('.tab').each(function(ind, el){
         $(this).removeClass('active');
         if (el === e.target) {
-          $('.container').html(tabsContent[ind].content);
           $(this).addClass('active');
+          $('.container').html(tabsContent.get(e.target).content);
         }
       });
     };
@@ -49,7 +51,21 @@ $(document).ready(function(){
         return;
       }
 
-      asideAddMsg('success', 'Everything is OK!');
+      var index = $('#text').val();
+      var title = $('#title').val();
+      var content = $('#html').val();
+      var item = $('.tab:first').clone();
+
+      if (index > tabsContentSize-1) {
+        item.appendTo('.tabs').text(title).removeClass('active');
+      } else {
+        item.insertBefore($('.tab').get(index)).text(title).removeClass('active');
+      }
+      tabsContentSize++;
+      tabsContent.set(item[0], {'content': content, 'date' : '', 'img' : null});
+
+
+      asideAddMsg('success', 'Tab successfully added!');
     };
   }());
 
