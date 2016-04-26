@@ -62,7 +62,7 @@ aside label[for=html] {
 }
 aside input,
 aside textarea {
-    color: rgb(153, 153, 153);;
+    color: rgb(153, 153, 153);
     padding: 5px 10px;
     outline: 0;
     border-color: transparent;
@@ -86,12 +86,14 @@ main .tabs {
     margin-bottom: 0;
     padding-left: 0;
     position: relative;
+    font-size: 0;
     left: 3px;
     top: 2px;
 }
 main .tab {
     display: inline-block;
     position: relative;
+    margin-right: -16px;
     padding: 0 20px;
     box-sizing: border-box;
     width: 95px;
@@ -116,7 +118,7 @@ main .tab:before {
     height: 0;
     width: 67px;
 }
-main .tab:first-child {
+/*main .tab:first-child {
     left: 0;
 }
 main .tab:nth-child(2) {
@@ -130,7 +132,7 @@ main .tab:nth-child(4) {
 }
 main .tab:nth-child(5) {
     left: -56px;
-}
+}*/
 main .container {
     background-color: white;
     border: 2px solid rgb(64, 74, 88);
