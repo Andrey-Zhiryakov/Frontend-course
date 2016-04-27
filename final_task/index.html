@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/normalize.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
+  <title>Final task</title>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="main-header">
+      <div class="header-top clearfix">
+        <div class="logo">
+          <a href="#">
+            <img src="img/logo.png" alt="National geographic logo image">
+          </a>
+        </div>
+        <div class="header-controls">
+          <div class="search-box box top-box-sprite">
+            <form class="search-form clearfix" action="index.html" method="post">
+              <input type="text" name="name" placeholder="Search" class="search-input">
+              <a href="#" class="categoriess-button misc-sprite">
+                <span>All categories</span>
+                <!--  I paste dropdown-menu into <a> only for example -->
+                <div class="dropdown-menu box">
+                  <input type="checkbox" name="select-all" value="" id="select-all">
+                  <label class="cb-label middle-text misc-sprite" for="select-all">Select all categories to search</label>
+                  <ul class="categories-1">
+                    <li>
+                      <input type="checkbox" id="Videos" name="name" value="">
+                      <label for="Videos" class="category box misc-sprite middle-text">Videos</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="Photography" name="name" value="">
+                      <label for="Photography" class="category box misc-sprite middle-text">Photography</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="Animals" name="name" value="">
+                      <label for="Animals" class="category box misc-sprite middle-text">Animals</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="Games" name="name" value="">
+                      <label for="Games" class="category box misc-sprite middle-text">Games</label>
+                    </li>
+                  </ul>
+                  <ul class="categories-2">
+                    <li>
+                      <input type="checkbox" id="Environment" name="name" value="">
+                      <label for="Environment" class="category box misc-sprite middle-text">Environment</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="Travel" name="name" value="">
+                      <label for="Travel" class="category box misc-sprite middle-text">Travel</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="Kids" name="name" value="">
+                      <label for="Kids" class="category box misc-sprite middle-text">Kids</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="Adventurer" name="name" value="">
+                      <label for="Adventurer" class="category box misc-sprite middle-text">Adventurer</label>
+                    </li>
+                  </ul>
+                  <ul class="categories-3">
+                    <li>
+                      <input type="checkbox" id="Television" name="name" value="">
+                      <label for="Television" class="category box misc-sprite middle-text">Television</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="Apps" name="name" value="">
+                      <label for="Apps" class="category box misc-sprite middle-text">Apps</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="Events" name="name" value="">
+                      <label for="Events" class="category box misc-sprite middle-text">Events</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="Trips" name="name" value="">
+                      <label for="Trips" class="category box misc-sprite middle-text">Trips</label>
+                    </li>
+                  </ul>
+                </div>
+              </a>
+              <button type="button" name="search" class="go-button top-box-sprite"></button>
+            </form>
+          </div>
+          <div class="account-box box">
+            <a href="" class="account-button sign-up bottom-text top-box-sprite">
+              Sign Up
+            </a>
+            <div class="vertical-separator"></div>
+            <a href="#" class="account-button login bottom-text top-box-sprite">
+              Login
+            </a>
+          </div>
+        </div>
+      </div>
+      <nav class="header-nav">
+        <ul class="header-nav-list">
+          <li class="header-nav-item"><a href="#" class="link1 menu-sprite bottom-text">Home</a></li>
+          <li class="header-nav-item"><a href="#" class="link2 menu-sprite bottom-text">Photography</a></li>
+          <li class="header-nav-item"><a href="#" class="link3 menu-sprite bottom-text">Video</a></li>
+          <li class="header-nav-item"><a href="#" class="link4 menu-sprite bottom-text">Environment</a></li>
+          <li class="header-nav-item"><a href="#" class="link5 menu-sprite bottom-text">Travel</a></li>
+          <li class="header-nav-item"><a href="#" class="link6 menu-sprite bottom-text">Adventure</a></li>
+          <li class="header-nav-item"><a href="#" class="link7 menu-sprite bottom-text">Television</a></li>
+          <li class="header-nav-item"><a href="#" class="link8 menu-sprite bottom-text">Kids</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main role="main">
+      <section class="main-content clearfix">
+        <section class="content">
+          <section class="top-block clearfix">
+            <nav class="content-nav">
+              <ul class="vertical-nav">
+                <li class="vertical-nav-item"><a href="#" class="box daily-news left-menu-sprite bottom-text">Daily News</a></li>
+                <li class="vertical-nav-item"><a href="#" class="box magazine left-menu-sprite bottom-text">Magazine</a></li>
+                <li class="vertical-nav-item"><a href="#" class="box maps left-menu-sprite bottom-text">Maps</a></li>
+                <li class="vertical-nav-item"><a href="#" class="box sciense left-menu-sprite bottom-text">Sciense</a></li>
+                <li class="vertical-nav-item"><a href="#" class="box education left-menu-sprite bottom-text">Education</a></li>
+                <li class="vertical-nav-item"><a href="#" class="box games left-menu-sprite bottom-text">Games</a></li>
+                <li class="vertical-nav-item"><a href="#" class="box events left-menu-sprite bottom-text">Events</a></li>
+                <li class="vertical-nav-item"><a href="#" class="box blogs left-menu-sprite bottom-text">Blogs</a></li>
+                <li class="vertical-nav-item"><a href="#" class="box explorers left-menu-sprite bottom-text">Explorers</a></li>
+                <li class="vertical-nav-item"><a href="#" class="box trips left-menu-sprite bottom-text">Trips</a></li>
+              </ul>
+          </nav>
+            <div class="slider-block">
+              <ul class="slider-nav">
+                <li class="box"><a href="#" class="slider-link middle-text">Home</a></li>
+                <li class="box"><a href="#" class="slider-link middle-text">Animals</a></li>
+                <li class="box"><a href="#" class="slider-link middle-text">Ancient</a></li>
+                <li class="box"><a href="#" class="slider-link middle-text">Energy</a></li>
+                <li class="box"><a href="#" class="slider-link middle-text">Environment</a></li>
+                <li class="box"><a href="#" class="slider-link middle-text">Travel</a></li>
+              </ul>
+              <div class="slider box">
+                <img src="img/wild-cats.jpg" class="slider-img" alt="young lions" />
+                <div class="toggle-box">
+                  <input type="radio" class="toggle-radio" id="toggle1-1" name="toggle1" checked>
+                  <input type="radio" class="toggle-radio" id="toggle1-2" name="toggle1">
+                  <input type="radio" class="toggle-radio" id="toggle1-3" name="toggle1">
+                  <ul class="toggle">
+                    <li class="middle-text"><label for="toggle1-1">1</label></li>
+                    <li class="middle-text"><label for="toggle1-2">2</label></li>
+                    <li class="middle-text"><label for="toggle1-3">3</label></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="slider-footer box clearfix">
+                <div class="play-button-box">
+                  <a href="#" class="play-button misc-sprite"></a>
+                </div>
+                <h4 class="caption">Lion Cubs Playing</h4>
+                <span class="description">African lion cubs play in the grass in the Okavango Delta.</span>
+              </div>
+              <div class="content-header header-box">
+                <div class="menu-box"></div>
+                <div class="toggle-box">
+                  <input type="radio" class="toggle-radio" id="toggle2-1" name="toggle2" checked>
+                  <input type="radio" class="toggle-radio" id="toggle2-2" name="toggle2">
+                  <ul class="toggle">
+                    <li class="middle-text"><label for="toggle2-1" class="content-header-toggle toggle-list misc-sprite"></label></li>
+                    <li class="middle-text"><label for="toggle2-2" class="content-header-toggle toggle-grid misc-sprite"></label></li>
+                  </ul>
+                </div>
+                <a href="#" class="lastest-news inset-button">Latest News</a>
+                <a href="#" class="most-recent misc-sprite">Most Recent</a>
+                <div class="sort-menu box">
+                  <ul class="sort-menu-list">
+                    <li><a href="#" class="middle-text">Most Viewd</a></li>
+                    <li><a href="#" class="middle-text">Most Recent</a></li>
+                    <li><a href="#" class="middle-text">Most Discussed</a></li>
+                    <li><a href="#" class="middle-text">Most Rated</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="preview-block clearfix">
+            <div class="large-preview box">
+              <div class="preview-text-outside clearfix">
+                <a href="#" class="page-link misc-sprite"></a>
+                <img src="img/lion.jpg" class="picture" alt="young lion">
+                <div class="left-side">
+                  <h5>African Lion Cub</h5>
+                  <span class="timestamp">3 hours ago</span>
+                </div>
+                <div class="right-side clearfix">
+                  <span class="starRating">
+                    <input id="rating1-5" type="radio" name="rating1" value="5">
+                    <label for="rating1-5">5</label>
+                    <input id="rating1-4" type="radio" name="rating1" value="4" checked>
+                    <label for="rating1-4">4</label>
+                    <input id="rating1-3" type="radio" name="rating1" value="3">
+                    <label for="rating1-3">3</label>
+                    <input id="rating1-2" type="radio" name="rating1" value="2">
+                    <label for="rating1-2">2</label>
+                    <input id="rating1-1" type="radio" name="rating1" value="1">
+                    <label for="rating1-1">1</label>
+                  </span>
+                  <span class="vote-count">1,291 votes</span>
+                </div>
+              </div>
+              <p class="preview-description">An African lion cub rests in the tall grasses of Botswana’s Okavango Delta. Once ranging across the African continent and into Syria, Israel, Iraq, Pakistan, Iran, and even northwest India, lions have declined to as few as 20,000 animals from about 450,000 just 50 years ago.</p>
+            </div>
+            <div class="large-preview box">
+              <div class="preview-text-outside clearfix">
+                <a href="#" class="page-link misc-sprite"></a>
+                <img src="img/gorilla.jpg" class="picture" alt="young lion">
+                <div class="left-side">
+                  <h5>Young Mountain Gorilla</h5>
+                  <span class="timestamp">5 hours ago</span>
+                </div>
+                <div class="right-side clearfix">
+                  <span class="starRating">
+                    <input id="rating2-5" type="radio" name="rating2" value="5">
+                    <label for="rating2-5">5</label>
+                    <input id="rating2-4" type="radio" name="rating2" value="4">
+                    <label for="rating2-4">4</label>
+                    <input id="rating2-3" type="radio" name="rating2" value="3" checked>
+                    <label for="rating2-3">3</label>
+                    <input id="rating2-2" type="radio" name="rating2" value="2">
+                    <label for="rating2-2">2</label>
+                    <input id="rating2-1" type="radio" name="rating2" value="1">
+                    <label for="rating2-1">1</label>
+                  </span>
+                  <span class="vote-count">681 votes</span>
+                </div>
+              </div>
+              <p class="preview-description">This young mountain gorilla, named Kwibesha, is a member of the Kabrizi family of gorillas in Virunga National Park. Wildlife rangers in the park have had to suspend their monitoring of the gorillas because rebel militias and the Congolese army occupy much of their habitat.</p>
+            </div>
+            <div class="large-preview box">
+              <div class="preview-text-outside clearfix">
+                <a href="#" class="page-link misc-sprite"></a>
+                <img src="img/penguins.jpg" class="picture" alt="young lion">
+                <div class="left-side">
+                  <h5>King Penguins</h5>
+                  <span class="timestamp">8 hours ago</span>
+                </div>
+                <div class="right-side clearfix">
+                  <span class="starRating">
+                    <input id="rating3-5" type="radio" name="rating3" value="5">
+                    <label for="rating3-5">5</label>
+                    <input id="rating3-4" type="radio" name="rating3" value="4">
+                    <label for="rating3-4">4</label>
+                    <input id="rating3-3" type="radio" name="rating3" value="3">
+                    <label for="rating3-3">3</label>
+                    <input id="rating3-2" type="radio" name="rating3" value="2" checked>
+                    <label for="rating3-2">2</label>
+                    <input id="rating3-1" type="radio" name="rating3" value="1">
+                    <label for="rating3-1">1</label>
+                  </span>
+                  <span class="vote-count">681 votes</span>
+                </div>
+              </div>
+              <p class="preview-description">King penguins live on the more temperate islands north of Antarctica. Although their habitat is warmer than that of emperor penguins, king penguins have four layers of feathers and huddle together for warmth.</p>
+            </div>
+            <div class="large-preview box">
+              <div class="preview-text-outside clearfix">
+                <a href="#" class="page-link misc-sprite"></a>
+                <img src="img/shark.jpg" class="picture" alt="young lion">
+                <div class="left-side">
+                  <h5>Great White Shark</h5>
+                  <span class="timestamp">1 day ago</span>
+                </div>
+                <div class="right-side clearfix">
+                  <span class="starRating">
+                    <input id="rating4-5" type="radio" name="rating4" value="5" checked>
+                    <label for="rating4-5">5</label>
+                    <input id="rating4-4" type="radio" name="rating4" value="4">
+                    <label for="rating4-4">4</label>
+                    <input id="rating4-3" type="radio" name="rating4" value="3">
+                    <label for="rating4-3">3</label>
+                    <input id="rating4-2" type="radio" name="rating4" value="2">
+                    <label for="rating4-2">2</label>
+                    <input id="rating4-1" type="radio" name="rating4" value="1">
+                    <label for="rating4-1">1</label>
+                  </span>
+                  <span class="vote-count">2,827 votes</span>
+                </div>
+              </div>
+              <p class="preview-description">The legendary great white shark is far more fearsome in our imaginations than in reality. As scientific research on these elusive predators increases, their image as mindless killing machines is beginning to fade.</p>
+            </div>
+          </section>
+        </section>
+        <section class="news-and-events">
+          <aside class="right-aside">
+            <div class="most-popular-news header-box">
+              <a href="#" class="button inset-button misc-sprite">Most Popular News</a>
+            </div>
+            <div class="preview-text-outside clearfix">
+              <a href="#" class="page-link"></a>
+                <img src="img/snake.jpg" class="picture" alt="green snake">
+                <div class="left-side">
+                  <h5>The Bite That Heals</h5>
+                  <span class="timestamp">6 days ago</span>
+                </div>
+              <div class="right-side clearfix">
+                <span class="starRating">
+                  <input id="rating5-5" type="radio" name="rating5" value="5" checked>
+                  <label for="rating5-5">5</label>
+                  <input id="rating5-4" type="radio" name="rating5" value="4">
+                  <label for="rating5-4">4</label>
+                  <input id="rating5-3" type="radio" name="rating5" value="3">
+                  <label for="rating5-3">3</label>
+                  <input id="rating5-2" type="radio" name="rating5" value="2">
+                  <label for="rating5-2">2</label>
+                  <input id="rating5-1" type="radio" name="rating5" value="1">
+                  <label for="rating5-1">1</label>
+                </span>
+                <span class="vote-count">71,482 votes</span>
+              </div>
+            </div>
+            <div class="preview-text-outside clearfix">
+              <a href="#" class="page-link"></a>
+                <img src="img/lizard.jpg" class="picture" alt="young lion">
+                <div class="left-side">
+                  <h5>Stranger Than Nature</h5>
+                  <span class="timestamp">8 days ago</span>
+                </div>
+              <div class="right-side clearfix">
+                <span class="starRating">
+                  <input id="rating6-5" type="radio" name="rating6" value="5" checked>
+                  <label for="rating6-5">5</label>
+                  <input id="rating6-4" type="radio" name="rating6" value="4">
+                  <label for="rating6-4">4</label>
+                  <input id="rating6-3" type="radio" name="rating6" value="3">
+                  <label for="rating6-3">3</label>
+                  <input id="rating6-2" type="radio" name="rating6" value="2">
+                  <label for="rating6-2">2</label>
+                  <input id="rating6-1" type="radio" name="rating6" value="1">
+                  <label for="rating6-1">1</label>
+                </span>
+                <span class="vote-count">64,159 votes</span>
+              </div>
+            </div>
+            <div class="most-popular-videos header-box">
+              <a href="#" class="button inset-button misc-sprite">Most Popular Videos</a>
+            </div>
+            <div class="preview-text-inside">
+              <img src="img/parrot.jpg" class="picture" alt="young lion">
+              <div class="text-block">
+                <h5>Most Rare Birds Ever</h5>
+                <span class="views-count">211,482 views</span>
+              </div>
+                <a href="#" class="preview-play-button misc-sprite"></a>
+            </div>
+            <div class="preview-text-inside">
+              <img src="img/fish.jpg" class="picture" alt="young lion">
+              <div class="text-block">
+                <h5>Mandarin Dragonet</h5>
+                <span class="views-count">192,029 views</span>
+              </div>
+              <a href="#" class="preview-play-button misc-sprite"></a>
+            </div>
+            <div class="upcoming-events header-box clearfix">
+              <a href="#" class="button inset-button misc-sprite">Upcoming Events</a>
+              <div class="l-r-buttons-box clearfix">
+                <a href="#" class="l-r-button left-button misc-sprite"></a>
+                <a href="#" class="l-r-button right-button misc-sprite"></a>
+              </div>
+            </div>
+            <div class="event box">
+              <a href="#" class="page-link"></a>
+              <h5>NatGeo Live Student Matinees</h5>
+              <img src="img/girl.jpg" alt="Live student matinees" />
+              <span class="timestamp misc-sprite">April 17, 2013</span>
+              <p class="description">Live Student Matinees offer students in USA and Canada entertaining and visually spectacular presentations by leading explorers</p>
+            </div>
+            <div class="buttons clearfix">
+              <a href="" class="shopping-btn box-button misc-sprite clearfix"><span class="btn-caption">Shopping</span></a>
+              <a href="" class="subscriptions-btn box-button misc-sprite clearfix"><span class="btn-caption">Subscriptions</span></a>
+            </div>
+          </aside>
+        </section>
+      </section>
+      <section class="content-footer clearfix">
+        <div class="header-box">
+          <a href="#" class="magazines-btn inset-button left-menu-sprite">National Geographic Magazines</a>
+          <div class="l-r-buttons-box clearfix">
+            <a href="#" class="l-r-button left-button misc-sprite"></a>
+            <a href="#" class="l-r-button right-button misc-sprite"></a>
+          </div>
+        </div>
+        <div class="subscribe-block clearfix">
+          <div class="subscribe-box box">
+            <div class="preview-text-outside clearfix">
+              <a href="#" class="page-link"></a>
+                <img src="img/journal1.jpg" class="picture" alt="america strikes oil">
+                  <h5>National Geographic Magazine</h5>
+            </div>
+            <div class="rating-block clearfix">
+              <span class="starRating">
+                <input id="rating7-5" type="radio" name="rating7" value="5" checked>
+                <label for="rating7-5">5</label>
+                <input id="rating7-4" type="radio" name="rating7" value="4">
+                <label for="rating7-4">4</label>
+                <input id="rating7-3" type="radio" name="rating7" value="3">
+                <label for="rating7-3">3</label>
+                <input id="rating7-2" type="radio" name="rating7" value="2">
+                <label for="rating7-2">2</label>
+                <input id="rating7-1" type="radio" name="rating7" value="1">
+                <label for="rating7-1">1</label>
+              </span>
+              <span class="vote-count">71,482 votes</span>
+            </div>
+            <a href="#" class="box-button misc-sprite"><span class="btn-caption">subscribe</span></a>
+          </div>
+          <div class="subscribe-box box">
+            <div class="preview-text-outside clearfix">
+              <a href="#" class="page-link"></a>
+                <img src="img/journal2.jpg" class="picture" alt="america strikes oil">
+                  <h5>National Geographic Kids Magazine</h5>
+            </div>
+            <div class="rating-block clearfix">
+              <span class="starRating">
+                <input id="rating8-5" type="radio" name="rating8" value="5">
+                <label for="rating8-5">5</label>
+                <input id="rating8-4" type="radio" name="rating8" value="4"checked>
+                <label for="rating8-4">4</label>
+                <input id="rating8-3" type="radio" name="rating8" value="3">
+                <label for="rating8-3">3</label>
+                <input id="rating8-2" type="radio" name="rating8" value="2">
+                <label for="rating8-2">2</label>
+                <input id="rating8-1" type="radio" name="rating8" value="1">
+                <label for="rating8-1">1</label>
+              </span>
+              <span class="vote-count">71,482 votes</span>
+            </div>
+            <a href="#" class="box-button misc-sprite"><span class="btn-caption">subscribe</span></a>
+          </div>
+          <div class="subscribe-box box">
+            <div class="preview-text-outside clearfix">
+              <a href="#" class="page-link"></a>
+                <img src="img/journal3.jpg" class="picture" alt="america strikes oil">
+                  <h5>NG Young Explorer Magazine</h5>
+            </div>
+            <div class="rating-block clearfix">
+              <span class="starRating">
+                <input id="rating9-5" type="radio" name="rating9" value="5" checked>
+                <label for="rating9-5">5</label>
+                <input id="rating9-4" type="radio" name="rating9" value="4">
+                <label for="rating9-4">4</label>
+                <input id="rating9-3" type="radio" name="rating9" value="3">
+                <label for="rating9-3">3</label>
+                <input id="rating9-2" type="radio" name="rating9" value="2">
+                <label for="rating9-2">2</label>
+                <input id="rating9-1" type="radio" name="rating9" value="1">
+                <label for="rating9-1">1</label>
+              </span>
+              <span class="vote-count">71,482 votes</span>
+            </div>
+            <a href="#" class="box-button misc-sprite"><span class="btn-caption">subscribe</span></a>
+          </div>
+          <div class="subscribe-box box">
+            <div class="preview-text-outside clearfix">
+              <a href="#" class="page-link"></a>
+                <img src="img/journal4.jpg" class="picture" alt="america strikes oil">
+                  <h5>National Geographic Little</h5>
+            </div>
+            <div class="rating-block clearfix">
+              <span class="starRating">
+                <input id="rating10-5" type="radio" name="rating10" value="5" checked>
+                <label for="rating10-5">5</label>
+                <input id="rating10-4" type="radio" name="rating10" value="4">
+                <label for="rating10-4">4</label>
+                <input id="rating10-3" type="radio" name="rating10" value="3">
+                <label for="rating10-3">3</label>
+                <input id="rating10-2" type="radio" name="rating10" value="2">
+                <label for="rating10-2">2</label>
+                <input id="rating10-1" type="radio" name="rating10" value="1">
+                <label for="rating10-1">1</label>
+              </span>
+              <span class="vote-count">71,482 votes</span>
+            </div>
+            <a href="#" class="box-button misc-sprite"><span class="btn-caption">subscribe</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="main-footer">
+      <div class="data-container clearfix">
+        <div class="subscribe">
+          <form class="subscribe-form" action="index.html" method="post">
+            <div class="input-wrapper clearfix">
+              <input type="text" name="name" class="subscribe-input" placeholder="type your email" value="">
+              <button type="button" class="subscribe-btn" name="button">Subscribe</button>
+            </div>
+          </form>
+          <a href="#" class="subscribe-social facebook button social-sprite"></a>
+          <a href="#" class="subscribe-social twitter button social-sprite"></a>
+          <a href="#" class="subscribe-social youtube button social-sprite"></a>
+        </div>
+        <div class="nav-legal">
+          <nav class="footer-nav">
+            <ul class="footer-nav-list">
+              <li><a href="#">Customer Service</a></li>
+              <li><a href="#">Advertise With Us</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </nav>
+          <span class="legal">© 1996-2013 National Geographic Society. All rights reserved</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
