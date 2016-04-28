@@ -1,140 +1,261 @@
-$(document).ready(function(){
-  var tabsContent = new WeakMap(), tabsContentSize = 0;
-  var tabs = $('.tab');
-  tabsContent.set(tabs[0] , {'content':$('.container').html(), 'date': '', 'img': null})
-  .set(tabs[1] , {'content':'some content of tab Two', 'date': '', 'img': null})
-  .set(tabs[2] , {'content':'What\'s up?', 'date': '', 'img': null})
-  .set(tabs[3] , {'content':'This is uniqe content!', 'date': '', 'img': null});
-  tabsContentSize+=4;
+$(document).ready(function() {
+	var tabsContent = new WeakMap(), //associative array that will be save all tabs data
+		tabsContentSize = 0,
+		tabs = $('.tab');
 
-  $('#text').val(0);
-  $('#title').val($('.tab').first().text());
-  $('#html').val($('.container').html());
+	$('#datepicker').datepicker({ //set date limitation
+		minDate: new Date(Date.now())
+	}).datepicker('setDate', new Date(Date.now())); //set current date by default
 
-  window.s = function(){  //just for debug
-    return tabsContent;
-  }
+	$('#datestamp').text($('#datepicker').val()); //set date stamp under the content container
 
-  function asideAddMsg(type, message) {
-    $.simplyToast(message, type, {appendTo: 'aside', offset : {'from':'bottom'}});
-  }
+	tabsContent.set(tabs[0], { //set default tabs content
+			'content': $('.container').html(),
+			'date': '',
+			'img': null
+		})
+		.set(tabs[1], {
+			'content': 'some content of tab Two',
+			'date': '',
+			'img': null
+		})
+		.set(tabs[2], {
+			'content': 'What\'s up?',
+			'date': '',
+			'img': null
+		})
+		.set(tabs[3], {
+			'content': 'This is uniqe content!',
+			'date': '',
+			'img': null
+		});
+	tabsContentSize += 4; //tabs count
 
-  $('#reset-btn').on('click', (e) => {
-    $('#text').val('');
-    $('#title').val('');
-    $('#html').val('');
-  });
+	$('#text').val(0); //set default value to index input
+	$('#title').val($('.tab').first().text()); //set value as first tab title
+	$('#html').val($('.container').html()); //set content of first tab
 
-  //tabs event handler
-  $('.tabs').on('click', function(e){
-    return function(e){
-      $('.tab').each(function(ind, el){
-        $(this).removeClass('active');
-        if (el === e.target) {
-          $(this).addClass('active');
-          var content = tabsContent.get(e.target).content;
-          $('.container').html(content);
-          $('#text').val(ind);
-          $('#title').val($(this).text());
-          $('#html').val(content);
-        }
-      });
-    };
-  }());
+	window.s = function() { //just for debug
+		return tabsContent;
+	}
 
-  function addItem(item) {
-    var isNotFilled = false;
+	function asideAddMsg(type, message) { //function for display alerts
+		$.simplyToast(message, type, {
+			appendTo: 'aside',
+			offset: {
+				'from': 'bottom'
+			}
+		});
+	}
 
-    $('form input').each(function() {
-      if ($(this).val() === '') {
-        isNotFilled = true;
-        return false;
-      }
-      return true;
-    });
+	function resetInputs() { //function for reset all inputs
+		$('#text').val('');
+		$('#title').val('');
+		$('#html').val('');
+		$('#datepicker').val('');
+	}
 
-    if ($('#html').val() === ''){
-      isNotFilled = true;
-    }
+	function addItem(item) {
+		var isNotFilled = false;
 
-    if (isNotFilled) {
-      asideAddMsg('danger', 'You should fill all text inputs!');
-      return false;
-    }
+		$('form input').each(function() {
+			if ($(this).val() === '') {
+				isNotFilled = true;
+				return false;
+			}
+			return true;
+		});
 
-    var index = $('#text').val();
-    var title = $('#title').val();
+		if ($('#html').val() === '') {
+			isNotFilled = true;
+		}
 
-    if (index < 0 || index > tabsContentSize-1) {
-      item.appendTo('.tabs').text(title);
-    } else {
-      item.insertBefore($('.tab').get(index)).text(title);
-    }
-    return true;
-  }
+		if (isNotFilled) {
+			asideAddMsg('danger', 'You should fill all text inputs!');
+			return false;
+		}
 
-  function tabOffset() { return;
-    $('.tab').each(function (ind, el) {
-      var offset = -20*ind;
-      el.style.left = offset.toString(10) + 'px';
-      return true;
-    });
-  }
+		var index = $('#text').val(),
+			title = $('#title').val();
 
-  //add button event handler
-  $('#add-btn').on('click', function() {
-    return function(){
-      var tabsBarWidth = parseInt($('.tabs').css('width'),10),
-      tabWidth = parseInt($('.tab').css('width'),10),
-      tabsCount = $('.tab').length;
+		if (index < 0 || index > tabsContentSize - 1) {
+			item.appendTo('.tabs').text(title);
+		} else {
+			item.insertBefore($('.tab').get(index)).text(title);
+		}
+		return true;
+	}
 
-      if (tabsCount * tabWidth - (16 * (tabsCount-5))  >= tabsBarWidth) {
-        asideAddMsg('danger', 'Max length has been reached!');
-        return;
-      }
-      var item = $('.tab:first').clone();
-      if (!addItem(item)) {
-        return;
-      }
-      tabOffset();
+	// function tabOffset() {
+	// 	$('.tab').each(function(ind, el) {
+	// 		var offset = -20 * ind;
+	// 		el.style.left = offset.toString(10) + 'px';
+	// 		return true;
+	// 	});
+	// }
 
-      var content = $('#html').val();
+	// reset button event handler
+	$('#reset-btn').on('click', (e) => {
+		resetInputs();
+	});
 
-      item.removeClass('active');
-      tabsContentSize++;
-      tabsContent.set(item[0], {'content': content, 'date' : '', 'img' : null});
+	//tabs event handler
+	$('.tabs').on('click', function(e) {
+		$('.tab').each(function(ind, el) {
+			$(this).removeClass('active'); //remove class active of all tabs
 
-      asideAddMsg('success', 'Tab successfully added!');
-    };
-  }());
+			if (el === e.target) { //if this is target tab
+				$(this).addClass('active'); //we add active class, because this is active tab
+				var data = tabsContent.get(e.target); //receive data of this tab
 
-  $('#edit-btn').on('click', (e) => {
-    var item = $('.tab.active');
-    if (!addItem(item)) {
-      return;
-    }
-    tabsContent.get(item[0]).content = $('#html').val();
-    var event = new Event("click", {bubbles : true});
-    item[0].dispatchEvent(event);
-    tabOffset();
-    asideAddMsg('success', 'Tab successfully edited!');
-  });
+				$('.container').html(data.content); //set values to inputs
+				$('#text').val(ind);
+				$('#title').val($(this).text());
+				$('#html').val(data.content);
 
-  // aside event handler
-  $('a.collapse').on('click',function(){
-    var isCollapsed = false;
-    return function() {
-      if (isCollapsed) {
-        $('aside').animate({'left' : '0'}, 300);
-        $('main').animate({'margin-left': '500px'}, 300);
-        $('a.collapse').html('&#8656;');
-        isCollapsed = !isCollapsed;
-      } else {
-        $('aside').animate({'left' : '-455px'}, 300);
-        $('main').animate({'margin-left': '45px'}, 300);
-        $('a.collapse').html('&#8658;');
-        isCollapsed = !isCollapsed;
-      }
-    };
-  }());
+				if (data.date) { //if date field exists, set it as value, otherwise set current date by default
+					$('#datestamp').text(data.date);
+					$('#datepicker').val(data.date);
+				} else {
+					$('#datepicker').datepicker('setDate', new Date(Date.now()));
+					$('#datestamp').text($('#datepicker').val());
+				}
+			}
+		});
+	});
+
+	//add button event handler
+	$('#add-btn').on('click', function() {
+		var tabsBarWidth = parseInt($('.tabs').css('width'), 10),
+			tabWidth = parseInt($('.tab').css('width'), 10),
+			tabsCount = $('.tab').length;
+
+		if (tabsCount * tabWidth - (16 * (tabsCount - 5)) >= tabsBarWidth) {
+			asideAddMsg('danger', 'Max length has been reached!');
+			return;
+		}
+		var item = $('.tab:first').clone();
+		if (!addItem(item)) {
+			return;
+		}
+		// tabOffset();
+
+		var content = $('#html').val(),
+			date = $('#datepicker').val();
+
+		item.removeClass('active');
+		tabsContentSize++;
+		tabsContent.set(item[0], {
+			'content': content,
+			'date': date,
+			'img': null
+		});
+
+		resetInputs();
+
+		asideAddMsg('success', 'Tab successfully added!');
+	});
+
+	//edit button event
+	$('#edit-btn').on('click', (e) => {
+		var item = $('.tab.active');
+		if (!addItem(item)) {
+			return;
+		}
+		var data = tabsContent.get(item[0]);
+		data.content = $('#html').val();
+		data.date = $('#datepicker').val();
+		var event = new Event("click", {
+			bubbles: true
+		});
+		item[0].dispatchEvent(event);
+		// tabOffset();
+		asideAddMsg('success', 'Tab successfully edited!');
+	});
+
+	// aside event handler
+	$('a.collapse').on('click', function() {
+		var isCollapsed = false;
+		return function() {
+			if (isCollapsed) {
+				$('aside').animate({
+					'left': '0'
+				}, 300);
+				$('main').animate({
+					'margin-left': '500px'
+				}, 300);
+				$('a.collapse').html('&#8656;');
+				isCollapsed = !isCollapsed;
+			} else {
+				$('aside').animate({
+					'left': '-455px'
+				}, 300);
+				$('main').animate({
+					'margin-left': '45px'
+				}, 300);
+				$('a.collapse').html('&#8658;');
+				isCollapsed = !isCollapsed;
+			}
+		};
+	}());
+
+
+	function moveLeft() {
+		var currTab = $('.tab.active');
+		var index = currTab.index('.tab');
+		if (index === 0) {
+			index = tabsContentSize - 1;
+		} else {
+			index--;
+		}
+
+		var nextTab = $('.tab').eq(index);
+
+		currTab.removeClass('active');
+
+		$('.slider img').fadeToggle(150, 'swing', function() {
+			nextTab.addClass('active');
+			nextTab[0].dispatchEvent(new Event('click', {
+				bubbles: true
+			}));
+			$(this).fadeToggle(150, 'swing', () => {
+				$('a.left').removeClass('disabled');
+			});
+		});
+	}
+
+	function moveRight() {
+		var currTab = $('.tab.active');
+		var index = currTab.index('.tab');
+		if (index === tabsContentSize - 1) {
+			index = 0;
+		} else {
+			index++;
+		}
+
+		var nextTab = $('.tab').eq(index);
+
+		currTab.removeClass('active');
+
+		$('.slider img').fadeToggle(150, 'swing', function() {
+			nextTab.addClass('active');
+			nextTab[0].dispatchEvent(new Event('click', {
+				bubbles: true
+			}));
+			$(this).fadeToggle(150, 'swing', () => {
+				$('a.right').removeClass('disabled');
+			});
+		});
+	};
+
+	$('a.left').on('click', function left(e) {
+		debugger;
+		$(this).addClass('disabled');
+		moveLeft();
+	});
+
+	$('a.right').on('click', function right(e) {
+		$(this).addClass('disabled');
+		moveRight();
+	});
 });

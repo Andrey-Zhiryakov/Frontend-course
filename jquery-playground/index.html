@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/3.0.2/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/simply-toast.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="https://js.cx/hello/ads.js?speed=0"></script>
 </head>
 <body>
@@ -24,6 +26,14 @@
                 <input type="text" id="title">
             </div>
             <div class="input-group">
+                <label for="datepicker">Date</label>
+                <input type="text" id="datepicker" readonly>
+            </div>
+            <div class="input-group">
+                <label for="image">Image</label>
+                <input type="text" id="image">
+            </div>
+            <div class="input-group">
                 <label for="html">HTML content</label>
                 <textarea id="html"></textarea>
             </div>
@@ -33,6 +43,11 @@
         </form>
     </aside>
     <main>
+      <div class="slider">
+        <a href="#" class="slide left"><<<</a>
+        <img src="" alt="slider image" />
+        <a href="#" class="slide right">>>></a>
+      </div>
         <ul class="tabs">
             <li class="tab active">One</li>
             <li class="tab">Two</li>
@@ -42,6 +57,7 @@
         <div class="container">
             <input type="button" value="click me">
         </div>
+        <p>Actual due date: <span id="datestamp"></span></p>
     </main>
     <script>
         $('input[type=button]').on('click', function(){
