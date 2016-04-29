@@ -77,6 +77,7 @@ aside button {
   margin-right: 30px;
 }
 main {
+  min-width: 350px;
   margin-left: 500px;
   padding: 0 40px;
 }
@@ -117,23 +118,6 @@ main .tab:before {
   height: 0;
   width: 67px;
 }
-
-/*main .tab:first-child {
-left: 0;
-}
-main .tab:nth-child(2) {
-left: -18px;
-}
-main .tab:nth-child(3) {
-left: -32px;
-}
-main .tab:nth-child(4) {
-left: -44px;
-}
-main .tab:nth-child(5) {
-left: -56px;
-}*/
-
 main .container {
   background-color: white;
   border: 2px solid rgb(64, 74, 88);
@@ -151,9 +135,9 @@ main .slider {
   height: 120px;
 }
 .slider img {
-  width: 600px;
+  width: calc(100% - 140px);
   height: 120px;
-  margin-left: calc(50% - 350px);
+  margin: 0 20px;
   display: inline-block;
 }
 .slider .slide {
@@ -174,10 +158,9 @@ main .slider {
 .slide.right {
   float: right;
 }
-
 .disabled {
-   pointer-events: none;
-   cursor: default;
+  pointer-events: none;
+  cursor: default;
 }
 ul > li.active:before {
   border-bottom-color: #fb6362;
