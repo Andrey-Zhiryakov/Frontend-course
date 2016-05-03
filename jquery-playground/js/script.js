@@ -37,7 +37,7 @@ $(document).ready(function() {
 
 	window.s = function() { //just for debug
 		return tabsContent;
-	}
+	};
 
 	function asideAddMsg(type, message) { //function for display alerts
 		$.simplyToast(message, type, {
@@ -97,6 +97,7 @@ $(document).ready(function() {
 
 	// reset button event handler
 	$('#reset-btn').on('click', (e) => {
+		e.preventDefault();
 		resetInputs();
 	});
 
@@ -128,7 +129,9 @@ $(document).ready(function() {
 	});
 
 	//add button event handler
-	$('#add-btn').on('click', function() {
+	$('#add-btn').on('click', function(e) {
+		e.preventDefault();
+
 		var tabsBarWidth = parseInt($('.tabs').css('width'), 10), //get width of 'ul'
 			tabWidth = parseInt($('.tab').css('width'), 10), //get width of single tab
 			tabsCount = $('.tab').length; // get tabs count
@@ -162,6 +165,8 @@ $(document).ready(function() {
 
 	//edit button event
 	$('#edit-btn').on('click', (e) => {
+		e.preventDefault();
+
 		var item = $('.tab.active'); //get current tab
 		if (!addItem(item)) { // try to add item with entered index
 			return;
@@ -250,10 +255,10 @@ $(document).ready(function() {
 				$('a.right').removeClass('disabled');
 			});
 		});
-	};
+	}
+
 	//left slider button handler
 	$('a.left').on('click', function left(e) {
-		debugger;
 		$(this).addClass('disabled'); //disable left slider button
 		moveLeft(); //call slide left function
 	});
