@@ -12,88 +12,26 @@ $(document).ready(function() {
 	tabsContent.set(tabs[0], { //set default tabs content
 			'content': $('.container').html(),
 			'date': '',
-			'img': null
+			'img': 'https://placeholdit.imgix.net/~text?txtsize=40&txt=900%C3%97160&w=900&h=160'
 		})
 		.set(tabs[1], {
-			'content': 'some content of tab Two',
+			'content': '<h1>some content of tab Two</h1>',
 			'date': '',
-			'img': null
+			'img': 'http://lorempixel.com/900/160/'
 		})
 		.set(tabs[2], {
-			'content': 'What\'s up?',
+			'content': '<p style="font-size: 42px;color: red;">What\'s up?</p>',
 			'date': '',
-			'img': null
+			'img': 'https://placeholdit.imgix.net/~text?txtsize=40&txt=900%C3%97160&w=900&h=160'
 		})
 		.set(tabs[3], {
-			'content': 'This is uniqe content!',
+			'content': '<div style="width: 100px; height: 100px; background: lime; margin: 30px; padding: 15px;"><span>This is uniqe content!</span></div>',
 			'date': '',
 			'img': null
 		});
 	tabsContentSize += 4; //tabs count
 
-	$('#text').val(0); //set default value to index input
-	$('#title').val($('.tab').first().text()); //set value as first tab title
-	$('#html').val($('.container').html()); //set content of first tab
-
-	window.s = function() { //just for debug
-		return tabsContent;
-	};
-
-	function asideAddMsg(type, message) { //function for display alerts
-		$.simplyToast(message, type, {
-			appendTo: 'aside',
-			offset: {
-				'from': 'bottom'
-			}
-		});
-	}
-
-	function resetInputs() { //function for reset all inputs
-		$('#text').val('');
-		$('#title').val('');
-		$('#html').val('');
-		$('#datepicker').val('');
-		$('#image').val('');
-	}
-
-	function addItem(item) {
-		var isNotFilled = false; //flag for checking filling of inputs
-
-		$('form input').each(function() {
-			if ($(this).val() === '') { // if input isn't filled, set flag to true state
-				isNotFilled = true;
-				return false; //break the iteration
-			}
-			return true;
-		});
-
-		if ($('#html').val() === '') {
-			isNotFilled = true;
-		}
-
-		if (isNotFilled) { //tell to user that he didn't fill all inputs
-			asideAddMsg('danger', 'You should fill all text inputs!');
-			return false;
-		}
-
-		var index = $('#text').val(),
-			title = $('#title').val();
-
-		if (index < 0 || index > tabsContentSize - 1) { // if index out of range, we append child to end of list
-			item.appendTo('.tabs').text(title);
-		} else {
-			item.insertBefore($('.tab').get(index)).text(title); //else insert before item with received index
-		}
-		return true;
-	}
-
-	// function tabOffset() {
-	// 	$('.tab').each(function(ind, el) {
-	// 		var offset = -20 * ind;
-	// 		el.style.left = offset.toString(10) + 'px';
-	// 		return true;
-	// 	});
-	// }
+	//event handlers
 
 	// reset button event handler
 	$('#reset-btn').on('click', (e) => {
@@ -209,6 +147,86 @@ $(document).ready(function() {
 		};
 	}());
 
+	//left slider button handler
+	$('a.left').on('click', function left(e) {
+		$(this).addClass('disabled'); //disable left slider button
+		moveLeft(); //call slide left function
+	});
+
+	//right slider button handler
+	$('a.right').on('click', function right(e) {
+		$(this).addClass('disabled'); //disable right slider button
+		moveRight(); //call slide right functoin
+	});
+
+	//set default values for page
+
+	$('#text').val(0); //set default value to index input
+	$('#title').val($('.tab').first().text()); //set value as first tab title
+	$('#html').val($('.container').html()); //set content of first tab
+	$('.tab.active').get()[0].dispatchEvent(new Event("click", { //call 'click' event on default active tab
+		bubbles: true
+	}));
+
+	//other functions
+
+	function asideAddMsg(type, message) { //function for display alerts
+		$.simplyToast(message, type, {
+			appendTo: 'aside',
+			offset: {
+				'from': 'bottom'
+			}
+		});
+	}
+
+	function resetInputs() { //function for reset all inputs
+		$('#text').val('');
+		$('#title').val('');
+		$('#html').val('');
+		$('#datepicker').val('');
+		$('#image').val('');
+	}
+
+	function addItem(item) {
+		var isNotFilled = false; //flag for checking filling of inputs
+
+		$('form input').each(function() {
+			if ($(this).val() === '') { // if input isn't filled, set flag to true state
+				isNotFilled = true;
+				return false; //break the iteration
+			}
+			return true;
+		});
+
+		if ($('#html').val() === '') {
+			isNotFilled = true;
+		}
+
+		if (isNotFilled) { //tell to user that he didn't fill all inputs
+			asideAddMsg('danger', 'You should fill all text inputs!');
+			return false;
+		}
+
+		var index = $('#text').val(),
+			title = $('#title').val();
+
+		if (index < 0 || index > tabsContentSize - 1) { // if index out of range, we append child to end of list
+			item.appendTo('.tabs').text(title);
+		} else {
+			item.insertBefore($('.tab').get(index)).text(title); //else insert before item with received index
+		}
+		return true;
+	}
+
+	// function tabOffset() {
+	// 	$('.tab').each(function(ind, el) {
+	// 		var offset = -20 * ind;
+	// 		el.style.left = offset.toString(10) + 'px';
+	// 		return true;
+	// 	});
+	// }
+
+
 	function moveLeft() {
 		var currTab = $('.tab.active'); //get current tab
 		var index = currTab.index('.tab'); //get index of current tab
@@ -256,15 +274,4 @@ $(document).ready(function() {
 			});
 		});
 	}
-
-	//left slider button handler
-	$('a.left').on('click', function left(e) {
-		$(this).addClass('disabled'); //disable left slider button
-		moveLeft(); //call slide left function
-	});
-	//right slider button handler
-	$('a.right').on('click', function right(e) {
-		$(this).addClass('disabled'); //disable right slider button
-		moveRight(); //call slide right functoin
-	});
 });
