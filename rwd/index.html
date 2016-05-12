@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+  <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="css/fontello.css">
+  <!-- fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+  <title>Lispum Media</title>
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">
+      <a href="#" class="logo-href" target="_blank">
+      <img src="img/logo.png" alt="logo image">
+      <h2>Lispum <span class="logo-word">Media</span></h2>
+      </a>
+    </div>
+    <label for="header-nav-checkbox" class="nav-label">&#9776;</label>
+    <input type="checkbox" id="header-nav-checkbox" class="hidden-checkbox">
+    <div class="wrapper">
+      <nav class="header-nav">
+        <ul class="nav-list">
+          <li><a href="#">home</a></li>
+          <li><a href="#">about</a></li>
+          <li><a href="#">work</a></li>
+          <li><a href="#">services</a></li>
+          <li><a href="#">resources</a></li>
+          <li><a href="#">articles</a></li>
+          <li><a href="#">contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="content" role="main">
+    <article class="banner">
+      <h1>Lipsum Media Presentation</h1>
+      <div class="video-box">
+        <picture>
+          <source srcset="img/panda.jpg" media="(min-width: 1025px)">
+          <source srcset="img/panda-medium.jpg" media="(min-width: 615px)">
+          <img srcset="img/panda-small.jpg"  alt="video poster image" class="video-img">
+          <div class="play-btn-wrapper">
+            <img src="img/play-btn.png" alt="play button" class="play-btn"/>
+          </div>
+        </picture>
+        <div class="about-video-box">
+          <div class="info-box client-info">
+            <span class="title">Client</span>
+            <span class="info">Jommy</span>
+          </div>
+          <div class="info-box project-descr-info">
+              <span class="title">Project description</span>
+              <span class="info">olor massa hac auctor! Ac, mauris massa. Sit pellen-tesque ridiculus pid, sceler-isque augue amet parturient?</span>
+          </div>
+          <div class="info-box software-info">
+              <span class="title">Software</span>
+              <span class="info">Photoshop</span>
+          </div>
+          <div class="info-box level-info">
+            <span class="title">Level Of Service</span>
+            <span class="info">Photoshop</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-descr-box">
+        <h4>Project description</h4>
+        <img src="img/proj-descr-img.jpg" alt="some image" />
+        <p class="descr-text">Ac aliquam pid amet, lorem eu, etiam ultrices, egestas. Et porttitor a, lacus egestas est rhoncus, egestas amet facilisis augue pellentesque. Nec? Velit tristique. Proin facilisis porta porttitor in tortor vel</p>
+        <div class="read-more-btn" role="button">
+          <a href="#">
+            <span class="btn-caption">Raed more</span>
+          </a>
+        </div>
+      </div>
+    </article>
+    <article class="featured-project">
+      <section class="about-us">
+        <div class="about-box our-services">
+          <h3>Our <span>services</span></h3>
+          <ul class="services-list">
+            <li class="icon-right-big">Ac tristique sagittis turpis</li>
+            <li class="icon-right-big">Duis mus nec porttitor</li>
+            <li class="icon-right-big">Phasellus lectus cras</li>
+            <li class="icon-right-big">Ac tristique sagittis turpis</li>
+            <li class="icon-right-big">Ac tristique sagittis turpis</li>
+            <li class="icon-right-big">Ac tristique sagittis turpis</li>
+          </ul>
+        </div>
+        <div class="about-box did-you-know">
+          <h3>Did you <span>know?</span></h3>
+          <p>
+            Ac tristique sagittis turpis dis purus egestas! Duis mus nec porttitor hac ac dictumst, porttitor eros adipiscing elementum tincidunt urna mus porttitor odio, non tristique adipiscing lorem, sed nec vel adipiscing sit, quis platea parturient sit adipiscing et massa . Risus, placerat. Augue etiam et dis velit ut, auctor et, duis dolor nunc nunc, augue nisi nascetur, porta
+          </p>
+          <div class="read-more-btn" role="button">
+            <a href="#">
+              <span class="btn-caption">Raed more</span>
+            </a>
+          </div>
+        </div>
+        <div class="about-box contact">
+          <h3><span>Contact</span></h3>
+          <ul class="contact-list">
+            <li class="mobile icon-mobile"><span>203 - 810-4300</span></li>
+            <li class="fax icon-fax"><span>203 - 810-4333</span></li>
+            <li class="email icon-mail-alt"><span><a href="mailto:Contact@lipsum.com">Contact@lipsum.com</a></span></li>
+            <li class="address icon-home">
+              <div class="address-wrap">
+                <span class="addr1">50 Washington street</span>
+                <span class="addr2">Sute 1048</span>
+                <span class="addr3">lipsume  0644</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="our-clients">
+        <h3>Our <span>clients</span></h3>
+        <div class="client-logo at-t-logo"><span class="wcag-hidden">AT&amp;T</span></div>
+        <div class="client-logo inc-logo"><span class="wcag-hidden">INC.</span></div>
+        <div class="client-logo auto-immune-logo"><span class="wcag-hidden">AutoImmune</span></div>
+        <div class="client-logo visa-logo"><span class="wcag-hidden">VISA</span></div>
+        <div class="client-logo polar-logo"><span class="wcag-hidden">Polar beverages</span></div>
+        <div class="client-logo gap-logo"><span class="wcag-hidden">GAP</span></div>
+      </section>
+    </article>
+  </main>
+  <footer class="main-footer">
+    <div class="logo">
+      <a href="#" class="logo-href" target="_blank">
+      <img src="img/logo.png" alt="logo image">
+      <h2>Lispum <span class="logo-word">Media</span></h2>
+      </a>
+    </div>
+    <nav class="footer-nav">
+      <ul class="nav-list">
+        <li><a href="#">home</a></li>
+        <li><a href="#">about</a></li>
+        <li><a href="#">work</a></li>
+        <li><a href="#">services</a></li>
+        <li><a href="#">resources</a></li>
+        <li><a href="#">articles</a></li>
+        <li><a href="#">contact</a></li>
+      </ul>
+    </nav>
+    <span class="copy">© 2009 lipsum media, LLC</span>
+  </footer>
+</body>
+</html>
