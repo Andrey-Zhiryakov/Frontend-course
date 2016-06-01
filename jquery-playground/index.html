@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Playground</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/3.0.2/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/simply-toast.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <!-- <script src="https://js.cx/hello/ads.js?speed=0"></script> -->
+</head>
+<body>
+    <aside>
+        <p>Add your own tab</p>
+        <a href="#" class="collapse" title="collapse">&#8656;</a>
+        <form name="newTab">
+            <div class="input-group">
+                <label for="text">Index</label>
+                <input type="text" id="text">
+            </div>
+            <div class="input-group">
+                <label for="title">Title</label>
+                <input type="text" id="title">
+            </div>
+            <div class="input-group">
+                <label for="datepicker">Date</label>
+                <input type="text" id="datepicker" readonly>
+            </div>
+            <div class="input-group">
+                <label for="image">Image</label>
+                <input type="text" id="image" placeholder="put image link here...">
+            </div>
+            <div class="input-group">
+                <label for="html">HTML content</label>
+                <textarea id="html"></textarea>
+            </div>
+            <button id="add-btn">ADD</button>
+            <button id="edit-btn">EDIT</button>
+            <button id="reset-btn">RESET</button>
+        </form>
+    </aside>
+    <main>
+      <div class="slider">
+        <a href="#" class="slide left"><<<</a>
+        <img src="" alt="slider image" />
+        <a href="#" class="slide right">>>></a>
+      </div>
+        <ul class="tabs">
+            <li class="tab active">One</li>
+            <li class="tab">Two</li>
+            <li class="tab">Three</li>
+            <li class="tab">Four</li>
+        </ul>
+        <div class="container">
+            <input type="button" value="click me">
+        </div>
+        <p>Actual due date: <span id="datestamp"></span></p>
+    </main>
+    <script>
+        $('input[type=button]').on('click', function(){
+            console.log('lol');
+            $('<a href="#" class="lol">LOL</a>').appendTo('.container');
+        });
+        $('body').on('click', '.lol', function(){
+            window.location.href='epam.by';
+        });
+    </script>
+    <script src="js/script.js" charset="utf-8"></script>
+    <script src="js/simply-toast.min.js" charset="utf-8"></script>
+</body>
+</html>
