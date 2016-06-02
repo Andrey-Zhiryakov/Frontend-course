@@ -1,0 +1,15 @@
+{
+  "name": "webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zhiriakov.andrey",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack-dev-server": "^1.14.1",
+    "webpack-notifier": "^1.3.0"
+  }
+}
