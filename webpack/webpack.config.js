@@ -18,7 +18,8 @@ module.exports = {
         extensions: ['', '.js', 'index.js']
     },
 
-    devtool: devEnvironment ? 'eval' : 'source-map',
+    // devtool: devEnvironment ? 'eval' : 'source-map',
+    devtool:'source-map', //eval works incorrect
 
     watch: true,
 

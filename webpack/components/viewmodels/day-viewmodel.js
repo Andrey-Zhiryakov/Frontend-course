@@ -10,7 +10,7 @@ class DayModel {
 
     if (notesList['week' + weekNumber]) {
       if (notesList['week' + weekNumber]['day' + dayNumber]) {
-        notesList['week' + weekNumber]['day' + dayNumber].each(note => {
+        notesList['week' + weekNumber]['day' + dayNumber].notes.forEach(note => {
           notesByHour['hour' + note.hour] = new Note(note.caption, note.text);
         });
       }

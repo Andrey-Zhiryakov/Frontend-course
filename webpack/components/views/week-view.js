@@ -25,7 +25,7 @@ function Week(content) {
 
   for (let i = 1; i <= 24; i ++) {
     hoursList.innerHTML += `
-    <li>${i}</li>
+    <li class="hour">${i}</li>
     `;
   }
   let hours = document.createElement('div');

@@ -1,13 +1,24 @@
-$height: 0.55em + 0.67em;
+$height: 0.55em + 0.67em + 0.5em;
 
 .hour{
+  border-bottom: 1px solid black;
+  box-sizing: border-box;
   min-height: $height;
+
+  .dots {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    // max-width: 160px;
+  }
+
   .zeroIndent {
     margin: 0;
     padding: 0;
   }
   .caption {
     @extend .zeroIndent;
+    @extend .dots;
     padding-left: 10px;
     color: #2a0505;
     font-weight: bold;
@@ -15,6 +26,7 @@ $height: 0.55em + 0.67em;
   }
   .text {
     @extend .zeroIndent;
+    @extend .dots;
     color: #01062f;
     font-size: 0.55em;
   }

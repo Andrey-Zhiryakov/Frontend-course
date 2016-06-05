@@ -3,7 +3,7 @@ $calendar-border-color: #072100;
 .flex-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .calendar-week {
@@ -15,19 +15,14 @@ $calendar-border-color: #072100;
     @extend .flex-container;
     border-bottom: 1px solid $calendar-border-color;
     .header, .day-wrapper {
-      flex-basis: 165px;
+      flex-basis: 300px;
       border-left: 1px solid $calendar-border-color;
       text-align: center;
     }
     .header:first-child, .day-wrapper:first-child {
-      flex-basis: 25px;
+      max-width: 55px;
+      min-width: 55px;
       border: none;
-    }
-
-    .day-wrapper ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
     }
   }
 }

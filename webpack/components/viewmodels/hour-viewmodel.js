@@ -1,3 +1,5 @@
+var Note = require('./../models/note.js');
+
 class HourModel {
   constructor(context = {}, hour) {
     this.hour = hour;
@@ -8,3 +10,5 @@ class HourModel {
     }
   }
 }
+
+module.exports = HourModel;
