@@ -13,7 +13,7 @@ var notesList = {
       notes : [
         {
           hour : 15,
-          caption : 'note 1',
+          caption : 'note 2',
           text : "Complete task"
         }
       ]
@@ -22,7 +22,7 @@ var notesList = {
       notes : [
         {
           hour : 19,
-          caption : 'note 1',
+          caption : 'note 3',
           text : "Send work"
         }
       ]

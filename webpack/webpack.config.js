@@ -1,10 +1,8 @@
 'use strict';
 
-var devEnvironment = true;
+var devEnvironment = false;
 
 var WebpackNotifierPlugin = require('webpack-notifier');
-var WebpackCleanupPlugin = require('webpack-cleanup-plugin');
-// var webpack = require('webpack');
 
 module.exports = {
     entry: './app.js',
@@ -21,7 +19,7 @@ module.exports = {
     // devtool: devEnvironment ? 'eval' : 'source-map',
     devtool:'source-map', //eval works incorrect
 
-    watch: true,
+    watch: devEnvironment,
 
     module: {
         loaders: [
@@ -31,12 +29,12 @@ module.exports = {
 
     plugins: [
       new WebpackNotifierPlugin({title: "Webpack task build", alwaysNotify: true}),
-      new WebpackCleanupPlugin({exclude : ["index.html"]})
     ],
 
     devServer : {
       host : 'localhost',
       port : 8080,
+      contentBase: __dirname + '/public'
     }
 };
 //

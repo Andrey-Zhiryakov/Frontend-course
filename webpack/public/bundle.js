@@ -406,7 +406,7 @@
 
 	module.exports = {
 	  week : __webpack_require__(6),
-	  weekModel : __webpack_require__(13)
+	  weekModel : __webpack_require__(15)
 	};
 
 
@@ -566,7 +566,7 @@
 /* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(18);
+	__webpack_require__(13);
 	
 	function HourView(context) {
 	  var container = document.createElement('li');
@@ -597,7 +597,47 @@
 /* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Day = __webpack_require__(14);
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(14);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(4)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/sass-loader/index.js?sourceMap!./hourstyle.scss", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/sass-loader/index.js?sourceMap!./hourstyle.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(3)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".hour {\n  border-bottom: 1px solid black;\n  box-sizing: border-box;\n  min-height: 1.72em; }\n  .hour .dots, .hour .caption, .hour .text {\n    white-space: nowrap;\n    text-overflow: ellipsis;\n    overflow: hidden; }\n  .hour .zeroIndent, .hour .caption, .hour .text {\n    margin: 0;\n    padding: 0; }\n  .hour .caption {\n    color: #2a0505;\n    font-weight: bold;\n    font-style: italic; }\n  .hour .text {\n    color: #01062f;\n    font-size: 0.55em; }\n  .hour:last-child {\n    border: none; }\n\n.hour-number {\n  background-color: #d0edff; }\n\n.has-note {\n  background-color: #c2c8f9; }\n", "", {"version":3,"sources":["/./components/components/styles/hourstyle.scss"],"names":[],"mappings":"AAEA;EACE,+BAA+B;EAC/B,uBAAuB;EACvB,mBALa,EAkCd;EAhCD;IAMI,oBAAoB;IACpB,wBAAwB;IACxB,iBAAiB,EAClB;EATH;IAYI,UAAU;IACV,WAAW,EACZ;EAdH;IAkBI,eAAe;IACf,kBAAkB;IAClB,mBAAmB,EACpB;EArBH;IAyBI,eAAe;IACf,kBAAkB,EACnB;EA3BH;IA8BI,aAAa,EACd;;AAEH;EACE,0BAA0B,EAC3B;;AACD;EACE,0BAA0B,EAC3B","file":"hourstyle.scss","sourcesContent":["$height: 0.55em + 0.67em + 0.5em;\r\n\r\n.hour{\r\n  border-bottom: 1px solid black;\r\n  box-sizing: border-box;\r\n  min-height: $height;\r\n\r\n  .dots {\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n    overflow: hidden;\r\n  }\r\n\r\n  .zeroIndent {\r\n    margin: 0;\r\n    padding: 0;\r\n  }\r\n  .caption {\r\n    @extend .zeroIndent;\r\n    @extend .dots;\r\n    color: #2a0505;\r\n    font-weight: bold;\r\n    font-style: italic;\r\n  }\r\n  .text {\r\n    @extend .zeroIndent;\r\n    @extend .dots;\r\n    color: #01062f;\r\n    font-size: 0.55em;\r\n  }\r\n\r\n  &:last-child {\r\n    border: none;\r\n  }\r\n}\r\n.hour-number {\r\n  background-color: #d0edff;\r\n}\r\n.has-note {\r\n  background-color: #c2c8f9;\r\n}\r\n"],"sourceRoot":"webpack://"}]);
+	
+	// exports
+
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Day = __webpack_require__(16);
 	
 	class WeekModel {
 	  constructor(weekNumber = 1){
@@ -613,12 +653,12 @@
 
 
 /***/ },
-/* 14 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Hour = __webpack_require__(15);
-	var notesList = __webpack_require__(17);
-	var Note = __webpack_require__(16);
+	var Hour = __webpack_require__(17);
+	var notesList = __webpack_require__(19);
+	var Note = __webpack_require__(18);
 	
 	class DayModel {
 	
@@ -644,10 +684,10 @@
 
 
 /***/ },
-/* 15 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Note = __webpack_require__(16);
+	var Note = __webpack_require__(18);
 	
 	class HourModel {
 	  constructor(context = {}, hour) {
@@ -664,7 +704,7 @@
 
 
 /***/ },
-/* 16 */
+/* 18 */
 /***/ function(module, exports) {
 
 	class Note {
@@ -678,7 +718,7 @@
 
 
 /***/ },
-/* 17 */
+/* 19 */
 /***/ function(module, exports) {
 
 	var notesList = {
@@ -714,46 +754,6 @@
 	};
 	
 	module.exports = notesList;
-
-
-/***/ },
-/* 18 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(19);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(4)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/sass-loader/index.js?sourceMap!./hourstyle.scss", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/sass-loader/index.js?sourceMap!./hourstyle.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 19 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(3)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".hour {\n  border-bottom: 1px solid black;\n  box-sizing: border-box;\n  min-height: 1.72em; }\n  .hour .dots, .hour .caption, .hour .text {\n    white-space: nowrap;\n    text-overflow: ellipsis;\n    overflow: hidden; }\n  .hour .zeroIndent, .hour .caption, .hour .text {\n    margin: 0;\n    padding: 0; }\n  .hour .caption {\n    color: #2a0505;\n    font-weight: bold;\n    font-style: italic; }\n  .hour .text {\n    color: #01062f;\n    font-size: 0.55em; }\n  .hour:last-child {\n    border: none; }\n\n.hour-number {\n  background-color: #d0edff; }\n\n.has-note {\n  background-color: #c2c8f9; }\n", "", {"version":3,"sources":["/./components/components/styles/hourstyle.scss"],"names":[],"mappings":"AAEA;EACE,+BAA+B;EAC/B,uBAAuB;EACvB,mBALa,EAkCd;EAhCD;IAMI,oBAAoB;IACpB,wBAAwB;IACxB,iBAAiB,EAClB;EATH;IAYI,UAAU;IACV,WAAW,EACZ;EAdH;IAkBI,eAAe;IACf,kBAAkB;IAClB,mBAAmB,EACpB;EArBH;IAyBI,eAAe;IACf,kBAAkB,EACnB;EA3BH;IA8BI,aAAa,EACd;;AAEH;EACE,0BAA0B,EAC3B;;AACD;EACE,0BAA0B,EAC3B","file":"hourstyle.scss","sourcesContent":["$height: 0.55em + 0.67em + 0.5em;\r\n\r\n.hour{\r\n  border-bottom: 1px solid black;\r\n  box-sizing: border-box;\r\n  min-height: $height;\r\n\r\n  .dots {\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n    overflow: hidden;\r\n  }\r\n\r\n  .zeroIndent {\r\n    margin: 0;\r\n    padding: 0;\r\n  }\r\n  .caption {\r\n    @extend .zeroIndent;\r\n    @extend .dots;\r\n    color: #2a0505;\r\n    font-weight: bold;\r\n    font-style: italic;\r\n  }\r\n  .text {\r\n    @extend .zeroIndent;\r\n    @extend .dots;\r\n    color: #01062f;\r\n    font-size: 0.55em;\r\n  }\r\n\r\n  &:last-child {\r\n    border: none;\r\n  }\r\n}\r\n.hour-number {\r\n  background-color: #d0edff;\r\n}\r\n.has-note {\r\n  background-color: #c2c8f9;\r\n}\r\n"],"sourceRoot":"webpack://"}]);
-	
-	// exports
 
 
 /***/ }
