@@ -15,6 +15,7 @@ $calendar-border-color: #072100;
     @extend .flex-container;
     border-bottom: 1px solid $calendar-border-color;
     .header, .day-wrapper {
+      width: 13%;
       flex-basis: 300px;
       border-left: 1px solid $calendar-border-color;
       text-align: center;
@@ -24,5 +25,11 @@ $calendar-border-color: #072100;
       min-width: 55px;
       border: none;
     }
+  }
+  .head {
+    background-color: #e2ffdb;
+  }
+  .body {
+    border: none;
   }
 }

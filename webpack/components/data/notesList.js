@@ -5,7 +5,7 @@ var notesList = {
         {
           hour : 7,
           caption : 'note 1',
-          text : "Create task"
+          text : "Create task with very long text content for test column width"
         }
       ]
     },
