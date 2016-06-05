@@ -1,5 +1,5 @@
-var {week, weekModel} = require('/components/');
+var {week, weekModel} = require('./components/');
 
 document.addEventListener('load', ()=>{
-  document.body.appendChild(week(new weekModel()));
+//  document.body.appendChild(week(new weekModel()));
 });

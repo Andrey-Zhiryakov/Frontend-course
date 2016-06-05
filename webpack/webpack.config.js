@@ -3,6 +3,7 @@
 var devEnvironment = true;
 
 var WebpackNotifierPlugin = require('webpack-notifier');
+var WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 // var webpack = require('webpack');
 
 module.exports = {
@@ -21,12 +22,13 @@ module.exports = {
 
     module: {
         loaders: [
-            { test: /\.css$/, loader: "style-loader!css-loader" },
+          { test: /\.scss$/, loaders: ["style", "css?sourceMap", "sass?sourceMap"] },
         ]
     },
 
     plugins: [
-      new WebpackNotifierPlugin(),
+      new WebpackNotifierPlugin({title: "Webpack task build", alwaysNotify: true}),
+      new WebpackCleanupPlugin({exclude : ["index.html"]})
     ],
 
     devServer : {
@@ -34,3 +36,14 @@ module.exports = {
       port : 8080,
     }
 };
+//
+// if (!devEnvironment) {
+//   module.exports.plugins.push(
+//     new webpack.optimize.UglifyJsPlugin({
+//       compress : {
+//         warnings : false,
+//         drop_console : true
+//       }
+//     })
+//   );
+// }
