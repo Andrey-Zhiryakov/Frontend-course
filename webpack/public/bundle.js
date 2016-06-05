@@ -94,13 +94,13 @@
 /* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("var Hour = __webpack_require__(11);\r\n\r\n\r\nclass DayModel {\r\n\r\n  constructor(weekNumber = 1, dayNumber = 1){\r\n\r\n    //here this must read notesList form another file/location and cache it\r\n    var notesList = {\r\n      week1 : {\r\n        day1 : {\r\n          notes : [\r\n            {\r\n              hour : 7,\r\n              caption : 'note 1',\r\n              text : \"Create task\"\r\n            }\r\n          ]\r\n        },\r\n        day3 : {\r\n          notes : [\r\n            {\r\n              hour : 15,\r\n              caption : 'note 1',\r\n              text : \"Complete task\"\r\n            }\r\n          ]\r\n        },\r\n        day5 : {\r\n          notes : [\r\n            {\r\n              hour : 19,\r\n              caption : 'note 1',\r\n              text : \"Send work\"\r\n            }\r\n          ]\r\n        },\r\n      }\r\n    };\r\n\r\n    if (notesList['week' + weekNumber]\r\n      && notesList['week' + weekNumber]['day' + dayNumber]\r\n      && notesList['week' + weekNumber]['day' + dayNumber].notes)\r\n    {\r\n      var notesByhours = {};\r\n\r\n      notesList['week' + weekNumber]['day' + dayNumber].notes.forEach(note => {\r\n        notesByhours['hour' + note.hour] = {caption : note.caption, text: note.text};\r\n      });\r\n\r\n      this.hours = [];\r\n    }\r\n\r\n  }\r\n}\r\n\r\nmodule.exports = DayModel;\r\n\n\n/*****************\n ** WEBPACK FOOTER\n ** ./components/viewmodels/day-viewmodel.js\n ** module id = 10\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./components/viewmodels/day-viewmodel.js?");
+	eval("var Hour = __webpack_require__(11);\r\nvar notesList = __webpack_require__(17);\r\nvar Note = __webpack_require__(16);\r\n\r\nclass DayModel {\r\n\r\n  constructor(weekNumber = 1, dayNumber = 1){\r\n    this.hours = [];\r\n    let notesByHour = {};\r\n\r\n    if (notesList['week' + weekNumber]) {\r\n      if (notesList['week' + weekNumber]['day' + dayNumber]) {\r\n        notesList['week' + weekNumber]['day' + dayNumber].each(note => {\r\n          notesByHour['hour' + note.hour] = new Note(note.caption, note.text);\r\n        });\r\n      }\r\n    }\r\n\r\n    for (let i = 1; i <= 24; i++) {\r\n      this.hours.push(new Hour(notesByHour, i));\r\n    }\r\n  }\r\n}\r\n\r\nmodule.exports = DayModel;\r\n\n\n/*****************\n ** WEBPACK FOOTER\n ** ./components/viewmodels/day-viewmodel.js\n ** module id = 10\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./components/viewmodels/day-viewmodel.js?");
 
 /***/ },
 /* 11 */
 /***/ function(module, exports) {
 
-	eval("\n\n/*****************\n ** WEBPACK FOOTER\n ** ./components/viewmodels/hour-viewmodel.js\n ** module id = 11\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./components/viewmodels/hour-viewmodel.js?");
+	eval("class HourModel {\r\n  constructor(context = {}, hour) {\r\n    this.hour = hour;\r\n    if (context['hour' + hour]) {\r\n      this.data = new Note(context['hour' + hour].caption, context['hour' + hour].text);\r\n    } else {\r\n      this.data = new Note();\r\n    }\r\n  }\r\n}\r\n\n\n/*****************\n ** WEBPACK FOOTER\n ** ./components/viewmodels/hour-viewmodel.js\n ** module id = 11\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./components/viewmodels/hour-viewmodel.js?");
 
 /***/ },
 /* 12 */,
@@ -120,6 +120,18 @@
 /***/ function(module, exports) {
 
 	eval("\n\n/*****************\n ** WEBPACK FOOTER\n ** ./components/views/day-view.js\n ** module id = 15\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./components/views/day-view.js?");
+
+/***/ },
+/* 16 */
+/***/ function(module, exports) {
+
+	eval("class Note {\r\n  constructor (caption = '', text = '') {\r\n    this.caption = caption;\r\n    this.text = text;\r\n  }\r\n}\r\n\r\nmodule.exports = Note;\r\n\n\n/*****************\n ** WEBPACK FOOTER\n ** ./components/models/note.js\n ** module id = 16\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./components/models/note.js?");
+
+/***/ },
+/* 17 */
+/***/ function(module, exports) {
+
+	eval("var notesList = {\r\n  week1 : {\r\n    day1 : {\r\n      notes : [\r\n        {\r\n          hour : 7,\r\n          caption : 'note 1',\r\n          text : \"Create task\"\r\n        }\r\n      ]\r\n    },\r\n    day3 : {\r\n      notes : [\r\n        {\r\n          hour : 15,\r\n          caption : 'note 1',\r\n          text : \"Complete task\"\r\n        }\r\n      ]\r\n    },\r\n    day5 : {\r\n      notes : [\r\n        {\r\n          hour : 19,\r\n          caption : 'note 1',\r\n          text : \"Send work\"\r\n        }\r\n      ]\r\n    },\r\n  }\r\n};\r\n\r\nmodule.exports = notesList;\r\n\n\n/*****************\n ** WEBPACK FOOTER\n ** ./components/data/notesList.js\n ** module id = 17\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./components/data/notesList.js?");
 
 /***/ }
 /******/ ]);
