@@ -20,6 +20,8 @@ module.exports = {
 
     devtool: devEnvironment ? 'eval' : 'source-map',
 
+    watch: true,
+
     module: {
         loaders: [
           { test: /\.scss$/, loaders: ["style", "css?sourceMap", "sass?sourceMap"] },
