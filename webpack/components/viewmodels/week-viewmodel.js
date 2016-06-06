@@ -1,4 +1,4 @@
-var Day = require('./day-viewmodel');
+const Day = require('./day-viewmodel');
 
 class WeekModel {
   constructor(weekNumber = 1){

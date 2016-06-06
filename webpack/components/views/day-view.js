@@ -1,5 +1,5 @@
 require('./../styles/daystyle.scss');
-var Hour = require('./hour-view');
+const Hour = require('./hour-view');
 
 function DayView(context) {
   var container = document.createElement('div');

@@ -2,7 +2,7 @@
 
 var devEnvironment = false;
 
-var WebpackNotifierPlugin = require('webpack-notifier');
+const WebpackNotifierPlugin = require('webpack-notifier');
 
 module.exports = {
     entry: './app.js',

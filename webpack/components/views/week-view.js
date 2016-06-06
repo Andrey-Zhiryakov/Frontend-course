@@ -1,5 +1,5 @@
 require('./../styles/weekstyle.scss');
-var Day = require('./day-view');
+const Day = require('./day-view');
 
 function Week(content) {
   let container = document.createElement('div');

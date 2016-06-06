@@ -1,4 +1,4 @@
-var Note = require('./../models/note.js');
+const Note = require('./../models/note.js');
 
 class HourModel {
   constructor(context = {}, hour) {

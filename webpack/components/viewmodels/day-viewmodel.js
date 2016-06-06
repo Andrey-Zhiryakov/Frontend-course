@@ -1,6 +1,6 @@
-var Hour = require('./hour-viewmodel');
-var notesList = require('./../data/notesList');
-var Note = require('./../models/note');
+const Hour = require('./hour-viewmodel'),
+  notesList = require('./../data/notesList'),
+  Note = require('./../models/note');
 
 class DayModel {
 
