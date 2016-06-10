@@ -38,7 +38,7 @@
     },
 
     Check() {
-      if (this.checkHorizontal() || this.checkDiagonal()) {
+      if (this.checkHorizontal() || this.checkDiagonal() ) {
         return {win: true, winner: Number(!this.player)};
       }
 
@@ -58,21 +58,6 @@
       return flg;
     },
 
-    checkVertical() {
-      var cols = [[],[],[]];
-
-      this.fieldData.forEach((item) => {
-        cols[0].push(item[0]);
-        cols[1].push(item[1]);
-        cols[2].push(item[2]);
-      });
-
-      var obj = {};
-      obj.fieldData = cols;
-
-      return checkHorizontal.call(fieldData);
-    },
-
     checkDiagonal(){
 
       if (this.fieldData[1][1] !== undefined) {
@@ -88,6 +73,21 @@
       }
 
       return false;
+    },
+
+    checkVertical() {
+      var cols = [[],[],[]];
+
+      this.fieldData.forEach((item) => {
+        cols[0].push(item[0]);
+        cols[1].push(item[1]);
+        cols[2].push(item[2]);
+      });
+
+      var obj = {};
+      obj.fieldData = cols;
+
+      return this.checkHorizontal.call(fieldData);
     }
   };
 
