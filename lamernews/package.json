@@ -1,0 +1,20 @@
+{
+  "name": "lamernews",
+  "version": "1.0.0",
+  "description": "final project",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "final",
+    "project",
+    "lamernews"
+  ],
+  "author": "zhiryakov andrey",
+  "license": "MIT",
+  "devDependencies": {
+    "sass-loader": "^3.2.0",
+    "webpack": "^1.13.1"
+  }
+}
