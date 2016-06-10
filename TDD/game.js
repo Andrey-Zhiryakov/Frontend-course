@@ -38,7 +38,7 @@
     },
 
     Check() {
-      if (this.checkHorizontal() || this.checkDiagonal() ) {
+      if (this.checkHorizontal() || this.checkDiagonal() || this.checkVertical()) {
         return {win: true, winner: Number(!this.player)};
       }
 
@@ -87,7 +87,7 @@
       var obj = {};
       obj.fieldData = cols;
 
-      return this.checkHorizontal.call(fieldData);
+      return this.checkHorizontal.call(obj);
     }
   };
 
