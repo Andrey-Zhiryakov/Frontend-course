@@ -1,4 +1,3 @@
-
 describe("Tic Tac Toe game tests:", function(){
 	describe('Game initialisation tests (constructor):', function(){
 		it("Should create empty game", function(){
@@ -11,7 +10,7 @@ describe("Tic Tac Toe game tests:", function(){
 		var game;
 		var correct;
 		beforeEach(function(){
-			//game = new TicTacToe();
+			game = new TicTacToe();
 			correct = [[,,,],[,,,],[,,,]];
 		});
 
@@ -50,6 +49,10 @@ describe("Tic Tac Toe game tests:", function(){
 			game.Move([1,0]).should.equal(false);
 		});
 
+		it("should return false when received value is not array", function() {
+			game.Move("42").should.equal(false);
+		});
+
 		it("should set value 'player' to 0 at empty game", function() {
 			game.player.should.equal(0);
 		});
@@ -70,41 +73,40 @@ describe("Tic Tac Toe game tests:", function(){
 		var game;
 		var checkResult;
 		beforeEach(function(){
-			//game = new TicTacToe();
-		//	correct = [[,,,],[,,,],[,,,]];
+			game = new TicTacToe();
 			checkResult = {};
 		});
 
 		it("should return check result", function() {
-			game.Check().should.equal({});
+			game.Check().should.be.a('object');
 		});
 
 		it("should return result with winner = -1 and win=false", function(){
 			checkResult.winner = -1;
 			checkResult.win = false;
 
-			game.check().should.deep.equal(checkResult);
+			game.Check().should.deep.equal(checkResult);
 		});
 
-		it("should return positive result when field has horisontal line", function(){
+		it("should return positive result when field has horizontal line", function(){
 			checkResult.win = true;
 			game.fieldData = [['X','X','X'],[],[]];
 
-			game.check().should.deep.equal(checkResult.win);
+			game.Check().win.should.deep.equal(checkResult.win);
 		});
 
 		it("should return positive result when field has vertical line", function(){
 			checkResult.win = true;
 			game.fieldData = [['X',,,],['X',,,],['X',,,]];
 
-			game.check().should.deep.equal(checkResult.win);
+			game.Check().win.should.deep.equal(checkResult.win);
 		});
 
 		it("should return positive result when field has diagonal line", function(){
 			checkResult.win = true;
 			game.fieldData = [[,,'X'],[,'X',,],['X',,,]];
 
-			game.check().should.deep.equal(checkResult.win);
+			game.Check().win.should.deep.equal(checkResult.win);
 		});
 	});
 });
