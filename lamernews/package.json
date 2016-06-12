@@ -4,6 +4,7 @@
   "description": "final project",
   "main": "app.js",
   "scripts": {
+    "start": "node service.js",
     "test": "mocha"
   },
   "keywords": [
@@ -14,7 +15,12 @@
   "author": "zhiryakov andrey",
   "license": "MIT",
   "devDependencies": {
+    "node-sass": "^3.7.0",
     "sass-loader": "^3.2.0",
     "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "mongoose": "^4.4.20"
   }
 }
