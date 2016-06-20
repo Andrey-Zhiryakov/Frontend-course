@@ -1,17 +1,36 @@
-const log = require('../utils/log.js').info;
+const log = require('../utils/log').info;
+const express = require('express');
+const router = express.Router();
+const user = require('../models/User');
 
-exports.getUser = function(req, res) {
-  
-};
+router.route('/:username')
+.get((req, res)=>{
 
-exports.createUser = function(req, res) {
+})
+.put((req, res)=>{
 
-};
+})
+.delete((req, res)=>{
 
-exports.updateUser = function(req, res) {
+});
 
-};
+router.post('/', (req, res)=>{
+  console.log(req.body);
+  user.addUser(req.body, req.handler /*callback*/);
+});
 
-exports.deleteUser = function(req, res) {
 
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+module.exports = router;

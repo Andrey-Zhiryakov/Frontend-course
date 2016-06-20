@@ -1,29 +1,47 @@
 const log = require('../utils/log.js').info;
+const express = require('express');
+const router =  express.Router();
 
-exports.getRandomArticle = function(req, res) {
+router.route('/random')
+.get((req, res)=>{
   log(JSON.stringify(req.params));
-  res.send({  // temproary plug
+  res.status(200).send({  // temproary plug
     name: "name",
     date: Date.now()
   });
-};
+});
 
-exports.getArticles = function(req, res) {
-  log(JSON.stringify(req.params), req.query.sort);
-  res.send(req.path);
-};
+router.route('/:startIndex/:count')
+.get((req, res)=>{
+res.send('ok');
+});
 
-exports.createArticle = function(req, res) {
-  log(JSON.stringify(req.params));
-  res.send(req.path);
-};
+router.route('/')
+.post((req, res)=>{
+res.send('ok');
+});
 
-exports.updateArticle = function(req, res) {
-  log(JSON.stringify(req.params));
-  res.send(req.path);
-};
+router.route('/:id')
+.get((req, res)=>{
+res.send('ok');
+})
+.put((req, res)=>{
+res.send('ok');
+})
+.delete((req, res)=>{
+res.send('ok');
+});
 
-exports.deleteArticle = function(req, res) {
-  log(JSON.stringify(req.params));
-  res.send(req.path);
-};
+
+
+
+
+
+
+
+
+
+
+
+
+module.exports = router;
