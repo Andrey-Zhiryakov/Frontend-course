@@ -25,6 +25,9 @@ app.use(function(req, res, next){
 app.use('/users', userRouter);
 app.use('/articles', articleRouter);
 
+// comments just for test
+app.use('/comments', require('./app/routes/comments'));
+
 app.get('/about', function (req, res) {
     console.log(req.path);
     res.send('About page');
