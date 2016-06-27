@@ -70,11 +70,14 @@ articleSchema.statics.addComment = (articleId, dataObj, cb) => {
       comment.addComment(dataObj)
       .then((newComment) => {         // add comment to article
         article.comments.push(newComment._id);
-        Article.editArticle(article, err => cb(err));
-        return newComment;
-      })
-      .then((newCommnet) => {         // add comment to user
-        user.addComment(usr._id, newCommnet._id, cb);
+
+        Article.editArticle(article, (err) => {
+          if (err) return cb(err);
+
+          user.addComment(usr._id, newComment._id, err => {
+            err ? cb(err) : cb(null, newComment);
+          }); //add comment record to user
+        });
       })
       .catch((err) => {cb(err)});
     })
@@ -96,13 +99,15 @@ articleSchema.statics.removeComment = (articleId, dataObj, cb) => {
       dataObj.date = Date.now();
 
       comment.deleteComment(dataObj.commentId)
-      .then((oldComment) => {         // remove comment to article
+      .then((oldComment) => {         // remove comment from article
         article.comments.splice(article.comments.indexOf(oldComment._id), 1);
-        Article.editArticle(article, err => cb(err));
-        return oldComment;
-      })
-      .then((oldComment) => {         // remove comment to user
-        user.removeComment(usr._id, oldComment._id, cb);
+        Article.editArticle(article, err => {
+          if (err) return cb(err);
+
+          user.removeComment(usr._id, oldComment._id, err => {
+            err ? cb(err) : cb(null, oldComment);
+          });  //remove comment from user record
+        });
       })
       .catch((err) => {cb(err)});
     })
