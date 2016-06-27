@@ -43,6 +43,9 @@ commentSchema.statics.deleteComment = (commentId) => {
     Comment.findByIdAndRemove(commentId, (err, item)=>{
       if (err) return reject(err);
 
+      if (!item) {
+        reject({error: `No comment with ID ${commentId} has been found.`})
+      }
       resolve(item);
     });
   });

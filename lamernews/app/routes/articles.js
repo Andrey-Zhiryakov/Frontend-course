@@ -54,7 +54,7 @@ router.route('/:id/comments')
   article.addComment(req.params.id, req.body, req.handler);
 })
 .delete((req, res)=>{
-  article.deleteComment(req.params.id, req.body, req.handler);
+  article.removeComment(req.params.id, req.body, req.handler);
 });
 
 

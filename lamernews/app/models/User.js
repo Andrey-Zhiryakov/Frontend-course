@@ -99,7 +99,7 @@ userSchema.statics.getUserArticles = (dataObj, cb) => {
 
 //system methods
 userSchema.statics.addComment = (userId, commentId, cb) => {
-  if (!userId) return cb({error: 'User id is not valid.'});
+  if (!userId) return cb({error: 'User ID is not valid.'});
   if (!commentId) return cb({error: 'Comment id is not valid.'});
 
 
@@ -112,7 +112,7 @@ userSchema.statics.addComment = (userId, commentId, cb) => {
 }
 
 userSchema.statics.removeComment = (userId, commentId, cb) => {
-  if (!userId) return cb({error: 'User id is not valid.'});
+  if (!userId) return cb({error: 'User ID is not valid.'});
   if (!commentId) return cb({error: 'Comment id is not valid.'});
 
 
@@ -124,29 +124,57 @@ userSchema.statics.removeComment = (userId, commentId, cb) => {
   });
 }
 
-userSchema.statics.addArticle = (userId, articleId, cb) => {
-  if (!userId) return cb({error: 'User id is not valid.'});
+userSchema.statics.addArticle = (username, articleId, cb) => {
+  if (!username) return cb({error: 'Username is not valid.'});
   if (!articleId) return cb({error: 'Comment id is not valid.'});
 
 
-  var result = User.findById(userId, (err, user) => {
+  var result = User.findOne(username, (err, user) => {
     if (err) return cb(err);
 
     user.postedArticles.push(articleId);
-    return this.editUser(user, cb);
+    return User.editUser(user, cb);
   });
 }
 
-userSchema.statics.removeArticle = (userId, articleId, cb) => {
-  if (!userId) return cb({error: 'User id is not valid.'});
+userSchema.statics.removeArticle = (username, articleId, cb) => {
+  if (!username) return cb({error: 'Username is not valid.'});
   if (!articleId) return cb({error: 'Comment id is not valid.'});
 
 
-  var result = User.findById(userId, (err, user) => {
+  var result = User.findOne(username, (err, user) => {
     if (err) return cb(err);
 
     user.postedArticles.splice(user.postedArticles.indexOf(articleId), 1);
-    return this.editUser(user, cb);
+    return User.editUser(user, cb);
+  });
+}
+
+userSchema.statics.checkUser = (username) => {
+  if (!username) return Promise.reject({error: `Did not provide username.`});
+
+  return new Promise(function(resolve, reject) {
+    User.findOne(username).exec().then(val => {
+      if (!val) {
+        reject({error: `No user with username '${username}' has been found.`});
+      }
+      resolve(val);
+    })
+    .catch((err) => {reject(err)});
+  });
+}
+
+userSchema.statics.checkUserById = (id) => {
+  if (!id) return Promise.reject({error: `Did not provide user ID.`});
+
+  return new Promise(function(resolve, reject) {
+    User.findById(id).exec().then(val => {
+      if (!val) {
+        reject({error: `No user with id ${id} has been found.`});
+      }
+      resolve(val);
+    })
+    .catch((err) => {reject(err)});
   });
 }
 
