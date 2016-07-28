@@ -1,0 +1,41 @@
+$height: 0.55em + 0.67em + 0.5em;
+
+.hour{
+  border-bottom: 1px solid black;
+  box-sizing: border-box;
+  min-height: $height;
+
+  .dots {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .zeroIndent {
+    margin: 0;
+    padding: 0;
+  }
+  .caption {
+    @extend .zeroIndent;
+    @extend .dots;
+    color: #2a0505;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .text {
+    @extend .zeroIndent;
+    @extend .dots;
+    color: #01062f;
+    font-size: 0.55em;
+  }
+
+  &:last-child {
+    border: none;
+  }
+}
+.hour-number {
+  background-color: #d0edff;
+}
+.has-note {
+  background-color: #c2c8f9;
+}

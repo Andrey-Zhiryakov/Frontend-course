@@ -1,0 +1,35 @@
+$calendar-border-color: #072100;
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.calendar-week {
+  width: 90%;
+  height: 90%;
+  margin: 0 auto;
+  border: 1px solid $calendar-border-color;
+  .head, .body {
+    @extend .flex-container;
+    border-bottom: 1px solid $calendar-border-color;
+    .header, .day-wrapper {
+      width: 13%;
+      flex-basis: 300px;
+      border-left: 1px solid $calendar-border-color;
+      text-align: center;
+    }
+    .header:first-child, .day-wrapper:first-child {
+      max-width: 55px;
+      min-width: 55px;
+      border: none;
+    }
+  }
+  .head {
+    background-color: #e2ffdb;
+  }
+  .body {
+    border: none;
+  }
+}
